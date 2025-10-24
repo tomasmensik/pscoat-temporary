@@ -1,9 +1,19 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import Spline from "@splinetool/react-spline";
+import React, { useRef, useState, useEffect, useCallback } from "react";
+import dynamic from "next/dynamic";
 import NavbarDropdownColumn from "../components/NavbarDropdownColumn";
 import NavbarExtraCard from "../components/NavbarExtraCard";
+
+// Dynamically import Spline with no SSR to improve performance
+const Spline = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+      <div className="text-gray-500">Loading 3D scene...</div>
+    </div>
+  ),
+});
 
 export interface NavLink {
   label: string;
@@ -135,7 +145,26 @@ export default function Home() {
   const [open, setOpen] = useState<number | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isNavbarVisible, setIsNavbarVisible] = useState<boolean>(true);
+  const [isHeroVisible, setIsHeroVisible] = useState<boolean>(true);
+  const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
   const current = open !== null ? topNav[open] : null;
+  const heroRef = useRef<HTMLElement>(null);
+
+  // Intersection Observer for hero section visibility
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsHeroVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   // Scroll detection for navbar visibility
   React.useEffect(() => {
@@ -157,6 +186,11 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Performance optimization: Only load Spline when hero is visible
+  const handleSplineLoad = useCallback(() => {
+    setIsSplineLoaded(true);
   }, []);
 
   // hover-intent timer to avoid flicker and keep banner open while navigating
@@ -390,10 +424,26 @@ export default function Home() {
 
       <main className="w-full min-h-screen bg-gray-100">
         {/* Hero Section */}
-        <section className="relative w-full h-screen flex">
-          {/* Spline Background - Full Viewport */}
+        <section ref={heroRef} className="relative w-full h-screen flex">
+          {/* Spline Background - Full Viewport with optimizations */}
           <div className="absolute inset-0 w-full h-full">
-            <Spline scene="https://prod.spline.design/QevFsvUiomSFUvkb/scene.splinecode" />
+            {isHeroVisible && (
+              <Spline
+                scene="https://prod.spline.design/QevFsvUiomSFUvkb/scene.splinecode"
+                onLoad={handleSplineLoad}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  // Performance optimizations
+                  willChange: "transform",
+                  transform: "translateZ(0)", // Force hardware acceleration
+                }}
+              />
+            )}
+            {/* Fallback background when Spline is not loaded */}
+            {!isSplineLoaded && (
+              <div className="w-full h-full bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300" />
+            )}
           </div>
 
           {/* Left Column - Content (col-8) */}
@@ -425,10 +475,293 @@ export default function Home() {
           <div className="w-1/3"></div>
         </section>
 
+        {/* PScoat Information Section */}
+        <section className="w-full py-20 bg-gradient-to-b from-gray-50 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Main Title */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                POWER SMART COAT
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Unikátní termoizolace s využitím nanotechnologie - špičkové
+                moderní nátěry nové generace
+              </p>
+            </div>
+
+            {/* Protection Features Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Tepelným ztrátám
+                </h3>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Korozi
+                </h3>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Kondenzaci
+                </h3>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Plísním
+                </h3>
+              </div>
+
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg
+                    className="w-8 h-8 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  Požáru
+                </h3>
+              </div>
+            </div>
+
+            {/* Benefits Section */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-lg flex items-center justify-center mr-4">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Jednoduchá aplikace
+                  </h3>
+                </div>
+                <p className="text-gray-600">
+                  PSC se nanáší strojem nebo ručně štětcem v tloušťce převážně
+                  1,5 - 3 mm. Jednoduchá aplikace ve velmi krátkém čase.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-lg flex items-center justify-center mr-4">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Ochrana zařízení
+                  </h3>
+                </div>
+                <p className="text-gray-600">
+                  Aplikace přímo na horký povrch. Odolnost vůči UV záření a
+                  chemikáliím. Snadné opravy přímo na poškozeném místě.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-lg flex items-center justify-center mr-4">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Ekologický produkt
+                  </h3>
+                </div>
+                <p className="text-gray-600">
+                  Nízká uhlíková stopa, šetrný k životnímu prostředí, ochrana
+                  zdraví a prodlužuje životnost zařízení.
+                </p>
+              </div>
+            </div>
+
+            {/* Key Features */}
+            <div className="bg-gradient-to-r from-[#0180ae] to-[#00a4d6] rounded-2xl p-8 text-white">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold mb-4">
+                  Klíčové vlastnosti PScoat
+                </h3>
+                <p className="text-xl opacity-90">
+                  PScoat odráží &gt; 92% světelného záření v celém svém spektru
+                  (TSR)
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-xl font-semibold mb-4">
+                    Vlastnosti produktu:
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      UV odolný, netoxický a ekologický
+                    </li>
+                    <li className="flex items-center">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      Významné energetické úspory
+                    </li>
+                    <li className="flex items-center">
+                      <svg
+                        className="w-5 h-5 mr-3"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      Plně certifikované produkty
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-xl font-semibold mb-4">Typy povrchů:</h4>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-white/20 rounded-lg p-4 text-center">
+                      <div className="text-2xl mb-2">🔧</div>
+                      <div className="font-semibold">Na kov</div>
+                    </div>
+                    <div className="bg-white/20 rounded-lg p-4 text-center">
+                      <div className="text-2xl mb-2">🏠</div>
+                      <div className="font-semibold">Na stěny</div>
+                    </div>
+                    <div className="bg-white/20 rounded-lg p-4 text-center">
+                      <div className="text-2xl mb-2">🌳</div>
+                      <div className="font-semibold">Na dřevo</div>
+                    </div>
+                    <div className="bg-white/20 rounded-lg p-4 text-center">
+                      <div className="text-2xl mb-2">🏢</div>
+                      <div className="font-semibold">Na PVC / střechy</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Scroll-driven Spline Section */}
         <section className="bg-[#252854] relative w-full h-[1200vh]">
           <div className="sticky top-0 w-full h-screen">
-            <Spline scene="https://prod.spline.design/rzZ4WPhunmMFQ3aU/scene.splinecode" />
+            <Spline
+              scene="https://prod.spline.design/rzZ4WPhunmMFQ3aU/scene.splinecode"
+              style={{
+                width: "100%",
+                height: "100%",
+                willChange: "transform",
+                transform: "translateZ(0)",
+              }}
+            />
             {/* Vignette Effect */}
             <div className="absolute inset-0 pointer-events-none">
               <div className="w-full h-full bg-gradient-radial from-transparent via-transparent to-black/30"></div>
