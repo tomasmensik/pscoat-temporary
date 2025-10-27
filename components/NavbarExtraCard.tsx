@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavbarExtraCardProps {
   type: "co-je-pscoat" | "produkty" | "o-nas";
@@ -16,9 +17,11 @@ interface ProtectionItemProps {
 const ProtectionItem: React.FC<ProtectionItemProps> = ({ img, label }) => (
   <div className="group flex items-center gap-2 p-1.5 rounded-lg hover:bg-gray-100/50 transition-colors duration-150">
     <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-      <img
+      <Image
         src={img}
         alt={`Ochrana proti ${label}`}
+        width={24}
+        height={24}
         className="w-6 h-6 object-contain group-hover:scale-110 transition-transform duration-150"
       />
     </div>

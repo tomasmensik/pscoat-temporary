@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import NavbarProvider from "../components/NavbarProvider";
+import Footer from "../components/shared/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next.js + Spline + GSAP Starter",
-  description: "A modern web app with 3D graphics and animations",
+  title: "PScoat - Termoizolační ochrana",
+  description:
+    "Inovativní řešení pro termoizolaci s využitím nejmodernějších nanotechnologií",
 };
 
 export default function RootLayout({
@@ -15,8 +18,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="cs">
+      <body className={inter.className}>
+        <NavbarProvider>{children}</NavbarProvider>
+        <Footer />
+      </body>
     </html>
   );
 }
