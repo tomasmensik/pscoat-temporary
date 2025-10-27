@@ -36,7 +36,7 @@ export default function NavbarDropdown({
 }: NavbarDropdownProps) {
   return (
     <div
-      className="fixed left-0 right-0 top-16 bg-white/20 backdrop-blur-lg border-t border-gray-200 shadow-[0_12px_30px_-10px_rgba(0,0,0,0.25)] z-40"
+      className="fixed left-0 right-0 top-16 bg-white/20 backdrop-blur-xl border-t border-gray-200 shadow-[0_12px_30px_-10px_rgba(0,0,0,0.25)] z-40"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

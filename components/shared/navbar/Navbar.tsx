@@ -51,7 +51,7 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
     <>
       {/* Navigation */}
       <nav
-        className={`fixed top-0 w-full z-50 bg-white/20 backdrop-blur-lg transition-transform duration-300 ${
+        className={`fixed top-0 w-full z-50 bg-white/20 backdrop-blur-xl transition-transform duration-300 ${
           isNavbarVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
@@ -109,9 +109,12 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <button className="bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white px-6 py-2 rounded-sm text-sm font-medium hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a
+                href="/pozadat-o-nabidku"
+                className="inline-block bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white px-6 py-2 rounded-sm text-sm font-medium hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-0.5"
+              >
                 Požádat o nabídku
-              </button>
+              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -189,9 +192,12 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
               </details>
             ))}
             <div className="px-2 pt-2">
-              <button className="w-full bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold py-2 px-4 rounded-lg">
+              <a
+                href="/pozadat-o-nabidku"
+                className="block w-full bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold py-2 px-4 rounded-lg text-center"
+              >
                 Požádat o nabídku
-              </button>
+              </a>
             </div>
           </div>
         </div>

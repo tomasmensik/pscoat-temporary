@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "PScoat - Termoizolační ochrana",
   description:
     "Inovativní řešení pro termoizolaci s využitím nejmodernějších nanotechnologií",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

@@ -30,30 +30,22 @@ const ProductsPage: React.FC = () => {
 
   return (
     <>
-      <main className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <main className="w-full min-h-screen bg-gradient-to-b from-white via-gray-50/50 to-white">
         {/* Header Section */}
-        <section className="relative bg-gradient-to-br from-[#0180ae] to-[#00a4d6] text-white py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <section className="relative bg-gradient-to-b from-gray-200 to-gray-100 py-20 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+          <div className="absolute inset-0 bg-grid-pattern opacity-[0.015]"></div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-3xl mt-12">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
                 Naše produkty
               </h1>
-              <p className="text-xl md:text-2xl text-white/90 mb-8">
+              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
                 Kompletní portfolio izolačních systémů PScoat pro různé oblasti
                 použití
               </p>
             </div>
           </div>
-
-          {/* Decorative SVG Waves */}
-          <svg
-            className="absolute bottom-0 left-0 w-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1440 120"
-            fill="white"
-          >
-            <path d="M0,64L48,69.3C96,75,192,85,288,90.7C384,96,480,96,576,85.3C672,75,768,53,864,48C960,43,1056,53,1152,64C1248,75,1344,85,1392,90.7L1440,96L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" />
-          </svg>
         </section>
 
         {/* Filter Section */}
@@ -221,10 +213,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <div className="w-7 h-7 bg-white rounded-full flex items-center justify-center shadow-md">
                 <svg
                   className="w-4 h-4 text-[#0180ae]"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
                 >
-                  <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="m14.622 17.897-10.68-2.913M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0zM9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15"
+                  />
                 </svg>
               </div>
             </div>

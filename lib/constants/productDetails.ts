@@ -191,6 +191,252 @@ export const productDetails: ProductDetail[] = [
       "/product/41-psc-250t-ecr-roof-paper.jpg",
     ],
   },
+
+  // Průmysl
+  {
+    id: "psc-250t-ecb-basic-a",
+    produkt: "ECB BASIC A",
+    typ_produktu: "Základní nátěr",
+    description:
+      "ECB BASIC A je základní nátěr, který má vynikající odolnost proti korozi a kondenzaci vody. Aplikace je vhodná pro všechny povrchy z oceli, hliníku, nerezu, mědi, atd. Lze použít i přímo na zkorodovaný, ale stabilní povrch.",
+    vlastnosti: [
+      "Vynikající odolnost proti korozi",
+      "Vynikající odolnost proti kondenzaci vody",
+      "Vhodný pro ocel, hliník, nerez, měď",
+      "Lze použít přímo na zkorodovaný (stabilní) povrch",
+    ],
+    pouziti:
+      "Jako základní nátěr pro nanášení hlavní vrstvy PSC HP, HP+, EC, EC+, ECR ROOF, HP 600.",
+    category: "prumysl",
+    paperImage: "/product/22-psc-250t-ecb-basic-a-paper.jpg",
+    images: [
+      "/product/22-psc-250t-ecb-basic-a.jpg",
+      "/product/22-psc-250t-ecb-basic-a-paper.jpg",
+    ],
+  },
+  {
+    id: "psc-250t-hp",
+    produkt: "PSC 250T HP",
+    typ_produktu: "Izolační a těsnící nátěr",
+    description:
+      "HP je vysoce účinný, energeticky úsporný a flexibilní nátěr pro izolaci a těsnění. Jedná se o nátěr s nejvyšším obsahem mikrosfér. Je netoxický, šetrný k životnímu prostředí a tvoří jednotnou membránu, která pokrývá mikrotrhliny. Má vynikající odolnost proti vzniku kondenzátu, chemickému prostředí (C4 a C5) a povětrnostním vlivům.",
+    vlastnosti: [
+      "Vysoce účinný",
+      "Energeticky úsporný",
+      "Flexibilní",
+      "Nejvyšší obsah mikrosfér",
+      "Netoxický, šetrný k životnímu prostředí",
+      "Tvoří jednotnou membránu, pokrývá mikrotrhliny",
+      "Vynikající odolnost proti kondenzátu",
+      "Odolnost proti chemickému prostředí (C4 a C5)",
+      "Vysoká přilnavost ke kovům",
+      "Ekologický a zdravotně nezávadný",
+    ],
+    pouziti:
+      "Všechny ocelové konstrukce. Izolace potrubí teplé a studené vody, klimatizačních systémů, střech, opláštění budov a hal, ploch, kde je třeba snížit povrchovou teplotu (kotle, parovody, aj.), zásobníky chemických produktů, nádrže na kapalný dusík, průmyslové mrazící přístroje, kontejnery, výměníky tepla, bojlery, rozvody klimatizace.",
+    category: "prumysl",
+    paperImage: "/product/42-psc-250t-hp-paper.jpg",
+    images: [
+      "/product/42-psc-250t-hp.jpg",
+      "/product/42-psc-250t-hp-paper.jpg",
+    ],
+  },
+  {
+    id: "psc-250t-hp-plus",
+    produkt: "PSC 250T HP+",
+    typ_produktu: "Izolační a těsnící nátěr s antikorozními složkami",
+    description:
+      "HP+ je vysoce účinný, energeticky úsporný a flexibilní nátěr pro izolaci a těsnění s nejvyšším obsahem mikrosfér. Je netoxický, šetrný k životnímu prostředí a tvoří jednotnou membránu, která pokrývá mikrotrhliny. Obsahuje antikorozní složky, a proto může být použit i bez základního nátěru ECB BASIC A. Má vynikající odolnost proti vzniku kondenzátu, chemickému prostředí C4 a C5 a povětrnostním vlivům.",
+    vlastnosti: [
+      "Vysoce účinný",
+      "Energeticky úsporný",
+      "Flexibilní",
+      "Nejvyšší obsah mikrosfér",
+      "Netoxický, šetrný k životnímu prostředí",
+      "Tvoří jednotnou membránu, pokrývá mikrotrhliny",
+      "Obsahuje antikorozní složky (lze bez základu)",
+      "Vynikající odolnost proti kondenzátu",
+      "Odolnost proti chemickému prostředí (C4 a C5)",
+      "Vysoká přilnavost ke kovům",
+      "Ekologický a zdravotně nezávadný",
+    ],
+    pouziti:
+      "Všechny ocelové konstrukce. Izolace potrubí teplé a studené vody, klimatizačních systémů, střech, opláštění budov a hal, ploch, kde je třeba snížit povrchovou teplotu (kotle, parovody, aj.), zásobníky chemických produktů, nádrže na kapalný dusík, průmyslové mrazící přístroje, kontejnery, výměníky tepla, bojlery, rozvody klimatizace.",
+    category: "prumysl",
+    paperImage: "/product/43-psc-250t-hp-paper.jpg",
+    images: [
+      "/product/43-psc-250t-hp.jpg",
+      "/product/43-psc-250t-hp-paper.jpg",
+    ],
+  },
+  {
+    id: "psc-250t-ec",
+    produkt: "PSC 250T EC",
+    typ_produktu: "Vrchní krycí nátěr",
+    description:
+      "PSC 250T EC je vrchní krycí nátěr pro PSC 250T HP ve venkovním nebo vnitřním prostředí. Je netoxický, šetrný k životnímu prostředí. Je plně omyvatelný a odolný vůči nečistotám a chemikáliím. Nátěr s výbornou ochrannou, reflexní a vizuální funkcí. Je vysoce odolný proti všem atmosférickým vlivům.",
+    vlastnosti: [
+      "Vrchní krycí nátěr pro PSC 250T HP",
+      "Netoxický, šetrný k životnímu prostředí",
+      "Plně omyvatelný",
+      "Odolný vůči nečistotám a chemikáliím",
+      "Výborná ochranná, reflexní a vizuální funkce",
+      "Vysoce odolný proti atmosférickým vlivům",
+      "Vynikající odolnost proti kondenzaci",
+      "Vynikající odolnost proti chemickému prostředí (C4 a C5)",
+      "Vysoká přilnavost ke kovům",
+      "Ekologický a zdravotně nezávadný",
+      "Možnost barevných variant RAL (verze COLOR)",
+    ],
+    pouziti:
+      "Venkovní nebo vnitřní stěny konstrukcí jako vrchní nátěr pro PSC 250T HP.",
+    category: "prumysl",
+    paperImage: "/product/44-psc-250t-ec-paper.jpg",
+    images: [
+      "/product/44-psc-250t-ec.jpg",
+      "/product/44-psc-250t-ec-paper.jpg",
+    ],
+  },
+  {
+    id: "psc-250t-ec-plus",
+    produkt: "PSC 250T EC+",
+    typ_produktu: "Vrchní krycí reflexní nátěr s antikorozními složkami",
+    description:
+      "PSC 250T EC+ je vrchní krycí nátěr pro PSC 250T HP pro venkovním prostředí a zároveň může být použit jako vrchní krycí reflexní nátěr. Je netoxický, šetrný k životnímu prostředí. Nátěr je plně omyvatelný, odolný vůči nečistotám a chemikáliím. Má výbornou ochrannou, reflexní a vizuální funkcí. Obsahuje antikorozní složky a může být použit i bez základního nátěru ECB BASIC A.",
+    vlastnosti: [
+      "Vrchní krycí reflexní nátěr pro venkovní prostředí",
+      "Netoxický, šetrný k životnímu prostředí",
+      "Plně omyvatelný",
+      "Odolný vůči nečistotám a chemikáliím",
+      "Výborná ochranná, reflexní a vizuální funkce",
+      "Vysoce odolný proti atmosférickým vlivům",
+      "Obsahuje antikorozní složky (lze bez základu)",
+      "Vynikající odolnost proti chemickému prostředí (C4 a C5)",
+      "Vysoká přilnavost ke kovům",
+      "Ekologický a zdravotně nezávadný",
+      "Možnost barevných variant RAL (verze COLOR)",
+    ],
+    pouziti:
+      "Vnější stěny konstrukcí jako vrchní nátěr pro PSC 250T HP. Lze použít jako samostatný vrchní krycí reflexní nátěr.",
+    category: "prumysl",
+    paperImage: "/product/44-psc-250t-ec-paper.jpg",
+    images: [
+      "/product/44-psc-250t-ec.jpg",
+      "/product/44-psc-250t-ec-paper.jpg",
+    ],
+  },
+  {
+    id: "psc-250t-ece-elastic-prumysl",
+    produkt: "ECE ELASTIC",
+    typ_produktu: "Dekorativní ochranný nátěr (Elastomer)",
+    description:
+      "ECE ELASTIC je vysoce účinný izolačně reflexní dekorativní ochranný nátěr. Díky svým elastomerním vlastnostem poskytuje vynikající ochranné a estetické vlastnosti. Odolává atmosférickým vlivům, kyselým dešťům a ostatním standardním povětrnostním podmínkám. Materiál neumožní prostup atmosférických vlivů.",
+    vlastnosti: [
+      "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+      "Odolává atmosférickým vlivům a kyselým dešťům",
+      "Elastomerní vlastnosti",
+      "Zvýšená odolnost proti mechanickému poškození",
+      "Otěruvzdorný a paropropustný",
+      "Poskytuje vynikající ochranné a estetické vlastnosti",
+      "Možnost barevných variant RAL (verze COLOR)",
+    ],
+    pouziti:
+      "Střešní krytiny nebo jiné stavební a konstrukční prvky z PVC, PC, PS, asfaltových pásů (IPA), plastických hmot, polykarbonátu, tvrzené PVC, apod.",
+    category: "prumysl",
+    paperImage: "/product/46-psc-250t-ece-elastic-paper.jpg",
+    images: [
+      "/product/46-psc-250t-ece-elastic.jpg",
+      "/product/46-psc-250t-ece-elastic-paper.jpg",
+    ],
+  },
+  {
+    id: "psc-250t-ecr-roof-prumysl",
+    produkt: "ECR ROOF",
+    typ_produktu: "Vrchní reflexní nátěr pro střechy",
+    description:
+      "ECR ROOF je flexibilní vrchní reflexní nátěr střešní ocelové krytiny a prvků střešní konstrukce se sklonem více jak 3%. Používá se i jako krycí vrchní nátěr pro HP, HP+. Je netoxický, šetrný k životnímu prostředí. Nátěr je plně omyvatelný a odolný vůči nečistotám a chemikáliím.",
+    vlastnosti: [
+      "Flexibilní vrchní reflexní nátěr",
+      "Netoxický, šetrný k životnímu prostředí",
+      "Plně omyvatelný",
+      "Odolný vůči nečistotám a chemikáliím",
+      "Výborná ochranná a vizuální funkce",
+      "Vysoce odolný proti atmosférickým vlivům",
+      "Vynikající odolnost proti kondenzaci",
+      "Vynikající odolnost proti chemickému prostředí (C4 a C5)",
+      "Možnost barevných variant RAL (verze COLOR)",
+    ],
+    pouziti:
+      "Střešní ocelové krytiny a prvky střešní konstrukce se sklonem více jak 3%. Jako krycí vrchní nátěr pro HP, HP+.",
+    category: "prumysl",
+    paperImage: "/product/41-psc-250t-ecr-roof-paper.jpg",
+    images: [
+      "/product/41-psc-250t-ecr-roof.jpg",
+      "/product/41-psc-250t-ecr-roof-paper.jpg",
+    ],
+  },
+
+  // Veřejný sektor a zdravotnictví
+  {
+    id: "psc-250t-bs-floor",
+    produkt: "BS FLOOR",
+    typ_produktu: "Dekorativní ochranný nátěr pro podlahy",
+    description:
+      "BS FLOOR je vysoce účinný izolačně reflexní dekorativní ochranný nátěr pro použití na podlahy veřejných budov, nemocnic, domovů pro seniory, školních zařízení. Je plně omyvatelný, odolný vůči nečistotám, chemikáliím a je bakteriostatický. Odolává běžnému zatížení v provozu. Je velmi účinný při izolaci podlah a poskytuje účinnou ochranu proti pronikání mrazu nebo tepla. Je ekologický a zdravotně nezávadný.",
+    vlastnosti: [
+      "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+      "Plně omyvatelný",
+      "Odolný vůči nečistotám a chemikáliím",
+      "Bakteriostatický",
+      "Odolává běžnému zatížení v provozu",
+      "Účinná ochrana proti pronikání mrazu nebo tepla",
+      "Ekologický a zdravotně nezávadný",
+      "Vodou ředitelná barva na bázi akrylátové pryskyřice",
+      "Vynikající izolační vlastnosti",
+      "Netoxický, šetrný k životnímu prostředí",
+      "Vytváří membránu, která pokrývá mikrotrhliny",
+      "Vhodný pro použití v klimatických podmínkách s vysokými energetickými náklady",
+      "Vynikající odolnost proti kondenzaci",
+      "Možnost aplikace v barevných odstínech RAL",
+    ],
+    pouziti:
+      "Podlahy veřejných budov, nemocnic, domovů pro seniory, školních zařízení",
+    category: "verejny-sektor",
+    paperImage: "/product/21-psc-250t-bs-floor-paper.jpg",
+    images: [
+      "/product/21-psc-250t-bs-floor.jpg",
+      "/product/21-psc-250t-bs-floor-paper.jpg",
+    ],
+  },
+  {
+    id: "psc-250t-bs-inside",
+    produkt: "BS INSIDE",
+    typ_produktu: "Dekorativní ochranný nátěr pro vnitřní stěny",
+    description:
+      "BS INSIDE je vysoce účinný izolačně reflexní dekorativní ochranný nátěr pro použití na vnitřní stěny veřejných budov, nemocnic, domovů pro seniory, školních zařízení. Je odolný vůči nečistotám, plísním a je rovněž bakteriostatický. Je navržen jako vnitřní izolace pro zvýšení efektu odrazivosti energie od izolovaného povrchu zpět do místnosti.",
+    vlastnosti: [
+      "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+      "Odolný vůči nečistotám",
+      "Odolný vůči plísním",
+      "Bakteriostatický",
+      "Navržen jako vnitřní izolace pro odrazivost energie",
+      "Vodou ředitelná barva na bázi akrylátové pryskyřice",
+      "Vynikající izolační vlastnosti",
+      "Netoxický, šetrný k životnímu prostředí",
+      "Vytváří membránu, která pokrývá mikrotrhliny",
+      "Vhodný pro použití v klimatických podmínkách s vysokými energetickými náklady",
+      "Vynikající odolnost proti kondenzaci",
+      "Možnost aplikace v barevných odstínech RAL",
+    ],
+    pouziti:
+      "Vnitřní stěny veřejných budov, nemocnic, domovů pro seniory, školních zařízení",
+    category: "verejny-sektor",
+    paperImage: "/product/48-psc-250t-bs-inside-paper.jpg",
+    images: [
+      "/product/48-psc-250t-bs-inside.jpg",
+      "/product/48-psc-250t-bs-inside-paper.jpg",
+    ],
+  },
 ];
 
 export function getProductDetail(id: string): ProductDetail | undefined {

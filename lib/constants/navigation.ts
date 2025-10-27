@@ -3,6 +3,7 @@ import { TopItem } from "../types/navigation";
 export const topNav: TopItem[] = [
   {
     label: "Co je PSCoat?",
+    href: "/co-je-pscoat",
     groups: [
       {
         title: "Informace o produktu",
@@ -49,6 +50,7 @@ export const topNav: TopItem[] = [
   },
   {
     label: "O nás",
+    href: "/o-nas",
     groups: [
       {
         title: "Společnost",
