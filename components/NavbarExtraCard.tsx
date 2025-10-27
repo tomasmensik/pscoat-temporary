@@ -188,35 +188,41 @@ const NavbarExtraCard: React.FC<NavbarExtraCardProps> = ({
   if (type === "o-nas") {
     return (
       <div
-        className="h-full rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 hover:to-gray-100 p-6 shadow-sm flex flex-col transition-colors duration-200 relative overflow-hidden"
+        className="rounded-2xl border border-gray-200 bg-gradient-to-br from-blue-50 to-cyan-50/30 p-4 shadow-sm transition-colors duration-200 h-full"
         aria-label="O nás highlight"
       >
-        {/* Decorative elements */}
-        <div className="absolute -left-10 -top-10 w-40 h-40 rounded-full bg-[#0180ae]/10 blur-3xl opacity-70" />
-        <div className="absolute -right-8 bottom-0 w-36 h-36 rounded-full bg-[#00a4d6]/10 blur-3xl opacity-60" />
-
-        <div className="grid md:grid-cols-3 gap-6 items-center flex-1">
-          {/* Illustration */}
-          <div className="md:col-span-1 flex items-center justify-center">
-            <div className="w-56 h-40 bg-gradient-to-br from-[#0180ae] to-[#00a4d6] rounded-xl flex items-center justify-center">
-              <div className="text-white text-2xl font-bold">🏆</div>
-            </div>
+        <div className="grid grid-cols-3 gap-4 h-full">
+          {/* Left Side - Image Placeholder */}
+          <div className="bg-gray-200 rounded-lg flex items-center justify-center overflow-hidden">
+            <svg
+              className="w-full h-full text-gray-400 p-4"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
 
-          {/* Content */}
-          <div className="md:col-span-2">
-            <h3 className="text-lg font-bold text-gray-900 mb-2">
-              O společnosti
-            </h3>
-            <p className="text-sm text-gray-700 mb-4">
-              Inovativní řešení pro termoizolaci s využitím nejmodernějších
-              nanotechnologií.
-            </p>
+          {/* Right Side - Content & CTAs */}
+          <div className="col-span-2 flex flex-col justify-center">
+            <div className="mb-4">
+              <h3 className="text-lg font-bold text-gray-900 mb-1">
+                Nejste si jistí, co vybrat?
+              </h3>
+              <p className="text-sm text-gray-600">
+                Zavolejte nám nebo napište — společně vybereme ideální variantu
+              </p>
+            </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex gap-2">
               <Link
-                href="/o-nas"
-                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white hover:from-[#0180ae]/80 hover:to-[#00a4d6]/80 font-semibold py-2 px-4 whitespace-nowrap transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl text-sm"
+                href="/kontakt"
+                onClick={onLinkClick}
+                className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white hover:from-[#0180ae]/90 hover:to-[#00a4d6]/90 transition-all duration-300 group"
               >
                 <svg
                   className="w-4 h-4"
@@ -228,10 +234,31 @@ const NavbarExtraCard: React.FC<NavbarExtraCardProps> = ({
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                Více o nás
+                <span className="text-xs font-semibold">Napište nám</span>
+              </Link>
+
+              <Link
+                href="/vypocitat-uspory"
+                onClick={onLinkClick}
+                className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white hover:from-[#0180ae]/90 hover:to-[#00a4d6]/90 transition-all duration-300 group"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                <span className="text-xs font-semibold">Požádat o nabídku</span>
               </Link>
             </div>
           </div>

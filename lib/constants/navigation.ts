@@ -39,29 +39,8 @@ export const topNav: TopItem[] = [
   },
   {
     label: "Produkty",
-    groups: [
-      {
-        title: "Oblast použití",
-        items: [
-          {
-            label: "Stavebnictví",
-            href: "/produkty/stavebnictvi",
-            desc: "Izolace pro stavební průmysl",
-          },
-          {
-            label: "Průmysl",
-            href: "/produkty/prumysl",
-            desc: "Průmyslové aplikace",
-          },
-          {
-            label: "Veřejný sektor a zdravotnictví",
-            href: "/produkty/verejny-sektor",
-            desc: "Zdravotnictví a veřejné budovy",
-          },
-        ],
-      },
-    ],
-    dropdown: true,
+    href: "/produkty",
+    dropdown: false,
   },
   {
     label: "Reference",

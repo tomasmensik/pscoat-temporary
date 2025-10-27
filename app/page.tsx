@@ -26,16 +26,16 @@ export default function Home() {
         <div style={{ height: "600px", position: "relative" }}>
           <CircularGalleryDynamic
             items={[
-              { image: "/gallery/01.jpg", text: "Aplikace PScoat" },
-              { image: "/gallery/02.jpg", text: "Termoizolační ochrana" },
-              { image: "/gallery/03.jpg", text: "Industriální použití" },
-              { image: "/gallery/04.jpg", text: "Stavební aplikace" },
-              { image: "/gallery/05.jpg", text: "Profesionální řešení" },
-              { image: "/gallery/05b.jpg", text: "Detail aplikace" },
-              { image: "/gallery/06.jpg", text: "Dlouhodobá ochrana" },
-              { image: "/gallery/07.jpg", text: "Výsledek aplikace" },
-              { image: "/gallery/08.jpg", text: "Energetické úspory" },
-              { image: "/gallery/09.jpg", text: "Certifikovaný produkt" },
+              { image: "/gallery/01.jpg", text: "Bioplynové stanice" },
+              { image: "/gallery/02.jpg", text: "Skladovací sila" },
+              { image: "/gallery/03.jpg", text: "Strojní díly" },
+              { image: "/gallery/04.jpg", text: "Průmyslové nádrže" },
+              { image: "/gallery/05.jpg", text: "Potrubí" },
+              { image: "/gallery/05b.jpg", text: "Potrubí" },
+              { image: "/gallery/06.jpg", text: "Zásobníky" },
+              { image: "/gallery/07.jpg", text: "Potrubní armatury" },
+              { image: "/gallery/08.jpg", text: "Přírubové ventily" },
+              { image: "/gallery/09.jpg", text: "Potrubní spoje" },
             ]}
             bend={3}
             textColor="#171717"
