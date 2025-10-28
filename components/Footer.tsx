@@ -210,12 +210,6 @@ export default function Footer() {
                 Černá listina
               </Link>
               <Link
-                href="/vypocitat-uspory"
-                className="hover:text-[#0180ae] transition-colors"
-              >
-                Kalkulátor úspor
-              </Link>
-              <Link
                 href="/kontakt"
                 className="hover:text-[#0180ae] transition-colors"
               >

@@ -16,7 +16,7 @@ const CircularGalleryDynamic = dynamic(
 );
 
 export default function Home() {
-  return (
+  return (      
     <>
       {/* Hero Section */}
       <HeroSection onVisibilityChange={() => {}} />

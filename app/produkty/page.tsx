@@ -172,12 +172,6 @@ const ProductsPage: React.FC = () => {
               >
                 Kontaktovat nás
               </Link>
-              <Link
-                href="/vypocitat-uspory"
-                className="px-8 py-3 bg-white border-2 border-[#0180ae] text-[#0180ae] font-semibold rounded-full hover:bg-gray-50 transition-all duration-300"
-              >
-                Vypočítat úspory
-              </Link>
             </div>
           </div>
         </section>

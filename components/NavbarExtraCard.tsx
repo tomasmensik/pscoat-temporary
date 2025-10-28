@@ -80,11 +80,11 @@ const NavbarExtraCard: React.FC<NavbarExtraCardProps> = ({
         </div>
 
         <Link
-          href="/vypocitat-uspory"
+          href="/kontakt"
           onClick={onLinkClick}
           className="group inline-flex items-center justify-center gap-1 w-full rounded-lg bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white hover:from-[#0180ae]/90 hover:to-[#00a4d6]/90 font-semibold py-2 px-3 transition-all duration-300 cursor-pointer transform hover:scale-[1.02] hover:shadow-md text-xs"
         >
-          Spočítat moje úspory
+          Kontaktovat
           <svg
             className="w-3 h-3 group-hover:translate-x-0.5 transition-transform"
             fill="none"
@@ -159,7 +159,7 @@ const NavbarExtraCard: React.FC<NavbarExtraCardProps> = ({
               </Link>
 
               <Link
-                href="/vypocitat-uspory"
+                href="/kontakt"
                 onClick={onLinkClick}
                 className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white hover:from-[#0180ae]/90 hover:to-[#00a4d6]/90 transition-all duration-300 group"
               >
@@ -241,7 +241,7 @@ const NavbarExtraCard: React.FC<NavbarExtraCardProps> = ({
               </Link>
 
               <Link
-                href="/vypocitat-uspory"
+                href="/pozadat-o-nabidku"
                 onClick={onLinkClick}
                 className="flex items-center gap-2 px-3 py-2.5 rounded-lg bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white hover:from-[#0180ae]/90 hover:to-[#00a4d6]/90 transition-all duration-300 group"
               >

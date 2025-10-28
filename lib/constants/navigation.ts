@@ -80,9 +80,4 @@ export const topNav: TopItem[] = [
     href: "/kontakt",
     dropdown: false,
   },
-  {
-    label: "Vypočítat úspory",
-    href: "/vypocitat-uspory",
-    dropdown: false,
-  },
 ];

@@ -405,12 +405,6 @@ export default function ProductDetailPage() {
                 >
                   Požádat o nabídku
                 </Link>
-                <Link
-                  href="/vypocitat-uspory"
-                  className="flex-1 border-2 border-[#0180ae] text-[#0180ae] font-semibold py-4 px-6 rounded-xl hover:bg-gray-50 transition-all duration-300 text-center"
-                >
-                  Vypočítat úspory
-                </Link>
               </div>
             </div>
           </div>
