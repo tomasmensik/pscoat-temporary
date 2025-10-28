@@ -8,13 +8,25 @@ export default function PozadatONabidku() {
     form_company: "",
     form_email: "",
     form_objekt: "",
-    form_varianta: "",
-    form_problem: "",
+    form_varianta: [] as string[],
+    form_problem: [] as string[],
     form_message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate that at least one option is selected for each checkbox group
+    if (formData.form_varianta.length === 0) {
+      alert("Prosím vyberte alespoň jednu variantu.");
+      return;
+    }
+
+    if (formData.form_problem.length === 0) {
+      alert("Prosím vyberte alespoň jeden problém, který řešíte.");
+      return;
+    }
+
     // Handle form submission
     console.log("Form submitted:", formData);
   };
@@ -26,9 +38,21 @@ export default function PozadatONabidku() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, checked } = e.target;
+    setFormData((prev) => {
+      const currentArray = prev[name as keyof typeof prev] as string[];
+      if (checked) {
+        // Add value to array if checked
+        return { ...prev, [name]: [...currentArray, value] };
+      } else {
+        // Remove value from array if unchecked
+        return {
+          ...prev,
+          [name]: currentArray.filter((item) => item !== value),
+        };
+      }
+    });
   };
 
   return (
@@ -128,7 +152,7 @@ export default function PozadatONabidku() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6">
-                Vyberte prosím jednu z následujících variant:{" "}
+                Vyberte prosím varianty
                 <span className="text-red-500">*</span>
               </h3>
               <div className="space-y-3">
@@ -147,13 +171,12 @@ export default function PozadatONabidku() {
                     className="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-100 hover:border-[#0180ae]/30 hover:bg-gray-50/50 cursor-pointer transition-all duration-200"
                   >
                     <input
-                      type="radio"
+                      type="checkbox"
                       name="form_varianta"
                       value={option.value}
-                      checked={formData.form_varianta === option.value}
-                      onChange={handleRadioChange}
-                      required
-                      className="w-5 h-5 text-[#0180ae] focus:ring-2 focus:ring-[#0180ae]/20 cursor-pointer"
+                      checked={formData.form_varianta.includes(option.value)}
+                      onChange={handleCheckboxChange}
+                      className="w-5 h-5 text-[#0180ae] focus:ring-2 focus:ring-[#0180ae]/20 cursor-pointer rounded"
                     />
                     <span className="text-gray-700 font-medium">
                       {option.label}
@@ -165,7 +188,8 @@ export default function PozadatONabidku() {
 
             <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6">
-                Jaký řešíte problém? <span className="text-red-500">*</span>
+                Jaké řešíte problémy?
+                <span className="text-red-500">*</span>
               </h3>
               <div className="space-y-3">
                 {[
@@ -185,13 +209,12 @@ export default function PozadatONabidku() {
                     className="flex items-center gap-3 p-4 rounded-xl border-2 border-gray-100 hover:border-[#0180ae]/30 hover:bg-gray-50/50 cursor-pointer transition-all duration-200"
                   >
                     <input
-                      type="radio"
+                      type="checkbox"
                       name="form_problem"
                       value={option.value}
-                      checked={formData.form_problem === option.value}
-                      onChange={handleRadioChange}
-                      required
-                      className="w-5 h-5 text-[#0180ae] focus:ring-2 focus:ring-[#0180ae]/20 cursor-pointer"
+                      checked={formData.form_problem.includes(option.value)}
+                      onChange={handleCheckboxChange}
+                      className="w-5 h-5 text-[#0180ae] focus:ring-2 focus:ring-[#0180ae]/20 cursor-pointer rounded"
                     />
                     <span className="text-gray-700 font-medium">
                       {option.label}

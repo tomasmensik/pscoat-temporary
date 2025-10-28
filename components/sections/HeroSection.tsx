@@ -8,7 +8,7 @@ const Spline = dynamic(() => import("@splinetool/react-spline"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-      <div className="text-gray-500">Loading 3D scene...</div>
+      <div className="text-gray-500"></div>
     </div>
   ),
 });

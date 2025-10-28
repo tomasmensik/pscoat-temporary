@@ -413,9 +413,6 @@ export default function Kontakt() {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
               Kontakt
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-2 max-w-2xl leading-relaxed">
-              <strong>Spojte se s námi</strong>
-            </p>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
               Máte dotaz nebo zájem o naše produkty? Rádi vám zodpovíme všechny
               otázky a pomůžeme najít nejvhodnější řešení pro váš projekt.

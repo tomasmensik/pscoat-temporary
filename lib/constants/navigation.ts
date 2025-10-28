@@ -56,19 +56,19 @@ export const topNav: TopItem[] = [
         title: "Společnost",
         items: [
           {
-            label: "Náš cíl",
-            href: "/o-nas/cil",
-            desc: "Naše poslání a vize",
-          },
-          {
-            label: "Černá listina",
-            href: "/o-nas/cerna-listina",
-            desc: "Nevhodné aplikace",
+            label: "O společnosti",
+            href: "/o-nas/#o-spolecnosti",
+            desc: "Náš příběh",
           },
           {
             label: "Ocenění",
-            href: "/o-nas/oceneni",
+            href: "/o-nas/#oceneni",
             desc: "Certifikace a uznání",
+          },
+          {
+            label: "Doporučení",  
+            href: "/o-nas/#doporuceni",
+            desc: "Reference a doporučení",
           },
         ],
       },
