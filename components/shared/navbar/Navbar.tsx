@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { TopItem } from "../../../lib/types/navigation";
 import { topNav } from "../../../lib/constants/navigation";
 import NavbarDropdown from "./NavbarDropdown";
 import NavbarExtraCard from "../../NavbarExtraCard";
 import NavbarDropdownColumn from "../../NavbarDropdownColumn";
+import { COLORS, GRADIENTS } from "../../../lib/constants/design";
 
 const ExtraCards: React.FC<{ label: string; onLinkClick?: () => void }> = ({
   label,
@@ -92,7 +93,7 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                 >
                   <a
                     href={item.href || "#"}
-                    className="py-2 px-2 font-medium transition-colors text-gray-800 hover:text-[#0180ae]"
+                    className={`py-2 px-2 font-medium transition-colors text-gray-800 hover:text-[${COLORS.brand.primary}]`}
                     onClick={(e) => {
                       if (!item.href || item.href === "#") {
                         e.preventDefault();
@@ -111,7 +112,7 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
             <div className="hidden md:block">
               <a
                 href="/pozadat-o-nabidku"
-                className="inline-block bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white px-6 py-2 rounded-sm text-sm font-medium hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-0.5"
+                className={`inline-block bg-gradient-to-r ${GRADIENTS.brand} text-white px-6 py-2 rounded-sm text-sm font-medium hover:shadow-lg hover:shadow-[${COLORS.brand.primary}]/25 transition-all duration-300 transform hover:-translate-y-0.5`}
               >
                 Požádat o nabídku
               </a>
@@ -121,7 +122,7 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-800 hover:text-[#0180ae] focus:outline-none focus:text-[#0180ae]"
+                className={`text-gray-800 hover:text-[${COLORS.brand.primary}] focus:outline-none focus:text-[${COLORS.brand.primary}]`}
               >
                 <svg
                   className="h-6 w-6"
@@ -168,7 +169,9 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                   {item.groups &&
                     item.groups.map((group) => (
                       <div key={group.title}>
-                        <div className="text-xs font-semibold text-[#0180ae] tracking-widest mb-2 uppercase">
+                        <div
+                          className={`text-xs font-semibold text-[${COLORS.brand.primary}] tracking-widest mb-2 uppercase`}
+                        >
                           {group.title}
                         </div>
                         <ul className="space-y-2">
@@ -177,7 +180,7 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                               <a
                                 href={link.href}
                                 onClick={() => setIsMenuOpen(false)}
-                                className="flex items-start gap-3 px-2 py-2 text-gray-700 hover:text-[#0180ae]"
+                                className={`flex items-start gap-3 px-2 py-2 text-gray-700 hover:text-[${COLORS.brand.primary}]`}
                               >
                                 <span className="text-sm font-medium">
                                   {link.label}
@@ -194,7 +197,7 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
             <div className="px-2 pt-2">
               <a
                 href="/pozadat-o-nabidku"
-                className="block w-full bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold py-2 px-4 rounded-lg text-center"
+                className={`block w-full bg-gradient-to-r ${GRADIENTS.brand} text-white font-semibold py-2 px-4 rounded-lg text-center`}
               >
                 Požádat o nabídku
               </a>
