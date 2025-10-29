@@ -10,6 +10,7 @@ import {
 } from "../../lib/constants/design";
 
 // Dynamically import Spline with no SSR to improve performance
+// Note: Spline 4.x - import from main package entry point
 const Spline = dynamic(() => import("@splinetool/react-spline"), {
   ssr: false,
   loading: () => (

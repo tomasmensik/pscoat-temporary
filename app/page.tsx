@@ -24,6 +24,19 @@ export default function Home() {
       <HeroSection onVisibilityChange={() => {}} />
 
       {/* Circular Gallery Section */}
+      <section
+        className={`w-full bg-gradient-to-b ${GRADIENTS.background} py-2`}
+      >
+        <div style={{ height: "600px", position: "relative" }}>
+          <CircularGalleryDynamic
+            items={GALLERY_ITEMS}
+            bend={GALLERY_CONFIG.bend}
+            textColor={GALLERY_CONFIG.textColor}
+            borderRadius={GALLERY_CONFIG.borderRadius}
+            scrollEase={GALLERY_CONFIG.scrollEase}
+          />
+        </div>
+      </section>
 
       {/* PScoat Information Section */}
       <PScoatInfoSection />
