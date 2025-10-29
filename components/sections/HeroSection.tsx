@@ -1,117 +1,184 @@
 "use client";
 
-import { useRef, useEffect, useCallback, useState } from "react";
-import dynamic from "next/dynamic";
-import {
-  SPLINE_SCENES,
-  COLORS,
-  GRADIENTS,
-  TYPOGRAPHY,
-} from "../../lib/constants/design";
+import { useEffect, useRef } from "react";
+import Navbar from "../shared/navbar/Navbar";
 
-// Dynamically import Spline with no SSR to improve performance
-// Note: Spline 4.x - import from main package entry point
-const Spline = dynamic(() => import("@splinetool/react-spline"), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-      <div className="text-gray-500"></div>
-    </div>
-  ),
-});
-
-interface HeroSectionProps {
-  onVisibilityChange?: (visible: boolean) => void;
+declare global {
+  interface Window {
+    Vimeo: any;
+  }
 }
 
-export default function HeroSection({ onVisibilityChange }: HeroSectionProps) {
-  const [isSplineLoaded, setIsSplineLoaded] = useState<boolean>(false);
-  const heroRef = useRef<HTMLElement>(null);
+export default function HeroSection() {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // Intersection Observer for hero section visibility
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        onVisibilityChange?.(entry.isIntersecting);
-      },
-      { threshold: 0.1 }
-    );
+    // Load Vimeo Player API script
+    const script = document.createElement("script");
+    script.src = "https://player.vimeo.com/api/player.js";
+    script.async = true;
+    document.body.appendChild(script);
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
+    script.onload = () => {
+      if (iframeRef.current && window.Vimeo) {
+        const player = new window.Vimeo.Player(iframeRef.current);
+        // Set loop to true for infinite repeat
+        player.setLoop(true);
+        // Autoplay
+        player.play();
+      }
+    };
 
-    return () => observer.disconnect();
-  }, [onVisibilityChange]);
-
-  // Performance optimization: Only load Spline when hero is visible
-  const handleSplineLoad = useCallback(() => {
-    setIsSplineLoaded(true);
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
   }, []);
 
   return (
-    <section ref={heroRef} className="relative w-full h-screen flex">
-      {/* Spline Background - Full Viewport with optimizations */}
-      <div className="absolute inset-0 w-full h-full">
-        {true && (
-          <Spline
-            scene={SPLINE_SCENES.hero}
-            onLoad={handleSplineLoad}
+    <section className="relative w-full h-screen flex flex-col overflow-hidden">
+      {/* Background Video - Vimeo */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <div
+          className="absolute"
+          style={{
+            width: "177.78vh", // 16:9 aspect ratio based on height
+            height: "100vh",
+            minWidth: "100vw",
+            minHeight: "56.25vw", // 16:9 aspect ratio based on width
+            left: "50%",
+            top: "50%",
+            transform: "translate(-50%, -50%)",
+            transformOrigin: "center center",
+          }}
+        >
+          <div
+            className="absolute inset-0"
             style={{
               width: "100%",
               height: "100%",
-              willChange: "transform",
-              transform: "translateZ(0)",
+              transform: "scale(1.5)", // Scale up to ensure cover effect
+              transformOrigin: "center center",
             }}
-          />
-        )}
-        {/* Fallback background when Spline is not loaded */}
-        {!isSplineLoaded && (
-          <div
-            className="w-full h-full"
-            style={{ backgroundColor: COLORS.brand.accent }}
-          />
-        )}
+          >
+            <iframe
+              ref={iframeRef}
+              src="https://player.vimeo.com/video/1131819800?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="absolute inset-0 w-full h-full"
+              style={{
+                width: "100%",
+                height: "100%",
+                pointerEvents: "none",
+              }}
+              title="PSCoat-hero"
+            />
+          </div>
+        </div>
+        {/* Optional overlay for better text readability */}
+        <div className="absolute inset-0 bg-white/10"></div>
       </div>
 
-      {/* Left Column - Content (col-8) */}
-      <div className="relative z-10 w-full md:w-2/3 flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-2">
-        <div className="max-w-3xl w-full">
-          {/* Main Heading */}
-          <h1
-            className={`${TYPOGRAPHY.heading.h1} text-black leading-tight mb-6`}
-          >
-            Termoizolační ochrana
-          </h1>
+      {/* Navbar - part of hero section */}
+      <div className="relative z-20">
+        <Navbar isNavbarVisible={true} />
+      </div>
 
-          {/* Subheading */}
-          <p
-            className={`${TYPOGRAPHY.body.large} text-gray-800 leading-relaxed mb-8`}
+      {/* Subtle Play Icon in Background (very faint) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="opacity-5">
+          <svg
+            width="120"
+            height="120"
+            viewBox="0 0 120 120"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-black"
           >
-            PScoat využívá pokročilé mikrosféry na bázi nanotechnologií k
-            dosažení špičkové tepelné izolace a ochrany povrchů.
-          </p>
-
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#jak-funguje"
-              className={`w-full sm:w-auto px-8 py-4 bg-gradient-to-r ${GRADIENTS.brand} text-white rounded-lg hover:shadow-lg hover:shadow-[${COLORS.brand.primary}]/25 transition-all duration-300 transform hover:-translate-y-1 text-center`}
-            >
-              Jak <span className="font-bold">PSCoat</span> funguje?
-            </a>
-            <a
-              href="/kontakt"
-              className={`w-full sm:w-auto px-8 py-4 border-2 border-gray-800 text-gray-800 rounded-lg hover:border-[${COLORS.brand.primary}] hover:bg-gray-100 transition-all duration-300 text-center`}
-            >
-              Kontaktujte nás
-            </a>
-          </div>
+            <path d="M40 30L40 90L90 60L40 30Z" fill="currentColor" />
+          </svg>
         </div>
       </div>
 
-      {/* Right Column - Empty (col-4) */}
-      <div className="hidden md:block w-1/3"></div>
+      {/* Main Content - centered vertically and horizontally */}
+      <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div className="text-center px-4 sm:px-6 lg:px-8">
+          {/* Main Title */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold text-black mb-6 leading-tight">
+            Vrstva,
+            <br />
+            která mění pravidla.
+          </h1>
+
+          {/* Tagline */}
+          <p className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-light text-black">
+            Izoluje. Nehoří. Funguje v 1 mm.
+          </p>
+        </div>
+      </div>
+
+      {/* Scroll Indicator (V-shaped arrow) */}
+      <div className="absolute inset-x-0 bottom-6 flex justify-center z-20">
+        <button
+          type="button"
+          aria-label="Scrollnout dolů"
+          onClick={() => {
+            if (typeof window !== "undefined") {
+              window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+            }
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="80"
+            height="80"
+            viewBox="0 0 24 24"
+            className="animate-subtle-bounce"
+          >
+            <defs>
+              <linearGradient
+                id="arrowGradientLeft"
+                x1="2"
+                y1="4"
+                x2="12"
+                y2="18"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" stopColor="#E01A00" />
+                <stop offset="100%" stopColor="#8B5CF6" />
+              </linearGradient>
+              <linearGradient
+                id="arrowGradientRight"
+                x1="12"
+                y1="18"
+                x2="22"
+                y2="4"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0%" stopColor="#8B5CF6" />
+                <stop offset="100%" stopColor="#1F72B0" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M2 4 L12 18"
+              stroke="url(#arrowGradientLeft)"
+              strokeWidth="0.5"
+              strokeLinecap="round"
+              fill="none"
+            />
+            <path
+              d="M22 4 L12 18"
+              stroke="url(#arrowGradientRight)"
+              strokeWidth="0.5"
+              strokeLinecap="round"
+              fill="none"
+            />
+          </svg>
+        </button>
+      </div>
     </section>
   );
 }

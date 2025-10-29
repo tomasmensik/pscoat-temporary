@@ -115,3 +115,44 @@
     linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+/* Hexagonal pattern background */
+.bg-hexagon-pattern {
+  background-image: repeating-linear-gradient(
+      30deg,
+      transparent,
+      transparent 30px,
+      rgba(0, 0, 0, 0.02) 30px,
+      rgba(0, 0, 0, 0.02) 60px
+    ),
+    repeating-linear-gradient(
+      -30deg,
+      transparent,
+      transparent 30px,
+      rgba(0, 0, 0, 0.02) 30px,
+      rgba(0, 0, 0, 0.02) 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 30px,
+      rgba(0, 0, 0, 0.02) 30px,
+      rgba(0, 0, 0, 0.02) 60px
+    );
+  background-size: 52px 52px;
+}
+
+/* Subtle bounce animation for scroll indicator */
+@keyframes subtle-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-subtle-bounce {
+  animation: subtle-bounce 1.8s ease-in-out infinite;
+}

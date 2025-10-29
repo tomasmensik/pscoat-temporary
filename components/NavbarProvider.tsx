@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { usePathname } from "next/navigation";
 import Navbar from "./shared/navbar/Navbar";
 
 export default function NavbarProvider({
@@ -8,37 +9,14 @@ export default function NavbarProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isNavbarVisible, setIsNavbarVisible] = useState<boolean>(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Find the spline section element by class or data attribute
-      const splineSection = document.querySelector("[data-spline-section]");
-
-      if (!splineSection) {
-        setIsNavbarVisible(true);
-        return;
-      }
-
-      const sectionRect = splineSection.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      const isEntirelyInSection =
-        sectionRect.top <= 0 && sectionRect.bottom >= windowHeight;
-
-      setIsNavbarVisible(!isEntirelyInSection);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   return (
-    <>
-      <Navbar isNavbarVisible={isNavbarVisible} />
+    <div className="relative">
+      {/* Only show navbar in layout if not on homepage (homepage has navbar in hero section) */}
+      {!isHomePage && <Navbar isNavbarVisible={true} />}
       {children}
-    </>
+    </div>
   );
 }
