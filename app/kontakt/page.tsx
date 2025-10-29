@@ -9,6 +9,12 @@ import {
   ZoomableGroup,
 } from "react-simple-maps";
 
+const MapComposableMap = ComposableMap as any;
+const MapZoomableGroup = ZoomableGroup as any;
+const MapGeographies = Geographies as any;
+const MapGeography = Geography as any;
+const MapMarker = Marker as any;
+
 export default function Kontakt() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -649,7 +655,7 @@ export default function Kontakt() {
           {/* World Map */}
           <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 mb-16 relative">
             <div className="w-full h-96">
-              <ComposableMap
+              <MapComposableMap
                 projection="geoMercator"
                 projectionConfig={{
                   scale: 180,
@@ -657,14 +663,14 @@ export default function Kontakt() {
                 }}
                 style={{ width: "100%", height: "100%" }}
               >
-                <ZoomableGroup
+                <MapZoomableGroup
                   zoom={1.5}
-                  onMoveEnd={({ zoom }) => setZoomLevel(zoom)}
+                  onMoveEnd={({ zoom }: any) => setZoomLevel(zoom)}
                 >
-                  <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
-                    {({ geographies }) =>
-                      geographies.map((geo) => (
-                        <Geography
+                  <MapGeographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
+                    {({ geographies }: any) =>
+                      geographies.map((geo: any) => (
+                        <MapGeography
                           key={geo.rsmKey}
                           geography={geo}
                           fill="#f3f4f6"
@@ -678,7 +684,7 @@ export default function Kontakt() {
                         />
                       ))
                     }
-                  </Geographies>
+                  </MapGeographies>
                   {offices.flatMap((office, officeIndex) =>
                     office.coordinates.map((coord, coordIndex) => {
                       const isCountryHovered = hoveredCountry === coord.country;
@@ -689,7 +695,7 @@ export default function Kontakt() {
                       );
 
                       return (
-                        <Marker
+                        <MapMarker
                           key={`${officeIndex}-${coordIndex}`}
                           coordinates={coord.coords}
                         >
@@ -704,12 +710,12 @@ export default function Kontakt() {
                             }
                             onMouseLeave={handleTooltipMouseLeave}
                           />
-                        </Marker>
+                        </MapMarker>
                       );
                     })
                   )}
-                </ZoomableGroup>
-              </ComposableMap>
+                </MapZoomableGroup>
+              </MapComposableMap>
             </div>
 
             {/* Hover Tooltip */}
