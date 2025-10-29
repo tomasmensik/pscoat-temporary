@@ -174,7 +174,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/kontakt"
-                  className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white rounded-lg hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-0.5 font-semibold text-sm mt-4"
+                  className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white rounded-sm hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-0.5 font-semibold text-sm mt-4"
                 >
                   Kontaktovat
                   <svg
@@ -203,12 +203,6 @@ export default function Footer() {
               © {new Date().getFullYear()} PScoat. Všechna práva vyhrazena.
             </p>
             <div className="flex gap-6 text-sm">
-              <Link
-                href="/o-nas/cerna-listina"
-                className="hover:text-[#0180ae] transition-colors"
-              >
-                Černá listina
-              </Link>
               <Link
                 href="/kontakt"
                 className="hover:text-[#0180ae] transition-colors"

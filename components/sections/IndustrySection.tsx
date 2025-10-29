@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function IndustrySection() {
   const [iconIndex, setIconIndex] = useState(0);
-  const totalIcons = 5;
+  const totalIcons = 6;
   const visibleIcons = 4;
   const [sliderPosition, setSliderPosition] = useState(50); // 0-100
   const [isDragging, setIsDragging] = useState(false);
@@ -54,6 +54,14 @@ export default function IndustrySection() {
       images: [
         "/home/slider-odvetvi/trubky1.jpg",
         "/home/slider-odvetvi/trubky2.jpg",
+      ],
+    },
+    {
+      title: "Lorem ipsum",
+      bullets: ["lorem ipsum", "lorem ipsum"],
+      images: [
+        "/home/slider-odvetvi/biopklynka1.jpg",
+        "/home/slider-odvetvi/bioplynka2.jpg",
       ],
     },
   ] as const;
@@ -182,7 +190,10 @@ export default function IndustrySection() {
     }
   };
   return (
-    <section className="relative w-full min-h-screen flex items-center overflow-hidden font-raleway">
+    <section
+      id="industry-section"
+      className="relative w-full min-h-screen flex items-center overflow-hidden font-raleway"
+    >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#1E73B2] to-[#840000]"></div>
 
@@ -216,7 +227,7 @@ export default function IndustrySection() {
                       className="h-6 w-auto object-contain"
                     />
                   </div>
-                  <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors font-medium">
+                  <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-sm hover:bg-gray-300 transition-colors font-medium">
                     Vlastnosti PS Coat
                   </button>
                 </div>
@@ -410,7 +421,34 @@ export default function IndustrySection() {
                         </div>
                       </button>
 
-                      {/* Removed 6th icon to show 5 items */}
+                      {/* Icon 6 - Bioplynka */}
+                      <button
+                        onClick={() => {
+                          setSelectedIcon(5);
+                          setSliderPosition(50);
+                        }}
+                        className="flex items-center justify-center relative flex-shrink-0 transition-colors"
+                        style={{
+                          width: "100%",
+                          height: "calc((70vh - 3 * 2vh) / 4)",
+                        }}
+                      >
+                        <div
+                          className={`w-full h-full rounded-lg flex items-center justify-center ${
+                            selectedIcon === 5 ? "bg-white/30" : ""
+                          }`}
+                        >
+                          <img
+                            src="/home/slider-odvetvi/silo.svg"
+                            alt="Silo"
+                            className="w-[70%] h-[70%] object-contain filter brightness-0 invert"
+                            style={{
+                              width: "70%",
+                              height: "70%",
+                            }}
+                          />
+                        </div>
+                      </button>
                     </div>
                   </div>
                   {/* Down Button - always visible, disabled when at bottom */}
@@ -445,7 +483,7 @@ export default function IndustrySection() {
               <div className="col-span-12 lg:col-span-10 relative flex flex-col items-center justify-center w-full py-[15vh]">
                 <div
                   ref={sliderContainerRef}
-                  className="relative rounded-lg overflow-hidden w-full h-[70vh]"
+                  className="relative overflow-hidden w-full h-[70vh]"
                 >
                   {/* Background Image (dynamic before) */}
                   <img

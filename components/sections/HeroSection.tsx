@@ -127,7 +127,10 @@ export default function HeroSection() {
           aria-label="Scrollnout dolů"
           onClick={() => {
             if (typeof window !== "undefined") {
-              window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+              const targetElement = document.getElementById("industry-section");
+              if (targetElement) {
+                targetElement.scrollIntoView({ behavior: "smooth" });
+              }
             }
           }}
         >
