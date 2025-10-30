@@ -25,13 +25,10 @@ export default function Kontakt() {
   });
 
   const [hoveredOffice, setHoveredOffice] = useState<number | null>(null);
-  const [hoveredCountry, setHoveredCountry] = useState<string | null>(null);
   const [zoomLevel, setZoomLevel] = useState(1.5);
-
-  // Timeout for smooth tooltip transitions
-  const [tooltipTimeout, setTooltipTimeout] = useState<NodeJS.Timeout | null>(
-    null
-  );
+  const [selectedCountry, setSelectedCountry] = useState<string | null>(null);
+  const [mapCenter, setMapCenter] = useState<[number, number]>([0, 75]);
+  const [mapZoom, setMapZoom] = useState(1.5);
 
   // Function to get all offices for a specific country
   const getOfficesForCountry = (countryCode: string) => {
@@ -40,30 +37,25 @@ export default function Kontakt() {
     );
   };
 
-  // Smooth tooltip handlers
-  const handleTooltipMouseEnter = (countryCode: string) => {
-    if (tooltipTimeout) {
-      clearTimeout(tooltipTimeout);
-      setTooltipTimeout(null);
+  const handleMarkerClick = (
+    countryCode: string,
+    coords: [number, number]
+  ) => {
+    // Toggle selection if same country is clicked
+    setSelectedCountry((prev) => (prev === countryCode ? null : countryCode));
+    setMapCenter(coords);
+    // On desktop (>= lg), don't auto-zoom; let mouse wheel control zoom
+    const isDesktop = typeof window !== "undefined" && window.matchMedia('(min-width: 1024px)').matches;
+    if (!isDesktop) {
+      setMapZoom(3);
     }
-    setHoveredCountry(countryCode);
   };
 
-  const handleTooltipMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setHoveredCountry(null);
-    }, 200); // 200ms delay before hiding
-    setTooltipTimeout(timeout);
+  const closePinnedTooltip = () => {
+    setSelectedCountry(null);
   };
 
-  // Cleanup timeout on unmount
-  useEffect(() => {
-    return () => {
-      if (tooltipTimeout) {
-        clearTimeout(tooltipTimeout);
-      }
-    };
-  }, [tooltipTimeout]);
+  // No hover cleanup needed
 
   // Function to get flag URL from Wikimedia Commons
   const getFlagUrl = (countryCode: string) => {
@@ -664,8 +656,15 @@ export default function Kontakt() {
                 style={{ width: "100%", height: "100%" }}
               >
                 <MapZoomableGroup
-                  zoom={1.5}
-                  onMoveEnd={({ zoom }: any) => setZoomLevel(zoom)}
+                  zoom={mapZoom}
+                  center={mapCenter}
+                  onMoveEnd={({ zoom, coordinates }: any) => {
+                    setZoomLevel(zoom);
+                    setMapZoom(zoom);
+                    if (Array.isArray(coordinates)) {
+                      setMapCenter(coordinates as [number, number]);
+                    }
+                  }}
                 >
                   <MapGeographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
                     {({ geographies }: any) =>
@@ -678,7 +677,7 @@ export default function Kontakt() {
                           strokeWidth={0.5}
                           style={{
                             default: { outline: "none" },
-                            hover: { outline: "none", fill: "#d1d5db" },
+                            hover: { outline: "none" },
                             pressed: { outline: "none" },
                           }}
                         />
@@ -687,8 +686,8 @@ export default function Kontakt() {
                   </MapGeographies>
                   {offices.flatMap((office, officeIndex) =>
                     office.coordinates.map((coord, coordIndex) => {
-                      const isCountryHovered = hoveredCountry === coord.country;
-                      const baseRadius = isCountryHovered ? 10 : 6;
+                      const isCountrySelected = selectedCountry === coord.country;
+                      const baseRadius = isCountrySelected ? 10 : 6;
                       const adjustedRadius = Math.max(
                         2,
                         baseRadius / Math.sqrt(zoomLevel)
@@ -701,14 +700,16 @@ export default function Kontakt() {
                         >
                           <circle
                             r={adjustedRadius}
-                            fill={isCountryHovered ? "#00a4d6" : "#0180ae"}
-                            stroke="#fff"
+                            fill={isCountrySelected ? "#00a4d6" : "#0180ae"}
+                            stroke={isCountrySelected ? "#00a4d6" : "#fff"}
                             strokeWidth={Math.max(1, 2 / Math.sqrt(zoomLevel))}
                             className="transition-all duration-300 cursor-pointer"
-                            onMouseEnter={() =>
-                              handleTooltipMouseEnter(coord.country)
+                            onClick={() =>
+                              handleMarkerClick(
+                                coord.country,
+                                coord.coords as [number, number]
+                              )
                             }
-                            onMouseLeave={handleTooltipMouseLeave}
                           />
                         </MapMarker>
                       );
@@ -718,35 +719,44 @@ export default function Kontakt() {
               </MapComposableMap>
             </div>
 
-            {/* Hover Tooltip */}
-            {hoveredCountry !== null && (
+            {/* Tooltip shown only when selected */}
+            {selectedCountry !== null && (
               <div
                 className="absolute top-4 right-4 bg-white rounded-xl p-4 shadow-xl border border-gray-200 max-w-lg z-10 animate-in fade-in duration-200"
-                onMouseEnter={() => handleTooltipMouseEnter(hoveredCountry)}
-                onMouseLeave={handleTooltipMouseLeave}
               >
                 {(() => {
-                  const countryOffices = getOfficesForCountry(hoveredCountry);
+                  const activeCountry = selectedCountry!;
+                  const countryOffices = getOfficesForCountry(activeCountry);
                   const countryName =
                     countryOffices[0]?.flags.find(
-                      (f) => f.code === hoveredCountry
-                    )?.name || hoveredCountry;
+                      (f) => f.code === activeCountry
+                    )?.name || activeCountry;
 
                   return (
                     <>
-                      <div className="flex items-center gap-2 mb-3">
-                        <img
-                          src={getFlagUrl(hoveredCountry)}
-                          alt={countryName}
-                          className="w-8 h-5 object-cover rounded-sm border border-gray-200"
-                        />
-                        <h3 className="font-bold text-gray-900 text-base">
-                          {countryName}
-                        </h3>
-                        <span className="text-gray-500 text-sm">
-                          ({countryOffices.length}{" "}
-                          {countryOffices.length === 1 ? "pobočka" : "pobočky"})
-                        </span>
+                      <div className="flex justify-between items-start">
+                        <div className="flex items-center gap-2 mb-3">
+                          <img
+                            src={getFlagUrl(activeCountry)}
+                            alt={countryName}
+                            className="w-8 h-5 object-cover rounded-sm border border-gray-200"
+                          />
+                          <h3 className="font-bold text-gray-900 text-base">
+                            {countryName}
+                          </h3>
+                          <span className="text-gray-500 text-sm">
+                            ({countryOffices.length} {countryOffices.length === 1 ? "pobočka" : "pobočky"})
+                          </span>
+                        </div>
+                        {selectedCountry && (
+                          <button
+                            onClick={closePinnedTooltip}
+                            className="ml-4 text-gray-400 hover:text-gray-600"
+                            aria-label="Zavřít detail"
+                          >
+                            ×
+                          </button>
+                        )}
                       </div>
 
                       <div className="space-y-3 max-h-80 overflow-y-auto">

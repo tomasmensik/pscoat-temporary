@@ -28,7 +28,7 @@ export default function ReferencesSection() {
 
         {/* Logos grid */}
         <div className="mt-10 flex flex-col gap-10">
-          <div className="grid grid-cols-5 gap-6 place-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 place-items-center">
             {logosTop.map((src) => (
               <img
                 key={src}
@@ -38,7 +38,7 @@ export default function ReferencesSection() {
               />
             ))}
           </div>
-          <div className="grid grid-cols-4 gap-6 place-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
             {logosBottom.map((src) => (
               <img
                 key={src}

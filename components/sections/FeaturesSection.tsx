@@ -29,20 +29,15 @@ export default function FeaturesSection() {
     },
   };
 
-  const renderHexagonIcon = (
-    feature: { icon: string; label: string; borderColor: string },
-    index: number
-  ) => {
+  const renderFeature = (feature: { icon: string; label: string }) => {
     return (
-      <div className="flex items-center gap-4">
-        <div className="relative flex-shrink-0">
-          <img
-            src={feature.icon}
-            alt={feature.label}
-            className="w-28 h-28 object-contain"
-          />
-        </div>
-        <p className="text-lg lg:text-xl text-black font-medium whitespace-nowrap">
+      <div className="flex flex-col items-center text-center gap-3">
+        <img
+          src={feature.icon}
+          alt={feature.label}
+          className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain"
+        />
+        <p className="text-base sm:text-lg lg:text-xl text-black font-medium">
           {feature.label}
         </p>
       </div>
@@ -50,48 +45,25 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-center bg-white">
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-12 gap-24">
-          {/* First Row */}
-          <div className="col-span-12 lg:col-span-6 flex items-center justify-end mr-8">
-            {/* Text Content */}
-            <div>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl text-black mb-4 leading-tight">
-                Souhra výkonů,
-                <br />
-                jeden materiál
-              </h2>
-              <p className="text-lg sm:text-xl text-black font-normal">
-                V jednom kroku chráníte proti
-              </p>
-            </div>
-          </div>
+    <section className="relative w-full min-h-screen flex items-center bg-white py-16 sm:py-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
+        <div className="mb-10 sm:mb-14 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black mb-3 sm:mb-4 leading-tight">
+            Souhra výkonů, jeden materiál
+          </h2>
+          <p className="text-base sm:text-lg text-black/80">
+            V jednom kroku chráníte proti
+          </p>
+        </div>
 
-          {/* Tepelne ztraty - col-3 */}
-          <div className="col-span-12 sm:col-span-6 lg:col-span-3 flex justify-start">
-            {renderHexagonIcon(features.tepelneZtraty, 1)}
-          </div>
-
-          {/* Pozar - col-3 */}
-          <div className="col-span-12 sm:col-span-6 lg:col-span-3 flex justify-end">
-            {renderHexagonIcon(features.pozar, 3)}
-          </div>
-
-          {/* Second Row - Koroze */}
-          <div className="col-span-12 lg:col-span-6 flex justify-end">
-            {renderHexagonIcon(features.koroze, 0)}
-          </div>
-
-          {/* Kondenzace - col-3 */}
-          <div className="col-span-12 sm:col-span-6 lg:col-span-3 flex justify-start">
-            {renderHexagonIcon(features.kondenzace, 2)}
-          </div>
-
-          {/* Plisne - col-3 */}
-          <div className="col-span-12 sm:col-span-6 lg:col-span-3 flex justify-end">
-            {renderHexagonIcon(features.plisne, 4)}
-          </div>
+        {/* Responsive features grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
+          {renderFeature(features.tepelneZtraty)}
+          {renderFeature(features.pozar)}
+          {renderFeature(features.koroze)}
+          {renderFeature(features.kondenzace)}
+          {renderFeature(features.plisne)}
         </div>
       </div>
     </section>

@@ -78,11 +78,11 @@ const ProductsPage: React.FC = () => {
               </div>
 
               {/* Filters - 40% */}
-              <div className="lg:w-[50%] flex items-center gap-2">
+              <div className="lg:w-[50%] w-full flex items-center gap-2 overflow-x-auto lg:overflow-visible flex-nowrap lg:flex-wrap [-webkit-overflow-scrolling:touch]">
                 {/* All Products Button - Larger */}
                 <button
                   onClick={() => setSelectedCategory("all")}
-                  className={`px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap ${
+                  className={`px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 whitespace-nowrap shrink-0 ${
                     selectedCategory === "all"
                       ? "bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white shadow-lg shadow-[#0180ae]/25"
                       : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#0180ae] hover:text-[#0180ae] hover:bg-white"
@@ -99,7 +99,7 @@ const ProductsPage: React.FC = () => {
                   <button
                     key={key}
                     onClick={() => setSelectedCategory(key as any)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 whitespace-nowrap ${
+                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 whitespace-nowrap shrink-0 ${
                       selectedCategory === key
                         ? "bg-[#0180ae] text-white shadow-sm"
                         : "bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-gray-900 border border-transparent hover:border-gray-200"

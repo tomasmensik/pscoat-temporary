@@ -111,7 +111,129 @@ export default function SquareDynamicSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-12 gap-6">
+        {/* Mobile layout */}
+        <div className="block md:hidden">
+          {/* Top: three small squares in a horizontal row */}
+          <div className="grid grid-cols-3 gap-2 mb-4">
+            {Array.from({ length: visibleCount }).map((_, i) => {
+              const realIdx = firstVisible + i;
+              const it = items[realIdx];
+              return (
+                <button
+                  key={it.id}
+                  onClick={() => setSelectedIndex(realIdx)}
+                  className={`relative w-full aspect-square border border-gray-200 overflow-hidden`}
+                  aria-label={it.label}
+                >
+                  <div
+                    className="absolute inset-0 bg-center"
+                    style={{
+                      backgroundImage: `url(${thumbs[realIdx]})`,
+                      backgroundSize: realIdx === 1 ? "150% auto" : "cover",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                    role="img"
+                  />
+                  <div
+                    className={`absolute inset-0 ${
+                      selectedIndex === realIdx
+                        ? "bg-gradient-to-b from-[#1E73B2]/70 to-[#840000]/70"
+                        : "bg-[#1E73B2]/70"
+                    }`}
+                  />
+                  <div className="absolute inset-0 p-2 text-white flex flex-col justify-between">
+                    <p className="text-[11px] leading-tight line-clamp-2">
+                      {it.label}
+                    </p>
+                    <p className="text-[10px] opacity-90">{it.sublabel}</p>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Big square simplified for mobile with fixed height */}
+          <div className="relative bg-gray-100 overflow-hidden rounded h-[75vh]">
+            <div className="flex flex-col h-full p-3">
+              <div className="shrink-0 grow-0 h-[55%] w-full overflow-hidden bg-white">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={items[selectedIndex].images[0]}
+                  alt={items[selectedIndex].label}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="mt-4 flex-1 overflow-y-auto">
+                <h3 className="text-[18px] text-slate-800">
+                  {items[selectedIndex].contentTitle}
+                </h3>
+                <div className="h-px bg-slate-300/70 my-3 w-full" />
+                {items[selectedIndex].contentText && (
+                  <p className="text-[13px] leading-relaxed text-slate-600">
+                    {items[selectedIndex].contentText}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* bottom-right arrows controlling selection */}
+            <div className="absolute bottom-2 right-2 flex gap-2">
+              <button
+                onClick={() => go(-1)}
+                disabled={selectedIndex === 0}
+                className={`w-8 h-8 flex items-center justify-center text-slate-900 ${
+                  selectedIndex === 0
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-white"
+                }`}
+                aria-label="Předchozí"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <button
+                onClick={() => go(1)}
+                disabled={selectedIndex === items.length - 1}
+                className={`w-8 h-8 flex items-center justify-center text-slate-900 ${
+                  selectedIndex === items.length - 1
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-white"
+                }`}
+                aria-label="Další"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="w-5 h-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop and tablet layout */}
+        <div className="hidden md:grid grid-cols-12 gap-6">
           {/* Left small squares column */}
           <div className="col-span-12 md:col-span-3 flex justify-end">
             <div className="relative h-[90vh] overflow-hidden w-[75%] ml-auto">
