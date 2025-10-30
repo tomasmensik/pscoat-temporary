@@ -12,6 +12,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Prevent horizontal scroll due to any overflowing sections on small screens */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Hide hero scroll indicator when mobile menu overlay is open */
+.mobile-menu-open .hero-scroll-indicator {
+  display: none;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

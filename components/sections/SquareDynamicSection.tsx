@@ -24,7 +24,6 @@ export default function SquareDynamicSection() {
   const ELEC_2 = "/home/square-sekce/elektrarna-velky-ctverec-2.png";
   const KOSTEL_1 = "/home/square-sekce/kostel-velky-ctverec-1.png";
   const SILO_1 = "/home/square-sekce/silo-velky-ctverec-1.png";
-  const TYRE_THUMB = "/home/square-sekce/tyre-maly-ctverec-thumbnail.png";
   const items: SquareItem[] = useMemo(
     () => [
       {
@@ -32,19 +31,19 @@ export default function SquareDynamicSection() {
         label: "Výroba pneumatik",
         sublabel: "Continental",
         images: [TYRE_BIG1, TYRE_BIG2],
-        contentTitle: "Použití při výrobě pneumatik.",
+        contentTitle: "Úspora energie při výrobě traktorových pneumatik",
         contentText:
-          "Měření ukázalo, že ušetří 50% energie elektrické na to aby vyrobili pneumatikou na traktor.",
+          "Aplikace PS Coat na formy pro výrobu traktorových pneumatik snížila spotřebu elektrické energie potřebné pro ohřev procesu přibližně o 50 %, podle provedeného měření v provozu.",
         imageLayout: "leftRight",
       },
       {
-        id: "biogas",
-        label: "Bioplynová elektrárna",
-        sublabel: "PLYNEX",
+        id: "silo",
+        label: "Izolace pecí a chladících věží",
+        sublabel: "Industry",
         images: [ELEC_1, ELEC_2],
-        contentTitle: "Úspory tepla a ochrana zařízení.",
+        contentTitle: "Bezpečnější provoz a nižší teplota v hale",
         contentText:
-          "Stálá ochrana proti kondenzaci a korozi, rychlá návratnost investice.",
+          "Aplikace PS Coat na povrchy pecí omezila přenos tepla do okolního prostředí a snížila teplotu v hale. Zároveň došlo ke zvýšení bezpečnosti práce díky nižší povrchové teplotě zařízení a omezení rizika popálení.",
         imageLayout: "twoStack",
       },
       {
@@ -52,18 +51,19 @@ export default function SquareDynamicSection() {
         label: "Fasáda historického objektu",
         sublabel: "Kostel a fara",
         images: [KOSTEL_1, KOSTEL_1],
-        contentTitle: "Citlivá ochrana kulturní památky.",
+        contentTitle: "Zateplení členité historické fasády",
         contentText:
-          "Snižuje tepelné ztráty a vlhkost, bez zásahu do vzhledu fasády.",
+          "Na objektu kostela byla použita tenká vrstva PS Coat, která umožnila zateplení členité historické fasády bez změny jejího vzhledu. Došlo ke snížení tepelných ztrát a energií na vytápění přibližně o 40 %. Povrch zároveň získal antibakteriální charakter a protipožární ochranu.",
         imageLayout: "imageLeftTextRight",
       },
       {
-        id: "silo",
-        label: "Skladování a zásobníky",
-        sublabel: "Silo",
+        id: "biogas",
+        label: "Bioplynová Stanice",
+        sublabel: "PLYNEX ",
         images: [SILO_1, SILO_1],
-        contentTitle: "Menší kondenzace, více jistoty.",
-        contentText: "Zabraňuje rosení a tvorbě plísní, chrání povrch a obsah.",
+        contentTitle: "Stabilní teplota fermentace i v mrazech",
+        contentText:
+          "V dofermentoru klesala v zimním období teplota média na +15 °C, což způsobovalo nedostatečnou produkci plynu a výpadky kogeneračních jednotek. Po aplikaci 1,5 mm vrstvy PS Coat se teplota stabilně drží kolem +35 °C, bez ztrát výkonu a s nižší spotřebou glycerinu.",
         imageLayout: "imageTopLeft",
       },
     ],
@@ -89,6 +89,14 @@ export default function SquareDynamicSection() {
 
   const canUp = firstVisible > 0;
   const canDown = firstVisible + visibleCount < items.length;
+
+  // Explicit thumbnails for small squares
+  const thumbs: string[] = [
+    "/home/square-sekce/tyre-maly-ctverec.png",
+    "/home/square-sekce/elektrarna-maly-ctverec.png",
+    "/home/square-sekce/kostel-maly-ctverec.png",
+    "/home/square-sekce/silo-maly-ctverec.png",
+  ];
 
   return (
     <section id="realizace-section" className="relative w-full bg-white py-16">
@@ -122,11 +130,24 @@ export default function SquareDynamicSection() {
                     style={{ height: "calc((100% - 16px)/3)" }}
                   >
                     <div className="relative h-full w-full">
-                      {/* photo */}
-                      <img
-                        src={TYRE_THUMB}
-                        alt="thumbnail"
-                        className="absolute inset-0 w-full h-full object-cover"
+                      {/* photo as background to avoid letterboxing */}
+                      <div
+                        className="absolute inset-0 bg-center"
+                        style={{
+                          backgroundImage: `url(${thumbs[idx]})`,
+                          backgroundSize: idx === 1 ? "150% auto" : "cover",
+                          backgroundRepeat: "no-repeat",
+                        }}
+                        aria-label={it.label}
+                        role="img"
+                      />
+                      {/* overlay: gradient when active, solid when inactive */}
+                      <div
+                        className={`absolute inset-0 ${
+                          selectedIndex === idx
+                            ? "bg-gradient-to-b from-[#1E73B2]/70 to-[#840000]/70"
+                            : "bg-[#1E73B2]/70"
+                        }`}
                       />
                       {/* content */}
                       <div className="absolute inset-0 p-4 text-white flex flex-col justify-between">
@@ -237,9 +258,7 @@ export default function SquareDynamicSection() {
                           <h3 className="text-[20px] md:text-[22px] text-slate-800">
                             {items[selectedIndex].contentTitle}
                           </h3>
-                          <p className="text-sm text-slate-500 mt-1">
-                            I co bude dál.
-                          </p>
+
                           <div className="h-px bg-slate-300/70 my-4 w-full" />
                         </div>
                         {items[selectedIndex].contentText && (
@@ -278,9 +297,7 @@ export default function SquareDynamicSection() {
                         <h3 className="text-[20px] md:text-[22px] text-slate-800">
                           {items[selectedIndex].contentTitle}
                         </h3>
-                        <p className="text-sm text-slate-500 mt-1">
-                          I co bude dál.
-                        </p>
+
                         <div className="h-px bg-slate-300/70 my-4 w-full" />
                       </div>
                       {items[selectedIndex].contentText && (
@@ -314,9 +331,7 @@ export default function SquareDynamicSection() {
                           <h3 className="text-[20px] md:text-[22px] text-slate-800">
                             {items[selectedIndex].contentTitle}
                           </h3>
-                          <p className="text-sm text-slate-500 mt-1">
-                            I co bude dál.
-                          </p>
+
                           <div className="h-px bg-slate-300/70 my-4 w-full" />
                         </div>
                         {items[selectedIndex].contentText && (
@@ -342,9 +357,7 @@ export default function SquareDynamicSection() {
                           <h3 className="text-[20px] md:text-[22px] text-slate-800">
                             {items[selectedIndex].contentTitle}
                           </h3>
-                          <p className="text-sm text-slate-500 mt-1">
-                            I co bude dál.
-                          </p>
+
                           <div className="h-px bg-slate-300/70 my-4 w-full" />
                         </div>
                         {items[selectedIndex].contentText && (
@@ -362,7 +375,7 @@ export default function SquareDynamicSection() {
                 <button
                   onClick={() => go(-1)}
                   disabled={selectedIndex === 0}
-                  className={`w-9 h-9 rounded-full flex items-center justify-center bg-white/80 text-slate-900 shadow ${
+                  className={`w-9 h-9 flex items-center justify-center text-slate-900 ${
                     selectedIndex === 0
                       ? "opacity-50 cursor-not-allowed"
                       : "hover:bg-white"
@@ -387,7 +400,7 @@ export default function SquareDynamicSection() {
                 <button
                   onClick={() => go(1)}
                   disabled={selectedIndex === items.length - 1}
-                  className={`w-9 h-9 rounded-full flex items-center justify-center bg-white/80 text-slate-900 shadow ${
+                  className={`w-9 h-9  flex items-center justify-center text-slate-900  ${
                     selectedIndex === items.length - 1
                       ? "opacity-50 cursor-not-allowed"
                       : "hover:bg-white"

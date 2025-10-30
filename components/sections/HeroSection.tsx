@@ -43,40 +43,28 @@ export default function HeroSection() {
         <div
           className="absolute"
           style={{
-            width: "177.78vh", // 16:9 aspect ratio based on height
-            height: "100vh",
-            minWidth: "100vw",
-            minHeight: "56.25vw", // 16:9 aspect ratio based on width
+            width: "max(100vw, 177.78vh)",
+            height: "max(100vh, 56.25vw)",
             left: "50%",
             top: "50%",
-            transform: "translate(-50%, -50%)",
+            transform: "translate(-50%, -50%) scale(1.15)",
             transformOrigin: "center center",
           }}
         >
-          <div
-            className="absolute inset-0"
+          <iframe
+            ref={iframeRef}
+            src="https://player.vimeo.com/video/1131819800?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            className="absolute inset-0 w-full h-full"
             style={{
               width: "100%",
               height: "100%",
-              transform: "scale(1.5)", // Scale up to ensure cover effect
-              transformOrigin: "center center",
+              pointerEvents: "none",
             }}
-          >
-            <iframe
-              ref={iframeRef}
-              src="https://player.vimeo.com/video/1131819800?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&background=1"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              className="absolute inset-0 w-full h-full"
-              style={{
-                width: "100%",
-                height: "100%",
-                pointerEvents: "none",
-              }}
-              title="PSCoat-hero"
-            />
-          </div>
+            title="PSCoat-hero"
+          />
         </div>
         {/* Optional overlay for better text readability */}
         <div className="absolute inset-0 bg-white/10"></div>
@@ -121,7 +109,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll Indicator (V-shaped arrow) */}
-      <div className="absolute inset-x-0 bottom-6 flex justify-center z-20">
+      <div className="absolute inset-x-0 bottom-6 flex justify-center z-20 hero-scroll-indicator">
         <button
           type="button"
           aria-label="Scrollnout dolů"

@@ -16,8 +16,9 @@ export default function IndustrySection() {
     {
       title: "Doprava",
       bullets: [
-        "Snížení kondenzace a koroze až o 80%",
-        "Snížení nákladů na udržení teploty",
+        "Stabilnější povrch bez kondenzace a koroze",
+        "Nižší náklady na udržení teploty",
+        "Bezpečnější kontakt s horkými povrchy",
       ],
       images: [
         "/home/slider-odvetvi/vlak1.jpg",
@@ -25,40 +26,47 @@ export default function IndustrySection() {
       ],
     },
     {
-      title: "Lorem ipsum",
-      bullets: ["lorem ipsum", "lorem ipsum"],
+      title: "Stavby",
+      bullets: [
+        "Omezení tepelných ztrát",
+        "Ochrana proti plísním",
+        "Zvládá členité / profilované fasády",
+      ],
       images: [
         "/home/slider-odvetvi/kostel1.jpg",
         "/home/slider-odvetvi/kostel2.jpg",
       ],
     },
     {
-      title: "Lorem ipsum",
-      bullets: ["lorem ipsum", "lorem ipsum"],
+      title: "Termální stopa",
+      bullets: ["Snížená termální stopa"],
       images: [
         "/home/slider-odvetvi/thermovize1.jpg",
         "/home/slider-odvetvi/thermovize2.jpg",
       ],
     },
     {
-      title: "Lorem ipsum",
-      bullets: ["lorem ipsum", "lorem ipsum"],
+      title: "Přeprava",
+      bullets: ["Omezení kondenzace", "Zpomalení koroze"],
       images: [
         "/home/slider-odvetvi/lod1.jpg",
         "/home/slider-odvetvi/lod2.jpg",
       ],
     },
     {
-      title: "Lorem ipsum",
-      bullets: ["lorem ipsum", "lorem ipsum"],
+      title: "Potrubní systémy",
+      bullets: [
+        "Nižší povrchová teplota potrubí",
+        "Stabilnější teplota média uvnitř",
+      ],
       images: [
         "/home/slider-odvetvi/trubky1.jpg",
         "/home/slider-odvetvi/trubky2.jpg",
       ],
     },
     {
-      title: "Lorem ipsum",
-      bullets: ["lorem ipsum", "lorem ipsum"],
+      title: "Bioplyn",
+      bullets: ["Udržení teploty fermentačního procesu"],
       images: [
         "/home/slider-odvetvi/biopklynka1.jpg",
         "/home/slider-odvetvi/bioplynka2.jpg",
@@ -189,6 +197,19 @@ export default function IndustrySection() {
       setIconIndex(iconIndex - 1);
     }
   };
+
+  // Mobile-specific horizontal strip scrolling (max 3 visible)
+  const scrollRightMobile = () => {
+    if (iconIndex < totalIcons - 3) {
+      setIconIndex(iconIndex + 1);
+    }
+  };
+
+  const scrollLeftMobile = () => {
+    if (iconIndex > 0) {
+      setIconIndex(iconIndex - 1);
+    }
+  };
   return (
     <section
       id="industry-section"
@@ -199,23 +220,31 @@ export default function IndustrySection() {
 
       <div className="relative z-10 w-full">
         <div className="grid grid-cols-12 gap-4 lg:gap-8 items-center">
-          {/* Left Column */}
+          {/* Left Column (text) */}
           <div className="col-span-12 lg:col-span-6 flex items-center justify-center">
-            <div className="max-w-7xl px-4 sm:px-6 lg:px-8 lg:pl-16 xl:pl-24 2xl:pl-32">
+            <div className="max-w-7xl px-4 sm:px-6 lg:px-8 lg:pl-16 xl:pl-24 2xl:pl-32 w-full">
               <div className="grid grid-cols-12 gap-4">
-                <div className="col-span-12 text-white text-left">
-                  <h2 className="text-4xl sm:text-5xl lg:text-5xl font-semibold mb-6 leading-tight">
-                    Multioborová ochrana povrchů s měřitelným výkonem.
+                <div className="col-span-12 text-white text-center lg:text-left pt-8 sm:pt-10 lg:pt-0">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 leading-tight max-w-[14ch] sm:max-w-[16ch] lg:max-w-[22ch] mx-auto lg:mx-0">
+                    Technologie, která funguje napříč segmenty
                   </h2>
-                  <p className="text-base sm:text-lg mb-8 leading-relaxed max-w-[60ch] lg:max-w-[40ch] mx-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse.
+                  <p className="text-sm sm:text-md mb-6 leading-relaxed max-w-[60ch] lg:max-w-[40ch] mx-auto lg:mx-0">
+                    PS Coat se uplatňuje v dopravě, ve výrobních provozech, na
+                    budovách i na strojních celcích. Používá se na kabiny,
+                    konstrukce, střechy, potrubní systémy a povrchy vystavené
+                    teplotní zátěži.
                   </p>
-                  <div className="flex gap-2 mb-8">
+                  <p className="text-sm sm:text-md mb-6 leading-relaxed max-w-[60ch] lg:max-w-[40ch] mx-auto lg:mx-0">
+                    V prostředí s vysokou teplotou umožňuje bezpečnější práci a
+                    v některých aplikacích dokáže ovlivnit i to, jak se povrch
+                    chová v obrazu termokamer.
+                  </p>
+                  <p className="text-sm sm:text-md mb-8 leading-relaxed max-w-[60ch] lg:max-w-[40ch] mx-auto lg:mx-0">
+                    Stejný materiál, který se přirozeně začlení do různých
+                    provozů, bez ohledu na obor a podmínky. Jedna vrstva, která
+                    přináší řešení i tam, kde dřív žádné nebylo.
+                  </p>
+                  <div className="flex flex-col items-center gap-3 mb-8 justify-center sm:flex-col md:flex-col lg:flex-row lg:items-center lg:justify-start">
                     <img
                       src="/home/ikony-vlastnosti/thermo-barrier.png"
                       alt="Fire barrier"
@@ -227,9 +256,11 @@ export default function IndustrySection() {
                       className="h-6 w-auto object-contain"
                     />
                   </div>
-                  <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-sm hover:bg-gray-300 transition-colors font-medium">
-                    Vlastnosti PS Coat
-                  </button>
+                  <div className="flex justify-center lg:justify-start">
+                    <button className="px-6 py-3 mb-8 md:mb-0 lg:mb-0 bg-gray-200 text-gray-800 rounded-sm hover:bg-gray-300 transition-colors font-medium">
+                      Vlastnosti PS Coat
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -238,8 +269,8 @@ export default function IndustrySection() {
           {/* Right Column */}
           <div className="col-span-12 lg:col-span-6">
             <div className="grid grid-cols-12 gap-4 lg:gap-8 items-start">
-              {/* Icon Column */}
-              <div className="col-span-12 lg:col-span-2 pt-[15vh] pb-[15vh]">
+              {/* Icon Column - Desktop/Large only (vertical) */}
+              <div className="hidden lg:block lg:col-span-2 pt-[15vh] pb-[15vh]">
                 <div className="relative h-[70vh] w-full">
                   {/* Up Button - always visible, disabled when at top */}
                   <button
@@ -479,8 +510,105 @@ export default function IndustrySection() {
                 </div>
               </div>
 
+              {/* Icon Row - Mobile only (horizontal) */}
+              <div className="col-span-12 lg:hidden">
+                <div className="relative w-full py-2 mb-2">
+                  {/* Left Arrow */}
+                  <button
+                    onClick={scrollLeftMobile}
+                    disabled={iconIndex <= 0}
+                    className={`absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                      iconIndex <= 0
+                        ? "bg-white/20 cursor-not-allowed opacity-50"
+                        : "bg-white/30 hover:bg-white/40"
+                    }`}
+                    aria-label="Scroll left"
+                  >
+                    <svg
+                      className="w-5 h-5 text-white"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+                  {/* Icons strip */}
+                  {/* Viewport width equals 3 items (3*64 + 2*12 = 216px) */}
+                  <div className="mx-auto overflow-hidden w-[216px] lg:w-auto">
+                    <div
+                      className="flex items-center gap-3 transition-transform duration-300 ease-in-out"
+                      style={{
+                        transform: `translateX(calc(-${iconIndex} * (64px + 12px)))`,
+                      }}
+                    >
+                      {Array.from({ length: 6 }).map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => {
+                            setSelectedIcon(idx);
+                            setSliderPosition(50);
+                          }}
+                          className={`flex items-center justify-center w-16 h-16 rounded-lg flex-shrink-0 ${
+                            selectedIcon === idx ? "bg-white/30" : "bg-white/10"
+                          }`}
+                        >
+                          <img
+                            src={
+                              idx === 0
+                                ? "/home/slider-odvetvi/letadlo.svg"
+                                : idx === 1
+                                ? "/home/slider-odvetvi/kostel.svg"
+                                : idx === 2
+                                ? "/home/slider-odvetvi/thermovision.svg"
+                                : idx === 3
+                                ? "/home/slider-odvetvi/lod.svg"
+                                : idx === 4
+                                ? "/home/slider-odvetvi/trubky.svg"
+                                : "/home/slider-odvetvi/silo.svg"
+                            }
+                            alt="Ikona odvětví"
+                            className="w-10 h-10 object-contain filter brightness-0 invert"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  {/* Right Arrow */}
+                  <button
+                    onClick={scrollRightMobile}
+                    disabled={iconIndex >= totalIcons - 3}
+                    className={`absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
+                      iconIndex >= totalIcons - 3
+                        ? "bg-white/20 cursor-not-allowed opacity-50"
+                        : "bg-white/30 hover:bg-white/40"
+                    }`}
+                    aria-label="Scroll right"
+                  >
+                    <svg
+                      className="w-5 h-5 text-white"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
               {/* Image Column */}
-              <div className="col-span-12 lg:col-span-10 relative flex flex-col items-center justify-center w-full py-[15vh]">
+              <div className="col-span-12 lg:col-span-10 relative flex flex-col items-center justify-center w-full pt-2 pb-10 lg:py-[15vh]">
                 <div
                   ref={sliderContainerRef}
                   className="relative overflow-hidden w-full h-[70vh]"
@@ -568,44 +696,31 @@ export default function IndustrySection() {
                     <div className="hidden lg:block self-stretch">
                       <div className="w-px h-full bg-white/30"></div>
                     </div>
-                    {/* Paragraphs */}
+                    {/* Bullets (dynamic count) */}
                     <div className="flex flex-col gap-1">
-                      <p className="text-left text-sm lg:text-base flex items-center gap-2">
-                        <svg
-                          className="w-4 h-4 text-white opacity-80"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                      {iconContent[selectedIcon].bullets.map((bullet, idx) => (
+                        <p
+                          key={idx}
+                          className="text-left text-sm lg:text-base flex items-center gap-2"
                         >
-                          <path d="M12 5v14" />
-                          <path d="m19 12-7 7-7-7" />
-                        </svg>
-                        <span>{iconContent[selectedIcon].bullets[0]}</span>
-                      </p>
-                      <p className="text-left text-sm lg:text-base flex items-center gap-2">
-                        <svg
-                          className="w-4 h-4 text-white opacity-80"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M12 5v14" />
-                          <path d="m19 12-7 7-7-7" />
-                        </svg>
-                        <span>{iconContent[selectedIcon].bullets[1]}</span>
-                      </p>
+                          <svg
+                            className="w-4 h-4 text-white opacity-80"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M12 5v14" />
+                            <path d="m19 12-7 7-7-7" />
+                          </svg>
+                          <span>{bullet}</span>
+                        </p>
+                      ))}
                     </div>
                   </div>
                 </div>
