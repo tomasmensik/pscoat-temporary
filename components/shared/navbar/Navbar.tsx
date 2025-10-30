@@ -156,18 +156,18 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                         {t(item.key)}
                       </Link>
                     ))}
-                    <div className="pt-4 space-y-3">
-                      <div className="flex justify-center">
+                    <div className="pt-4">
+                      <div className="flex justify-start -ml-3">
                         <LanguageSwitcher />
                       </div>
-                      <Link
-                        href="/pozadat-o-nabidku"
-                        onClick={() => setIsMobileOpen(false)}
-                        className="block text-center bg-[#2B659C] hover:bg-cyan-600 text-white px-5 py-4 rounded-sm text-base transition-colors"
-                      >
-                        {t('nav.chciKonzultaci')}
-                      </Link>
                     </div>
+                    <Link
+                      href="/pozadat-o-nabidku"
+                      onClick={() => setIsMobileOpen(false)}
+                      className="block text-center bg-[#2B659C] hover:bg-cyan-600 text-white px-5 py-4 rounded-sm text-base transition-colors"
+                    >
+                      {t('nav.chciKonzultaci')}
+                    </Link>
                   </div>
                 </div>
               </div>

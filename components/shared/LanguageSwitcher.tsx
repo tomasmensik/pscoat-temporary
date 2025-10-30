@@ -81,14 +81,14 @@ export default function LanguageSwitcher() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-black hover:text-[#2B659C] transition-colors"
+        className="flex items-center gap-2 px-3 py-2 text-2xl md:text-sm font-semibold md:font-medium text-black hover:text-[#2B659C] transition-colors"
       >
-        <currentLanguage.FlagComponent className="w-5 h-4" />
-        <span className="hidden md:inline">
+        <currentLanguage.FlagComponent className="w-6 h-5 md:w-5 md:h-4" />
+        <span className="md:inline">
           {currentLanguage.code.toUpperCase()}
         </span>
         <svg
-          className="w-4 h-4"
+          className="w-5 h-5 md:w-4 md:h-4"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -108,7 +108,7 @@ export default function LanguageSwitcher() {
             className="fixed inset-0 z-10"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20">
+          <div className="absolute left-0 md:right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-20">
             {languages.map((lang) => (
               <button
                 key={lang.code}
