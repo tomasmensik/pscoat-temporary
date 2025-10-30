@@ -10,10 +10,12 @@ import {
 } from "../../../lib/constants/productDetails";
 import { products } from "../../../lib/constants/products";
 import { categories } from "../../../lib/constants/products";
+import { useI18n } from "@/lib/contexts/I18nContext";
 
 export default function ProductDetailPage() {
   const params = useParams();
   const id = params.id as string;
+  const { t } = useI18n();
 
   const product = products.find((p) => p.id === id);
   const detail = getProductDetail(id);
@@ -101,10 +103,10 @@ export default function ProductDetailPage() {
       <main className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Produkt nenalezen
+            {t("productDetail.notFound")}
           </h1>
           <Link href="/produkty" className="text-[#0180ae] hover:underline">
-            Zpět na produkty
+            {t("productDetail.back")}
           </Link>
         </div>
       </main>
@@ -152,7 +154,7 @@ export default function ProductDetailPage() {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              <span className="font-medium">Zpět na produkty</span>
+              <span className="font-medium">{t("productDetail.back")}</span>
             </Link>
 
             <div className="max-w-4xl">
@@ -168,7 +170,7 @@ export default function ProductDetailPage() {
 
               {detail && (
                 <p className="text-lg text-gray-600 mb-6 max-w-2xl">
-                  {detail.typ_produktu}
+                  {t(`productDetails.${detail.id}.typ_produktu`) || detail.typ_produktu}
                 </p>
               )}
             </div>
@@ -202,7 +204,7 @@ export default function ProductDetailPage() {
                         previousImage();
                       }}
                       className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
-                      aria-label="Předchozí obrázek"
+                      aria-label={t("productDetail.previousImage")}
                     >
                       <svg
                         className="w-6 h-6 text-gray-800"
@@ -224,7 +226,7 @@ export default function ProductDetailPage() {
                         nextImage();
                       }}
                       className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
-                      aria-label="Další obrázek"
+                      aria-label={t("productDetail.nextImage")}
                     >
                       <svg
                         className="w-6 h-6 text-gray-800"
@@ -261,7 +263,7 @@ export default function ProductDetailPage() {
                         />
                       </svg>
                       <p className="text-xs text-gray-700 font-medium whitespace-nowrap">
-                        Barevné varianty
+                        {t("productDetail.colorVariants")}
                       </p>
                     </div>
 
@@ -283,12 +285,10 @@ export default function ProductDetailPage() {
                         </svg>
                         <div>
                           <h4 className="text-sm font-semibold text-gray-900 mb-1">
-                            Barevné varianty
+                            {t("productDetail.colorVariants")}
                           </h4>
                           <p className="text-xs text-gray-600 leading-relaxed">
-                            Tento produkt je možné objednat i ve verzi COLOR.
-                            Možnost aplikace různých barevných odstínů ve škále
-                            RAL.
+                            {t("productDetail.colorVariantsDescription")}
                           </p>
                         </div>
                       </div>
@@ -348,50 +348,53 @@ export default function ProductDetailPage() {
                   {/* Description */}
                   <div>
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                      Popis produktu
+                      {t("productDetail.productDescription")}
                     </h2>
                     <p className="text-gray-700 leading-relaxed">
-                      {detail.description}
+                      {t(`productDetails.${detail.id}.description`) || detail.description}
                     </p>
                   </div>
 
                   {/* Usage */}
                   <div>
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                      Použití
+                      {t("productDetail.usage")}
                     </h2>
                     <p className="text-gray-700 leading-relaxed">
-                      {detail.pouziti}
+                      {t(`productDetails.${detail.id}.pouziti`) || detail.pouziti}
                     </p>
                   </div>
 
                   {/* Key Features - compact */}
                   <div>
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                      Hlavní vlastnosti
+                      {t("productDetail.keyFeatures")}
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {detail.vlastnosti.slice(0, 6).map((vlastnost, index) => (
-                        <div
-                          key={index}
-                          className="flex items-center gap-2 p-2 rounded-lg bg-gray-50"
-                        >
-                          <svg
-                            className="w-5 h-5 text-[#0180ae] flex-shrink-0"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
+                      {detail.vlastnosti.slice(0, 6).map((vlastnost, index) => {
+                        const translatedVlastnost = t(`productDetails.${detail.id}.vlastnosti.${index}`) || vlastnost;
+                        return (
+                          <div
+                            key={index}
+                            className="flex items-center gap-2 p-2 rounded-lg bg-gray-50"
                           >
-                            <path
-                              fillRule="evenodd"
-                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                          <span className="text-sm text-gray-700">
-                            {vlastnost}
-                          </span>
-                        </div>
-                      ))}
+                            <svg
+                              className="w-5 h-5 text-[#0180ae] flex-shrink-0"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                            <span className="text-sm text-gray-700">
+                              {translatedVlastnost}
+                            </span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </>
@@ -400,10 +403,10 @@ export default function ProductDetailPage() {
               {/* CTA Buttons */}
               <div className="flex gap-4 pt-4">
                 <Link
-                  href="/poyadat-o-nabidku"
+                  href="/pozadat-o-nabidku"
                   className="flex-1 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold py-4 px-6 rounded-xl hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 text-center"
                 >
-                  Požádat o konzultaci
+                  {t("productDetail.requestConsultation")}
                 </Link>
               </div>
             </div>
@@ -413,7 +416,7 @@ export default function ProductDetailPage() {
         {/* Related Products */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Podobné produkty
+            {t("productDetail.relatedProducts")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {products
@@ -457,7 +460,7 @@ export default function ProductDetailPage() {
           <button
             onClick={closeLightbox}
             className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
-            aria-label="Zavřít"
+            aria-label={t("productDetail.close")}
           >
             <svg
               className="w-10 h-10"
@@ -507,7 +510,7 @@ export default function ProductDetailPage() {
                   previousImage();
                 }}
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white transition-all"
-                aria-label="Předchozí obrázek"
+                aria-label={t("productDetail.previousImage")}
               >
                 <svg
                   className="w-8 h-8"
@@ -529,7 +532,7 @@ export default function ProductDetailPage() {
                   nextImage();
                 }}
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white transition-all"
-                aria-label="Další obrázek"
+                aria-label={t("productDetail.nextImage")}
               >
                 <svg
                   className="w-8 h-8"

@@ -1,0 +1,648 @@
+{
+  "common": {
+    "scrollDown": "Scroll down",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "viewMore": "View more",
+    "hide": "Hide",
+    "loading": "Loading...",
+    "error": "Error"
+  },
+  "nav": {
+    "vyuziti": "Applications",
+    "produkty": "Products",
+    "technologie": "Technology",
+    "realizace": "Projects",
+    "vyrobce": "About",
+    "kontakt": "Contact",
+    "chciKonzultaci": "Request consultation"
+  },
+  "hero": {
+    "title1": "The layer",
+    "title2": "that changes the rules.",
+    "subtitle": "Insulates. Doesn't burn. Works in 1 mm."
+  },
+  "industry": {
+    "title": "Technology that works across segments",
+    "description1": "PS Coat is used in transportation, manufacturing facilities, buildings and machinery. It's used on cabs, structures, roofs, piping systems and surfaces exposed to thermal stress.",
+    "description2": "In high-temperature environments, it enables safer work and in some applications, it can even affect how surfaces behave in thermal imaging.",
+    "description3": "The same material that naturally integrates into various operations, regardless of industry and conditions. One layer that provides solutions where there were none before.",
+    "button": "PS Coat Properties",
+    "doprava": "Transportation",
+    "stavby": "Buildings",
+    "termalniStopa": "Thermal footprint",
+    "preprava": "Shipping",
+    "potrubniSystemy": "Piping systems",
+    "bioplyn": "Biogas",
+    "dopravaBullet1": "More stable surface without condensation and corrosion",
+    "dopravaBullet2": "Reduced cost of maintaining temperature",
+    "dopravaBullet3": "Safer contact with hot surfaces",
+    "stavbyBullet1": "Reduced heat loss",
+    "stavbyBullet2": "Protection against mold",
+    "stavbyBullet3": "Suitable for articulated and profiled facades",
+    "termalniStopaBullet1": "Reduced thermal footprint",
+    "prepravaBullet1": "Condensation reduction",
+    "prepravaBullet2": "Corrosion protection",
+    "potrubniSystemyBullet1": "Lower pipe surface temperature",
+    "potrubniSystemyBullet2": "More stable media temperature inside",
+    "bioplynBullet1": "Maintenance of fermentation process temperature"
+  },
+  "features": {
+    "title": "Combined performance, one material",
+    "subtitle": "In one step, you establish protection against:",
+    "koroze": "Corrosion",
+    "tepelneZtraty": "Heat loss",
+    "kondenzace": "Condensation",
+    "pozar": "Fire",
+    "plisne": "Mold"
+  },
+  "references": {
+    "title": "PS Coat is used by",
+    "viewMore": "View more",
+    "hide": "Hide",
+    "companies": {
+      "airLiquid": "AIR LIQUID - industrial gases",
+      "airProducts": "AIR Products - industrial gases",
+      "uwc": "UWC, Thailand - ecological production of electricity",
+      "greenGas": "GREEN GAS - ecological production of electricity",
+      "mavir": "MAVIR, Almásfüzitő, Hungary - power plants, heating plants",
+      "weglokoks": "WEGLOKOKS, PL - power plants, heating plants",
+      "zem": "ZEM, PL - power plants, heating plants",
+      "ecMikolaj": "EC MIKOLAJ, PL - power plants, heating plants",
+      "azotyGroup": "AZOTY GROUP - chemical industry",
+      "synthos": "SYNTHOS - chemical industry",
+      "kghm": "KGHM (Polish copper) - copper mining",
+      "kosownia": "KOSOWNIA CZENSTOCHOWA, (ZARMEN G.A.) - production of coal coke",
+      "plynex": "PLYNEX, (VAE Controls) - ecological biogas plant, production of electricity",
+      "tempestHold": "TEMPEST HOLD, SK - industry, construction industry",
+      "vyvojMartin": "VÝVOJ MARTIN, (CZECHOSLOVAK GROUP AG) - military industry"
+    }
+  },
+  "certification": {
+    "heading1": "Certification and verified quality",
+    "text1": "PS Coat has been developed and tested since 2013 and meets the relevant certification requirements for industrial and construction applications. Production takes place in a certified facility in Poland near Kraków, ensuring quality control and oversight of the manufacturing process.",
+    "heading2": "Swiss origin. International availability. Local technical support.",
+    "text2": "PS Coat originates from a company founded in Switzerland in 2007. Since then, its presence has expanded from Europe to North and South America and the Middle East. Today, the material is available for industrial, construction and specialized projects with local technical support.",
+    "text3": "PS Coat is a stable and proven solution that we continue to develop and adapt to various operating conditions. We work with researchers and experts in surface and industrial technologies to continuously improve the material and expand its practical applications."
+  },
+  "fullScreenVideo": {
+    "title": "RAL as standard"
+  },
+  "squareDynamic": {
+    "title": "Proven in real operation",
+    "tyreLabel": "Tire manufacturing",
+    "tyreSublabel": "Continental",
+    "tyreTitle": "Energy savings in tire production",
+    "tyreText": "The application of PS Coat to molds for tractor tire manufacturing reduced the electrical energy consumption required for process heating by approximately 50% according to in-operation measurements.",
+    "siloLabel": "Insulation of furnaces and cooling towers",
+    "siloSublabel": "Industry",
+    "siloTitle": "Safer operation and lower hall temperature",
+    "siloText": "The application of PS Coat to oven surfaces reduced heat transfer to the environment and lowered hall temperature. At the same time, work safety was increased thanks to lower equipment surface temperatures and reduced burn risk.",
+    "facadeLabel": "Historic building facade",
+    "facadeSublabel": "Church and rectory",
+    "facadeTitle": "Insulation of intricate historic facade",
+    "facadeText": "A thin layer of PS Coat was used on the church building, enabling insulation of the intricate historic facade without changing its appearance. Heat losses and heating energy were reduced by approximately 40%. The surface also gained antibacterial properties and fire protection.",
+    "biogasLabel": "Biogas plant",
+    "biogasSublabel": "PLYNEX",
+    "biogasTitle": "Stable fermentation temperature even in frost",
+    "biogasText": "In the digester, medium temperature dropped to +15°C during winter, causing insufficient gas production and cogeneration unit failures. After applying a 1.5mm layer of PS Coat, temperature is consistently maintained around +35°C, without performance loss and with lower glycerin consumption.",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "footer": {
+    "description": "Thin-layer thermal insulation coatings with high microsphere content. They insulate, reduce condensation and corrosion, and increase operational safety across industries.",
+    "navigation": "Navigation",
+    "coJepscoat": "What is PScoat?",
+    "reference": "References",
+    "onas": "About",
+    "contact": "Contact",
+    "contactTitle": "Contact",
+    "address": "Hlubinská 1378/36, 702 00 Ostrava",
+    "copyright": "© {year} PScoat",
+    "requestOffer": "Request offer",
+    "certification": "Certification",
+    "manufacturer": "Manufacturer: RIVER POWER s.r.o., Hlubinská 1378/36, 702 00 Ostrava"
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Complete portfolio of PScoat insulation systems for various application areas",
+    "search": "Search products...",
+    "all": "All",
+    "detailProduct": "Product details",
+    "helpTitle": "Need help choosing?",
+    "helpText": "Contact us and together we'll find the ideal solution for your application",
+    "contactUs": "Contact us",
+    "categories": {
+      "stavebnictvi": "Construction",
+      "prumysl": "Industry",
+      "verejnySektor": "Public sector and healthcare"
+    }
+  },
+  "productDetail": {
+    "back": "Back to products",
+    "notFound": "Product not found",
+    "gallery": "Gallery",
+    "characteristics": "Characteristics",
+    "applications": "Applications",
+    "downloads": "Downloads",
+    "pdf": "PDF",
+    "requestOffer": "Request offer",
+    "contactSales": "Contact sales department",
+    "productDescription": "Product description",
+    "usage": "Usage",
+    "keyFeatures": "Key features",
+    "requestConsultation": "Request consultation",
+    "relatedProducts": "Related products",
+    "close": "Close",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "colorVariants": "Color variants",
+    "colorVariantsDescription": "This product can also be ordered in COLOR version. Possibility of applying various color shades in RAL scale."
+  },
+  "productDetails": {
+    "psc-250t-ecb-basic-b": {
+      "typ_produktu": "Base coat",
+      "description": "ECB BASIC B is a highly penetrating adhesive, energy-efficient and flexible base coat. It is non-toxic, environmentally friendly and creates a membrane. After application, it creates a pleasant matte gypsum surface.",
+      "pouziti": "As a base penetrating adhesive coat for applying the main layer BUILD, ECI INTERIOR, BS INSIDE, ECO OUTSIDE, ECF FLOOR, BS FLOOR, ECE ELASTIC",
+      "vlastnosti": [
+        "Highly penetrating adhesive",
+        "Energy efficient",
+        "Flexible",
+        "Non-toxic",
+        "Environmentally friendly",
+        "Creates a membrane",
+        "Creates a pleasant matte gypsum surface after application"
+      ]
+    },
+    "psc-250t-eci-interior": {
+      "typ_produktu": "Decorative protective coating",
+      "description": "ECI INTERIOR is a highly effective insulating reflective decorative protective coating for use on interior walls of residential and office buildings. It is resistant to dirt and resists mold. It is designed as interior insulation to increase the energy reflectivity effect from the insulated surface back into the room.",
+      "pouziti": "Interior walls of residential and office buildings",
+      "vlastnosti": [
+        "Highly effective insulating reflective decorative protective coating",
+        "Resistant to dirt",
+        "Resists mold",
+        "Designed as interior insulation",
+        "Water-based paint based on acrylic resin",
+        "Excellent insulating properties",
+        "Non-toxic and environmentally friendly",
+        "Creates a membrane that covers microcracks",
+        "Suitable for climatic conditions with high energy costs",
+        "Excellent resistance to condensation",
+        "Possibility of RAL color variants"
+      ]
+    },
+    "psc-250t-build": {
+      "typ_produktu": "Coating for insulation of external building structures",
+      "description": "PSC 250T BUILD is a high-performance, energy-efficient and flexible coating for insulation of external building structures. It is non-toxic, environmentally friendly and fills microcracks. It is a vapor-permeable insulating coating that prevents mold formation.",
+      "pouziti": "External walls of industrial and residential buildings",
+      "vlastnosti": [
+        "High performance",
+        "Energy efficient",
+        "Flexible",
+        "Non-toxic",
+        "Environmentally friendly",
+        "Fills microcracks",
+        "Vapor-permeable insulating coating",
+        "Prevents mold formation",
+        "Works as a conductive insulating reflective layer",
+        "Effective protection against frost or heat penetration",
+        "High adhesion to all known building materials",
+        "Ecological and health-safe"
+      ]
+    },
+    "psc-250t-eco-outside": {
+      "typ_produktu": "Decorative protective coating",
+      "description": "ECO OUTSIDE is a highly effective insulating reflective decorative protective coating for use on facades of residential, industrial buildings and as a coating for roof coverings made of concrete, ceramic materials or eternite. It resists atmospheric influences, acid rain and other standard weather conditions.",
+      "pouziti": "Facades of residential and industrial buildings, coating for roof coverings made of concrete, ceramic materials or eternite",
+      "vlastnosti": [
+        "Highly effective insulating reflective decorative protective coating",
+        "Resists atmospheric influences",
+        "Abrasion resistant",
+        "Vapor permeable",
+        "Increased resistance to mechanical damage",
+        "Possibility of RAL color variants"
+      ]
+    },
+    "psc-250t-ecf-floor": {
+      "typ_produktu": "Decorative protective coating for floors",
+      "description": "ECF FLOOR is a highly effective insulating reflective decorative protective coating for use on floors of administrative, industrial (light industry) and residential floors. It is fully washable and resistant to dirt and chemicals, withstands normal load and operation.",
+      "pouziti": "Floors of administrative, industrial (light industry) and residential floors",
+      "vlastnosti": [
+        "Highly effective insulating reflective coating",
+        "Fully washable",
+        "Resistant to dirt and chemicals",
+        "Withstands normal load",
+        "Effective protection against frost or heat penetration",
+        "Ecological and health-safe",
+        "Excellent insulating properties",
+        "Suitable for climatic conditions with high energy costs",
+        "Excellent resistance to condensation",
+        "Possibility of RAL color variants"
+      ]
+    },
+    "psc-250t-ece-elastic": {
+      "typ_produktu": "Decorative protective coating",
+      "description": "ECE ELASTIC is a highly effective insulating reflective decorative protective coating for use on roof coverings or other building and structural elements made of PVC, PC, PS, asphalt sheets (IPA), plastics, polycarbonate, hardened PVC. It resists atmospheric influences and acid rain.",
+      "pouziti": "Roof coverings or other building and structural elements made of PVC, PC, PS, asphalt sheets",
+      "vlastnosti": [
+        "Highly effective insulating reflective decorative protective coating",
+        "Resists atmospheric influences",
+        "Elastomeric properties",
+        "Abrasion resistant",
+        "Vapor permeable",
+        "Increased resistance to mechanical damage",
+        "Possibility of RAL color variants"
+      ]
+    },
+    "psc-250t-ecr-roof": {
+      "typ_produktu": "Top reflective coating",
+      "description": "ECR ROOF is a flexible top reflective coating for steel roof coverings and roof structure elements with a slope of more than 3% and as a top coating for HP, HP+. It is non-toxic and environmentally friendly.",
+      "pouziti": "Steel roof coverings and roof structure elements with a slope of more than 3%",
+      "vlastnosti": [
+        "Flexible top reflective coating",
+        "Non-toxic",
+        "Environmentally friendly",
+        "Fully washable",
+        "Resistant to dirt and chemicals",
+        "Excellent protective and visual function",
+        "Highly resistant to atmospheric influences",
+        "Excellent resistance to condensation",
+        "Excellent resistance to chemical environment",
+        "Possibility of RAL color variants"
+      ]
+    },
+    "psc-250t-ecb-basic-a": {
+      "typ_produktu": "Base coat",
+      "description": "ECB BASIC A is a base coat with excellent resistance to corrosion and water condensation. Application is suitable for all surfaces made of steel, aluminum, stainless steel, copper, etc. It can also be used directly on corroded but stable surfaces.",
+      "pouziti": "As a base coat for applying the main layer PSC HP, HP+, EC, EC+, ECR ROOF, HP 600.",
+      "vlastnosti": [
+        "Excellent corrosion resistance",
+        "Excellent water condensation resistance",
+        "Suitable for steel, aluminum, stainless steel, copper",
+        "Can be used directly on corroded (stable) surfaces"
+      ]
+    },
+    "psc-250t-hp": {
+      "typ_produktu": "Insulating and sealing coating",
+      "description": "HP is a highly effective, energy-efficient and flexible coating for insulation and sealing. It is a coating with the highest microsphere content. It is non-toxic, environmentally friendly and forms a uniform membrane that covers microcracks. It has excellent resistance to condensate formation, chemical environment (C4 and C5) and weather influences.",
+      "pouziti": "All steel structures. Insulation of hot and cold water pipes, air conditioning systems, roofs, building and hall cladding, surfaces where it is necessary to reduce surface temperature (boilers, steam pipes, etc.), chemical product tanks, liquid nitrogen tanks, industrial freezing equipment, containers, heat exchangers, boilers, air conditioning distribution.",
+      "vlastnosti": [
+        "Highly effective",
+        "Energy efficient",
+        "Flexible",
+        "Highest microsphere content",
+        "Non-toxic, environmentally friendly",
+        "Forms a uniform membrane, covers microcracks",
+        "Excellent resistance to condensate",
+        "Resistance to chemical environment (C4 and C5)",
+        "High adhesion to metals",
+        "Ecological and health-safe"
+      ]
+    },
+    "psc-250t-hp-plus": {
+      "typ_produktu": "Insulating and sealing coating with anti-corrosion components",
+      "description": "HP+ is a highly effective, energy-efficient and flexible coating for insulation and sealing with the highest microsphere content. It is non-toxic, environmentally friendly and forms a uniform membrane that covers microcracks. It contains anti-corrosion components and therefore can be used even without the base coat ECB BASIC A. It has excellent resistance to condensate formation, chemical environment C4 and C5 and weather influences.",
+      "pouziti": "All steel structures. Insulation of hot and cold water pipes, air conditioning systems, roofs, building and hall cladding, surfaces where it is necessary to reduce surface temperature (boilers, steam pipes, etc.), chemical product tanks, liquid nitrogen tanks, industrial freezing equipment, containers, heat exchangers, boilers, air conditioning distribution.",
+      "vlastnosti": [
+        "Highly effective",
+        "Energy efficient",
+        "Flexible",
+        "Highest microsphere content",
+        "Non-toxic, environmentally friendly",
+        "Forms a uniform membrane, covers microcracks",
+        "Contains anti-corrosion components (can be used without base)",
+        "Excellent resistance to condensate",
+        "Resistance to chemical environment (C4 and C5)",
+        "High adhesion to metals",
+        "Ecological and health-safe"
+      ]
+    },
+    "psc-250t-ec": {
+      "typ_produktu": "Top coating",
+      "description": "PSC 250T EC is a top coating for PSC 250T HP in outdoor or indoor environments. It is non-toxic and environmentally friendly. It is fully washable and resistant to dirt and chemicals. A coating with excellent protective, reflective and visual function. It is highly resistant to all atmospheric influences.",
+      "pouziti": "Outdoor or indoor walls of structures as a top coating for PSC 250T HP.",
+      "vlastnosti": [
+        "Top coating for PSC 250T HP",
+        "Non-toxic, environmentally friendly",
+        "Fully washable",
+        "Resistant to dirt and chemicals",
+        "Excellent protective, reflective and visual function",
+        "Highly resistant to atmospheric influences",
+        "Excellent resistance to condensation",
+        "Excellent resistance to chemical environment (C4 and C5)",
+        "High adhesion to metals",
+        "Ecological and health-safe",
+        "Possibility of RAL color variants (COLOR version)"
+      ]
+    },
+    "psc-250t-ec-plus": {
+      "typ_produktu": "Top reflective coating with anti-corrosion components",
+      "description": "PSC 250T EC+ is a top coating for PSC 250T HP for outdoor environments and can also be used as a top reflective coating. It is non-toxic and environmentally friendly. The coating is fully washable, resistant to dirt and chemicals. It has excellent protective, reflective and visual function. It contains anti-corrosion components and can be used even without the base coat ECB BASIC A.",
+      "pouziti": "External walls of structures as a top coating for PSC 250T HP. Can be used as a standalone top reflective coating.",
+      "vlastnosti": [
+        "Top reflective coating for outdoor environments",
+        "Non-toxic, environmentally friendly",
+        "Fully washable",
+        "Resistant to dirt and chemicals",
+        "Excellent protective, reflective and visual function",
+        "Highly resistant to atmospheric influences",
+        "Contains anti-corrosion components (can be used without base)",
+        "Excellent resistance to chemical environment (C4 and C5)",
+        "High adhesion to metals",
+        "Ecological and health-safe",
+        "Possibility of RAL color variants (COLOR version)"
+      ]
+    },
+    "psc-250t-ece-elastic-prumysl": {
+      "typ_produktu": "Decorative protective coating (Elastomer)",
+      "description": "ECE ELASTIC is a highly effective insulating reflective decorative protective coating. Thanks to its elastomeric properties, it provides excellent protective and aesthetic properties. It resists atmospheric influences, acid rain and other standard weather conditions. The material prevents the passage of atmospheric influences.",
+      "pouziti": "Roof coverings or other building and structural elements made of PVC, PC, PS, asphalt sheets (IPA), plastics, polycarbonate, hardened PVC, etc.",
+      "vlastnosti": [
+        "Highly effective insulating reflective decorative protective coating",
+        "Resists atmospheric influences and acid rain",
+        "Elastomeric properties",
+        "Increased resistance to mechanical damage",
+        "Abrasion resistant and vapor permeable",
+        "Provides excellent protective and aesthetic properties",
+        "Possibility of RAL color variants (COLOR version)"
+      ]
+    },
+    "psc-250t-ecr-roof-prumysl": {
+      "typ_produktu": "Top reflective coating for roofs",
+      "description": "ECR ROOF is a flexible top reflective coating for steel roof coverings and roof structure elements with a slope of more than 3%. It is also used as a top coating for HP, HP+. It is non-toxic and environmentally friendly. The coating is fully washable and resistant to dirt and chemicals.",
+      "pouziti": "Steel roof coverings and roof structure elements with a slope of more than 3%. As a top coating for HP, HP+.",
+      "vlastnosti": [
+        "Flexible top reflective coating",
+        "Non-toxic, environmentally friendly",
+        "Fully washable",
+        "Resistant to dirt and chemicals",
+        "Excellent protective and visual function",
+        "Highly resistant to atmospheric influences",
+        "Excellent resistance to condensation",
+        "Excellent resistance to chemical environment (C4 and C5)",
+        "Possibility of RAL color variants (COLOR version)"
+      ]
+    },
+    "psc-250t-bs-floor": {
+      "typ_produktu": "Decorative protective coating for floors",
+      "description": "BS FLOOR is a highly effective insulating reflective decorative protective coating for use on floors of public buildings, hospitals, senior homes, school facilities. It is fully washable, resistant to dirt, chemicals and is bacteriostatic. It withstands normal load in operation. It is very effective in floor insulation and provides effective protection against frost or heat penetration. It is ecological and health-safe.",
+      "pouziti": "Floors of public buildings, hospitals, senior homes, school facilities",
+      "vlastnosti": [
+        "Highly effective insulating reflective decorative protective coating",
+        "Fully washable",
+        "Resistant to dirt and chemicals",
+        "Bacteriostatic",
+        "Withstands normal load in operation",
+        "Effective protection against frost or heat penetration",
+        "Ecological and health-safe",
+        "Water-based paint based on acrylic resin",
+        "Excellent insulating properties",
+        "Non-toxic, environmentally friendly",
+        "Creates a membrane that covers microcracks",
+        "Suitable for use in climatic conditions with high energy costs",
+        "Excellent resistance to condensation",
+        "Possibility of application in RAL color shades"
+      ]
+    },
+    "psc-250t-bs-inside": {
+      "typ_produktu": "Decorative protective coating for interior walls",
+      "description": "BS INSIDE is a highly effective insulating reflective decorative protective coating for use on interior walls of public buildings, hospitals, senior homes, school facilities. It is resistant to dirt, mold and is also bacteriostatic. It is designed as interior insulation to increase the energy reflectivity effect from the insulated surface back into the room.",
+      "pouziti": "Interior walls of public buildings, hospitals, senior homes, school facilities",
+      "vlastnosti": [
+        "Highly effective insulating reflective decorative protective coating",
+        "Resistant to dirt",
+        "Resistant to mold",
+        "Bacteriostatic",
+        "Designed as interior insulation for energy reflectivity",
+        "Water-based paint based on acrylic resin",
+        "Excellent insulating properties",
+        "Non-toxic, environmentally friendly",
+        "Creates a membrane that covers microcracks",
+        "Suitable for use in climatic conditions with high energy costs",
+        "Excellent resistance to condensation",
+        "Possibility of application in RAL color shades"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a question or interest in our products? We're happy to answer all your questions and help you find the most suitable solution for your project.",
+    "writeUs": "Write to us",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "E-mail",
+    "phone": "Phone",
+    "message": "Message",
+    "sendMessage": "Send message",
+    "contactInfo": "Contact information",
+    "addressValue": "Prague, Czech Republic",
+    "quickOfferTitle": "Need a quick offer?",
+    "quickOfferText": "Use our specialized form to request an offer and get an individual price calculation.",
+    "requestOffer": "Request offer",
+    "branchesTitle": "Our branches worldwide",
+    "branchesSubtitle": "PScoat has representation on all continents. Find your nearest branch.",
+    "closeDetail": "Close detail",
+    "office": "branch",
+    "offices": "branches",
+    "placeholders": {
+      "message": "Your message..."
+    }
+  },
+  "requestOffer": {
+    "title": "Request technical consultation",
+    "subtitle1": "Contact us for individual offer and consultation",
+    "subtitle2": "Fill out the form and we'll prepare an individual offer tailored to your project. We look forward to working with you!",
+    "contactDetails": "Contact details",
+    "fullName": "Full name",
+    "company": "Company",
+    "object": "Object",
+    "selectVariants": "Please select variants",
+    "whatProblems": "What problems are you solving?",
+    "message": "Message",
+    "yourMessage": "Your message",
+    "send": "Send request",
+    "required": "*",
+    "placeholders": {
+      "object": "Describe your project and requirements..."
+    },
+    "variants": {
+      "tezkyPrumysl": "Heavy industry",
+      "prumysl": "Industry",
+      "potravinarsky": "Food industry",
+      "vyroba": "Manufacturing",
+      "komercniBudovy": "Commercial buildings",
+      "stavebnictvi": "Construction",
+      "klimatizace": "Air conditioning",
+      "jine": "Other"
+    },
+    "problems": {
+      "kondenzace": "Condensation",
+      "koroze": "Corrosion",
+      "plisne": "Mold",
+      "tepelneZtraty": "Heat losses/need for cooling",
+      "izolaceDomu": "House insulation",
+      "bezpecnost": "Operational safety",
+      "zefektivneni": "Operational efficiency"
+    },
+    "errors": {
+      "selectVariant": "Please select at least one variant.",
+      "selectProblem": "Please select at least one problem you are solving."
+    }
+  },
+  "about": {
+    "title": "About the company",
+    "subtitle": "Since 2007, we have been developing innovative thermal insulation technologies",
+    "milestones": "Key milestones",
+    "milestone2007": "Establishment of Alpha Construction AG in Switzerland",
+    "milestone2009": "Expansion to EU markets",
+    "milestone2011": "Move to Zug and acquisition of RIVER POWER",
+    "milestone2013": "Start of PScoat product development",
+    "milestone2023": "Transformation to ALPHA Construction SE",
+    "production": "Production",
+    "productionInPoland": "in Poland",
+    "productionText": "The PScoat product manufacturing facility is currently in Poland in Wola Batorska near Krakow",
+    "certifiedProducts": "Certified products",
+    "awards": "Awards",
+    "mayorCup": "Mayor's cup",
+    "mayorCupLocation": "Bielsko-Biała",
+    "mayorCupDescription": "For the best innovative building trade fair product of 2020",
+    "bronzePillar": "Bronze building pillar",
+    "bronzePillarLocation": "Poland 2020",
+    "bronzePillarDescription": "For the best innovative product in Poland in 2020",
+    "testimonials": "Recommendations",
+    "petrKouril": "Petr Kouřil",
+    "petrKourilTitle": "Master of Czech Republic in aerobatics",
+    "petrKourilText": "recommends PScoat products",
+    "lomzaVive": "ŁOMŻA VIVE KIELCE",
+    "lomzaViveTitle": "(2x UEFA champion and 18x Polish champion in handball)",
+    "lomzaViveText": "recommends PScoat products"
+  },
+  "technology": {
+    "title": "Technology",
+    "subtitle": "Unique modern thermal insulation material",
+    "microspheres": {
+      "title": "Microspheres:",
+      "subtitle": "unique modern thermal insulation material",
+      "point1": "based on nanotechnology and closed microspheres",
+      "point2": "full replacement for polystyrene and mineral wool",
+      "point3": "minimizes heat transfer between surfaces",
+      "point4": "application thickness mainly 1-3 mm",
+      "point5": "saves space and weight, can be applied anywhere",
+      "point6": "no need for a special application team – application by spray or coating",
+      "point7": "defect control detectable by the naked eye, possibility of quick repairs"
+    },
+    "insulation": {
+      "title": "Insulation against external temperatures",
+      "withoutPsc": "WITHOUT PSC APPLICATION: heat flow outside / inside",
+      "withPsc": "WITH PSC APPLICATION: heat flow outside / inside",
+      "coldTitle": "Insulation against cold",
+      "coldWithoutPsc": "WITHOUT PSC APPLICATION: heat flow outside / inside",
+      "coldWithPsc": "WITH PSC APPLICATION: heat flow outside / inside"
+    },
+    "suitableAreas": {
+      "title": "Areas suitable for PScoat coverage:",
+      "subtitle": "Interior and exterior of buildings",
+      "items": {
+        "roofs": "Roofs",
+        "ceilings": "Ceilings",
+        "walls": "Walls",
+        "basements": "Underground floors/basements",
+        "piping": "Distribution/piping",
+        "metalParts": "Metal parts",
+        "railings": "Railings",
+        "facades": "Facades",
+        "other": "and more"
+      },
+      "uniqueProperties": "Unique properties of PScoat are given primarily by the combination of thermal conductivity + TSR up to >92% reflection of all radiation."
+    },
+    "comparison": {
+      "title": "Comparison of traditional insulation with PScoat:",
+      "table": {
+        "property": "Properties",
+        "pscoat": "PScoat",
+        "traditional": "Traditional insulation materials",
+        "thermal": {
+          "property": "Thermal insulation properties",
+          "pscoat": "Stable against temperature changes and over time regardless of air humidity. PSC thermal insulation performance is stable long-term.",
+          "traditional": "Material degrades quickly in relation to humid air and thus subsequently reduces the longevity of equipment under insulation and its thermal insulation performance."
+        },
+        "waterResistance": {
+          "property": "Water resistance",
+          "pscoat": "PSC 250T is waterproof – certified",
+          "traditional": "This material absorbs moisture from the environment and therefore cannot solve e.g. the problem of corrosion due to resulting condensate"
+        },
+        "corrosion": {
+          "property": "Corrosion protection",
+          "pscoat": "PSC 250T has anti-corrosion properties – certified",
+          "traditional": "Cannot solve the corrosion problem"
+        },
+        "condensation": {
+          "property": "Condensation - water precipitation",
+          "pscoat": "PSC 250T can solve the condensation problem",
+          "traditional": "Cannot solve the condensation problem and when it can, it's in very thick layers."
+        },
+        "uvStable": {
+          "property": "UV stable",
+          "pscoat": "PSC 250T is UV stable thanks to TSR property /Total Solar Reflection - with 92% reflectivity of all radiation across its entire spectrum/. Solar radiation 97%.",
+          "traditional": "Additional protection required"
+        },
+        "weight": {
+          "property": "Weight load and device area requirements",
+          "pscoat": "Due to thin application layer mainly between 1-3 mm, surfaces with PSC application are not significantly weight-loaded and due to this thin layer do not require large space around the applied equipment.",
+          "traditional": "This insulation layer takes up much more area and when soaked with moisture significantly increases its weight and thus loads the equipment."
+        },
+        "application": {
+          "property": "Application method",
+          "pscoat": "Simple and fast PSC application by spray or roller. For smaller surfaces by brush.",
+          "traditional": "Complex process that requires the use of several partial components for the insulation to be complete."
+        },
+        "repairs": {
+          "property": "Repairs",
+          "pscoat": "Simple defect identification. Thanks to thin PSC layer, repairs are very easy. In case of necessary repair, the point is cleaned with a brush. PSC is removed and after repair is locally reapplied,",
+          "traditional": "Hard to identify repairs. No damage traces are visible on the insulation surface, but under the insulation there can be a serious problem with condensation, pests and mold. Repairs are demanding and require a complex process of removing the entire insulation and subsequent ecological disposal of the material."
+        },
+        "lifespan": {
+          "property": "Lifespan",
+          "pscoat": "PSC has 25-30 years certification for material lifespan",
+          "traditional": "Short lifespan due to problem with moisture absorption from the environment, or degradation on very hot surfaces."
+        },
+        "resistance": {
+          "property": "Resistance against insects, rodents and mold",
+          "pscoat": "Thanks to thin PSC application layer and perfect adhesion to the applied surface, prevents mold formation and insect movement under insulation",
+          "traditional": "Insects and rodents can stay under traditional insulation, mold can easily form."
+        },
+        "ecology": {
+          "property": "Ecology",
+          "pscoat": "PSC is an ecological product that is certified in terms of hygiene and can be used even in the food industry.",
+          "traditional": "Difficult to dispose of ecologically, financially demanding. May have adverse effects on human health."
+        }
+      }
+    },
+    "specificProperties": {
+      "title": "Specific properties of PScoat",
+      "left": {
+        "item1": "ability to withstand temperatures from -200 to +200 °C",
+        "item2": "can be applied directly to hot surfaces up to +150 °C",
+        "item3": "can be applied externally and internally",
+        "item4": "abrasion resistant",
+        "item5": "very good adhesion",
+        "item6": "reflection of all radiation across its entire spectrum (TSR) 92%",
+        "item7": "full replacement for polystyrene, mineral wool and other insulation materials",
+        "item8": "nanotechnology based on microspheres",
+        "item9": "possibility of application in various color shades"
+      },
+      "right": {
+        "item1": "color stability",
+        "item2": "elastic",
+        "item3": "resistant to acids and other chemical compounds (C4, C5 environment)",
+        "item4": "mold protection",
+        "item5": "corrosion protection",
+        "item6": "protection against condensate formation",
+        "item7": "UV resistant",
+        "item8": "simple application of shape-complex surfaces (e.g. valves, taps...)",
+        "item9": "occupational safety prevention"
+      }
+    }
+  }
+}

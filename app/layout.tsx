@@ -4,6 +4,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import NavbarProvider from "../components/NavbarProvider";
 import Footer from "../components/shared/Footer";
+import { I18nProvider } from "@/lib/contexts/I18nContext";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -32,10 +33,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="cs" className={`${lexend.variable} ${raleway.variable}`}>
+    <html className={`${lexend.variable} ${raleway.variable}`}>
       <body className="font-sans">
-        <NavbarProvider>{children}</NavbarProvider>
-        <Footer />
+        <I18nProvider>
+          <NavbarProvider>{children}</NavbarProvider>
+          <Footer />
+        </I18nProvider>
       </body>
     </html>
   );

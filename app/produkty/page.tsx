@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { products, categories, Product } from "../../lib/constants/products";
 import Link from "next/link";
+import { useI18n } from "@/lib/contexts/I18nContext";
 
 const ProductsPage: React.FC = () => {
+  const { t } = useI18n();
   const [selectedCategory, setSelectedCategory] = useState<
     "all" | "stavebnictvi" | "prumysl" | "verejny-sektor"
   >("all");
@@ -38,11 +40,10 @@ const ProductsPage: React.FC = () => {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="max-w-3xl mt-12">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
-                Naše produkty
+                {t("products.title")}
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed">
-                Kompletní portfolio izolačních systémů PScoat pro různé oblasti
-                použití
+                {t("products.subtitle")}
               </p>
             </div>
           </div>
@@ -57,7 +58,7 @@ const ProductsPage: React.FC = () => {
               <div className="relative lg:w-[50%]">
                 <input
                   type="text"
-                  placeholder="Hledat produkty..."
+                  placeholder={t("products.search")}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-5 py-3 pl-12 rounded-xl border border-gray-200 focus:border-[#0180ae] focus:ring-2 focus:ring-[#0180ae]/10 outline-none transition-all duration-300 bg-gray-50/50"
@@ -88,26 +89,31 @@ const ProductsPage: React.FC = () => {
                       : "bg-gray-50 text-gray-700 border border-gray-200 hover:border-[#0180ae] hover:text-[#0180ae] hover:bg-white"
                   }`}
                 >
-                  Všechny
+                  {t("products.all")}
                 </button>
 
                 {/* Divider */}
                 <div className="hidden lg:block w-px h-6 bg-gray-200 mx-1"></div>
 
                 {/* Category filters - Smaller */}
-                {Object.entries(categories).map(([key, category]) => (
-                  <button
-                    key={key}
-                    onClick={() => setSelectedCategory(key as any)}
-                    className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 whitespace-nowrap shrink-0 ${
-                      selectedCategory === key
-                        ? "bg-[#0180ae] text-white shadow-sm"
-                        : "bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-gray-900 border border-transparent hover:border-gray-200"
-                    }`}
-                  >
-                    {category.name}
-                  </button>
-                ))}
+                {Object.entries(categories).map(([key, category]) => {
+                  // Map category key to translation key (handle hyphen case)
+                  const translationKey =
+                    key === "verejny-sektor" ? "verejnySektor" : key;
+                  return (
+                    <button
+                      key={key}
+                      onClick={() => setSelectedCategory(key as any)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 whitespace-nowrap shrink-0 ${
+                        selectedCategory === key
+                          ? "bg-[#0180ae] text-white shadow-sm"
+                          : "bg-gray-50 text-gray-600 hover:bg-gray-100 hover:text-gray-900 border border-transparent hover:border-gray-200"
+                      }`}
+                    >
+                      {t(`products.categories.${translationKey}`)}
+                    </button>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -125,12 +131,16 @@ const ProductsPage: React.FC = () => {
                 const isLastColumn =
                   index === Object.entries(categories).length - 1;
 
+                // Map category key to translation key (handle hyphen case)
+                const translationKey =
+                  key === "verejny-sektor" ? "verejnySektor" : key;
+
                 return (
                   <div key={key} className="flex flex-col">
                     {/* Category header */}
                     <div className="mb-4">
                       <h2 className="text-xl font-bold text-gray-700 mb-3">
-                        {category.name}
+                        {t(`products.categories.${translationKey}`)}
                       </h2>
                       <div className="h-px bg-gray-300"></div>
                     </div>
@@ -159,18 +169,17 @@ const ProductsPage: React.FC = () => {
         <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Potřebujete pomoct s výběrem?
+              {t("products.helpTitle")}
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Kontaktujte nás a společně najdeme ideální řešení pro vaši
-              aplikaci
+              {t("products.helpText")}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link
                 href="/kontakt"
                 className="px-8 py-3 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold rounded-full hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-0.5"
               >
-                Kontaktovat nás
+                {t("products.contactUs")}
               </Link>
             </div>
           </div>
@@ -185,6 +194,8 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { t } = useI18n();
+
   return (
     <Link
       href={`/produkty/${product.id}`}
@@ -230,7 +241,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </h3>
 
           <span className="text-[#0180ae] text-sm font-medium inline-flex items-center gap-1 group-hover:translate-x-1 group-hover:text-[#00a4d6] transition-all duration-300">
-            Detail produktu
+            {t("products.detailProduct")}
             <svg
               className="w-4 h-4"
               fill="none"

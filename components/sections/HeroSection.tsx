@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Navbar from "../shared/navbar/Navbar";
+import { useI18n } from "@/lib/contexts/I18nContext";
 
 declare global {
   interface Window {
@@ -10,6 +11,7 @@ declare global {
 }
 
 export default function HeroSection() {
+  const { t } = useI18n();
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
@@ -96,14 +98,14 @@ export default function HeroSection() {
         <div className="text-center px-4 sm:px-6 lg:px-8">
           {/* Main Title */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl font-bold text-black mb-6 leading-tight">
-            Vrstva,
+            {t("hero.title1")}
             <br />
-            která mění pravidla.
+            {t("hero.title2")}
           </h1>
 
           {/* Tagline */}
           <p className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-light text-black">
-            Izoluje. Nehoří. Funguje v 1 mm.
+            {t("hero.subtitle")}
           </p>
         </div>
       </div>

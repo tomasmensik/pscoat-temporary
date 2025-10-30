@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useI18n } from "@/lib/contexts/I18nContext";
 
 export default function ONas() {
+  const { t } = useI18n();
+  
   return (
     <>
       <main className="w-full min-h-screen bg-gradient-to-b from-white via-gray-50/50 to-white">
@@ -13,10 +16,10 @@ export default function ONas() {
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="max-w-3xl mt-12">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
-                O společnosti
+                {t("about.title")}
               </h1>
               <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
-                Od roku 2007 vyvíjíme inovativní termoizolační technologie
+                {t("about.subtitle")}
               </p>
             </div>
           </div>
@@ -26,7 +29,7 @@ export default function ONas() {
           {/* Timeline Section */}
           <div className="mb-12">
             <h2 className="text-xl font-bold text-gray-900 mb-8 text-center">
-              Důležité milníky
+              {t("about.milestones")}
             </h2>
             <div className="relative">
               {/* Vertical line */}
@@ -57,7 +60,7 @@ export default function ONas() {
                         2007
                       </div>
                       <p className="text-sm text-gray-600 relative z-10">
-                        Vznik Alpha Construction AG ve Švýcarsku
+                        {t("about.milestone2007")}
                       </p>
                     </div>
                   </div>
@@ -91,7 +94,7 @@ export default function ONas() {
                         2009
                       </div>
                       <p className="text-sm text-gray-600 relative z-10">
-                        Expanze na trhy EU
+                        {t("about.milestone2009")}
                       </p>
                     </div>
                   </div>
@@ -121,7 +124,7 @@ export default function ONas() {
                         2011
                       </div>
                       <p className="text-sm text-gray-600 relative z-10">
-                        Přesun do Zug a akvizice RIVER POWER
+                        {t("about.milestone2011")}
                       </p>
                     </div>
                   </div>
@@ -155,7 +158,7 @@ export default function ONas() {
                         2013
                       </div>
                       <p className="text-sm text-gray-600 relative z-10">
-                        Začátek vývoje produktu PScoat
+                        {t("about.milestone2013")}
                       </p>
                     </div>
                   </div>
@@ -185,7 +188,7 @@ export default function ONas() {
                         2023
                       </div>
                       <p className="text-sm text-white/90 relative z-10">
-                        Transformace na ALPHA Construction SE
+                        {t("about.milestone2023")}
                       </p>
                     </div>
                   </div>
@@ -201,12 +204,11 @@ export default function ONas() {
             <div className="bg-white rounded-2xl p-8 border border-gray-200/50">
               <div className="max-w-3xl mx-auto text-center">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Výroba{" "}
-                  <span className="font-bold text-[#0180ae]">v Polsku</span>
+                  {t("about.production")}{" "}
+                  <span className="font-bold text-[#0180ae]">{t("about.productionInPoland")}</span>
                 </h2>
                 <p className="text-base text-gray-600 mb-6">
-                  Výrobní závod produktu PScoat je aktuálně v Polsku ve Woli
-                  Batorske nedaleko Krakova
+                  {t("about.productionText")}
                 </p>
                 <div className="flex items-center justify-center gap-2 text-gray-700">
                   <svg
@@ -223,7 +225,7 @@ export default function ONas() {
                     />
                   </svg>
                   <span className="text-sm font-medium">
-                    Certifikované produkty
+                    {t("about.certifiedProducts")}
                   </span>
                 </div>
               </div>
@@ -233,7 +235,7 @@ export default function ONas() {
           {/* Awards Section */}
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-              Ocenění
+              {t("about.awards")}
             </h2>
 
             {/* Awards Grid */}
@@ -254,13 +256,13 @@ export default function ONas() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    Pohár starosty města
+                    {t("about.mayorCup")}
                   </h3>
                   <p className="text-[#0180ae] font-semibold mb-2">
-                    Bielska-Biała
+                    {t("about.mayorCupLocation")}
                   </p>
                   <p className="text-sm text-gray-600">
-                    Za nejlepší inovativní výrobek stavebního veletrhu roku 2020
+                    {t("about.mayorCupDescription")}
                   </p>
                 </div>
               </div>
@@ -281,13 +283,13 @@ export default function ONas() {
                     />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">
-                    Bronzový stavební pilíř
+                    {t("about.bronzePillar")}
                   </h3>
                   <p className="text-[#0180ae] font-semibold mb-2">
-                    Polsko 2020
+                    {t("about.bronzePillarLocation")}
                   </p>
                   <p className="text-sm text-gray-600">
-                    Za nejlepší inovativní produkt v Polsku za rok 2020
+                    {t("about.bronzePillarDescription")}
                   </p>
                 </div>
               </div>
@@ -296,7 +298,7 @@ export default function ONas() {
             {/* Testimonials */}
             <div className="bg-white rounded-2xl p-8 border border-gray-200/50">
               <h3 className="text-xl font-semibold text-gray-900 mb-6 text-center">
-                Doporučení
+                {t("about.testimonials")}
               </h3>
               <div className="grid md:grid-cols-2 gap-12">
                 {/* Petr Kouřil */}
@@ -315,14 +317,14 @@ export default function ONas() {
                     />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
-                    Petr Kouřil
+                    {t("about.petrKouril")}
                   </h4>
                   <p className="text-[#0180ae] font-semibold mb-3">
-                    Mistr České Republiky v letecké akrobacii
+                    {t("about.petrKourilTitle")}
                   </p>
                   <div className="bg-gray-50 rounded-xl p-4">
                     <p className="text-gray-700 italic">
-                      doporučuje výrobky PScoat
+                      {t("about.petrKourilText")}
                     </p>
                   </div>
                 </div>
@@ -341,15 +343,15 @@ export default function ONas() {
                     />
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
-                    ŁOMŻA VIVE KIELCE
+                    {t("about.lomzaVive")}
                   </h4>
                   <p className="text-[#0180ae] font-semibold mb-3">
-                    (2× mistr UEFA a 18× mistr Polska v házené)
+                    {t("about.lomzaViveTitle")}
                   </p>
 
                   <div className="bg-gray-50 rounded-xl p-4">
                     <p className="text-gray-700 italic">
-                      doporučuje výrobky PScoat
+                      {t("about.lomzaViveText")}
                     </p>
                   </div>
                 </div>

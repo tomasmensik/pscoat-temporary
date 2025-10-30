@@ -3,21 +3,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { useI18n } from "@/lib/contexts/I18nContext";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 interface NavbarProps {
   isNavbarVisible: boolean;
 }
 
-const navItems = [
-  { label: "Využití", href: "/#industry-section" },
-  { label: "Produkty", href: "/produkty" },
-  { label: "Technologie", href: "/technologie" },
-  { label: "Realizace", href: "/#realizace-section" },
-  { label: "Výrobce", href: "/o-nas" },
-  { label: "Kontakt", href: "/kontakt" },
-];
-
 export default function Navbar({ isNavbarVisible }: NavbarProps) {
+  const { t } = useI18n();
+  
+  const navItems = [
+    { key: "nav.vyuziti", href: "/#industry-section" },
+    { key: "nav.produkty", href: "/produkty" },
+    { key: "nav.technologie", href: "/technologie" },
+    { key: "nav.realizace", href: "/#realizace-section" },
+    { key: "nav.vyrobce", href: "/o-nas" },
+    { key: "nav.kontakt", href: "/kontakt" },
+  ];
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   // Prevent background scroll when mobile menu is open
@@ -62,18 +65,19 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                   href={item.href}
                   className="text-black font-medium hover:text-[#2B659C] transition-colors text-sm drop-shadow-sm"
                 >
-                  {item.label}
+                  {t(item.key)}
                 </Link>
               ))}
             </nav>
 
-            {/* CTA Button */}
-            <div className="hidden md:block flex-shrink-0">
+            {/* CTA Button and Language Switcher */}
+            <div className="hidden md:flex items-center gap-4 flex-shrink-0">
+              <LanguageSwitcher />
               <Link
                 href="/pozadat-o-nabidku"
                 className="bg-[#2B659C] hover:bg-cyan-600 text-white px-6 py-3 rounded-sm text-xs transition-colors"
               >
-                Chci technickou konzultaci
+                {t('nav.chciKonzultaci')}
               </Link>
             </div>
 
@@ -149,16 +153,19 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                         onClick={() => setIsMobileOpen(false)}
                         className="block text-black font-semibold hover:text-[#2B659C] transition-colors text-2xl"
                       >
-                        {item.label}
+                        {t(item.key)}
                       </Link>
                     ))}
-                    <div className="pt-4">
+                    <div className="pt-4 space-y-3">
+                      <div className="flex justify-center">
+                        <LanguageSwitcher />
+                      </div>
                       <Link
                         href="/pozadat-o-nabidku"
                         onClick={() => setIsMobileOpen(false)}
                         className="block text-center bg-[#2B659C] hover:bg-cyan-600 text-white px-5 py-4 rounded-sm text-base transition-colors"
                       >
-                        Chci technickou konzultaci
+                        {t('nav.chciKonzultaci')}
                       </Link>
                     </div>
                   </div>

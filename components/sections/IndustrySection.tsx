@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useI18n } from "@/lib/contexts/I18nContext";
 
 export default function IndustrySection() {
+  const { t } = useI18n();
   const [iconIndex, setIconIndex] = useState(0);
   const totalIcons = 6;
   const visibleIcons = 4;
@@ -14,11 +16,11 @@ export default function IndustrySection() {
 
   const iconContent = [
     {
-      title: "Doprava",
+      title: t("industry.doprava"),
       bullets: [
-        "Stabilnější povrch bez kondenzace a koroze",
-        "Nižší náklady na udržení teploty",
-        "Bezpečnější kontakt s horkými povrchy",
+        t("industry.dopravaBullet1"),
+        t("industry.dopravaBullet2"),
+        t("industry.dopravaBullet3"),
       ],
       images: [
         "/home/slider-odvetvi/vlak1.jpg",
@@ -26,11 +28,11 @@ export default function IndustrySection() {
       ],
     },
     {
-      title: "Stavby",
+      title: t("industry.stavby"),
       bullets: [
-        "Omezení tepelných ztrát",
-        "Ochrana proti plísním",
-        "Zvládá členité / profilované fasády",
+        t("industry.stavbyBullet1"),
+        t("industry.stavbyBullet2"),
+        t("industry.stavbyBullet3"),
       ],
       images: [
         "/home/slider-odvetvi/kostel1.jpg",
@@ -38,26 +40,26 @@ export default function IndustrySection() {
       ],
     },
     {
-      title: "Termální stopa",
-      bullets: ["Snížená termální stopa"],
+      title: t("industry.termalniStopa"),
+      bullets: [t("industry.termalniStopaBullet1")],
       images: [
         "/home/slider-odvetvi/thermovize1.jpg",
         "/home/slider-odvetvi/thermovize2.jpg",
       ],
     },
     {
-      title: "Přeprava",
-      bullets: ["Omezení kondenzace", "Zpomalení koroze"],
+      title: t("industry.preprava"),
+      bullets: [t("industry.prepravaBullet1"), t("industry.prepravaBullet2")],
       images: [
         "/home/slider-odvetvi/lod1.jpg",
         "/home/slider-odvetvi/lod2.jpg",
       ],
     },
     {
-      title: "Potrubní systémy",
+      title: t("industry.potrubniSystemy"),
       bullets: [
-        "Nižší povrchová teplota potrubí",
-        "Stabilnější teplota média uvnitř",
+        t("industry.potrubniSystemyBullet1"),
+        t("industry.potrubniSystemyBullet2"),
       ],
       images: [
         "/home/slider-odvetvi/trubky1.jpg",
@@ -65,14 +67,14 @@ export default function IndustrySection() {
       ],
     },
     {
-      title: "Bioplyn",
-      bullets: ["Udržení teploty fermentačního procesu"],
+      title: t("industry.bioplyn"),
+      bullets: [t("industry.bioplynBullet1")],
       images: [
         "/home/slider-odvetvi/biopklynka1.jpg",
         "/home/slider-odvetvi/bioplynka2.jpg",
       ],
     },
-  ] as const;
+  ];
 
   const clamp = (value: number, min: number, max: number) =>
     Math.min(max, Math.max(min, value));
@@ -226,23 +228,16 @@ export default function IndustrySection() {
               <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-12 text-white text-center lg:text-left pt-8 sm:pt-10 lg:pt-0">
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 leading-tight max-w-[14ch] sm:max-w-[16ch] lg:max-w-[22ch] mx-auto lg:mx-0">
-                    Technologie, která funguje napříč segmenty
+                    {t("industry.title")}
                   </h2>
                   <p className="text-sm sm:text-md mb-6 leading-relaxed max-w-[60ch] lg:max-w-[40ch] mx-auto lg:mx-0">
-                    PS Coat se uplatňuje v dopravě, ve výrobních provozech, na
-                    budovách i na strojních celcích. Používá se na kabiny,
-                    konstrukce, střechy, potrubní systémy a povrchy vystavené
-                    teplotní zátěži.
+                    {t("industry.description1")}
                   </p>
                   <p className="text-sm sm:text-md mb-6 leading-relaxed max-w-[60ch] lg:max-w-[40ch] mx-auto lg:mx-0">
-                    V prostředí s vysokou teplotou umožňuje bezpečnější práci a
-                    v některých aplikacích dokáže ovlivnit i to, jak se povrch
-                    chová v obrazu termokamer.
+                    {t("industry.description2")}
                   </p>
                   <p className="text-sm sm:text-md mb-8 leading-relaxed max-w-[60ch] lg:max-w-[40ch] mx-auto lg:mx-0">
-                    Stejný materiál, který se přirozeně začlení do různých
-                    provozů, bez ohledu na obor a podmínky. Jedna vrstva, která
-                    přináší řešení i tam, kde dřív žádné nebylo.
+                    {t("industry.description3")}
                   </p>
                   <div className="flex flex-col items-center gap-3 mb-8 justify-center sm:flex-col md:flex-col lg:flex-row lg:items-center lg:justify-start">
                     <img
@@ -258,7 +253,7 @@ export default function IndustrySection() {
                   </div>
                   <div className="flex justify-center lg:justify-start">
                     <button className="px-6 py-3 mb-8 md:mb-0 lg:mb-0 bg-gray-200 text-gray-800 rounded-sm hover:bg-gray-300 transition-colors font-medium">
-                      Vlastnosti PS Coat
+                      {t("industry.button")}
                     </button>
                   </div>
                 </div>

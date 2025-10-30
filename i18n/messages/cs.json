@@ -1,0 +1,649 @@
+{
+  "common": {
+    "scrollDown": "Scrollnout dolů",
+    "openMenu": "Otevřít menu",
+    "closeMenu": "Zavřít menu",
+    "viewMore": "Zobrazit více",
+    "hide": "Skrýt",
+    "loading": "Načítání...",
+    "error": "Chyba"
+  },
+  "nav": {
+    "vyuziti": "Využití",
+    "produkty": "Produkty",
+    "technologie": "Technologie",
+    "realizace": "Realizace",
+    "vyrobce": "Výrobce",
+    "kontakt": "Kontakt",
+    "chciKonzultaci": "Chci technickou konzultaci"
+  },
+  "hero": {
+    "title1": "Vrstva,",
+    "title2": "která mění pravidla.",
+    "subtitle": "Izoluje. Nehoří. Funguje v 1 mm."
+  },
+  "industry": {
+    "title": "Technologie, která funguje napříč segmenty",
+    "description1": "PS Coat se uplatňuje v dopravě, ve výrobních provozech, na budovách i na strojních celcích. Používá se na kabiny, konstrukce, střechy, potrubní systémy a povrchy vystavené teplotní zátěži.",
+    "description2": "V prostředí s vysokou teplotou umožňuje bezpečnější práci a v některých aplikacích dokáže ovlivnit i to, jak se povrch chová v obrazu termokamer.",
+    "description3": "Stejný materiál, který se přirozeně začlení do různých provozů, bez ohledu na obor a podmínky. Jedna vrstva, která přináší řešení i tam, kde dřív žádné nebylo.",
+    "button": "Vlastnosti PS Coat",
+    "doprava": "Doprava",
+    "stavby": "Stavby",
+    "termalniStopa": "Termální stopa",
+    "preprava": "Přeprava",
+    "potrubniSystemy": "Potrubní systémy",
+    "bioplyn": "Bioplyn",
+    "dopravaBullet1": "Stabilnější povrch bez kondenzace a koroze",
+    "dopravaBullet2": "Nižší náklady na udržení teploty",
+    "dopravaBullet3": "Bezpečnější kontakt s horkými povrchy",
+    "stavbyBullet1": "Omezení tepelných ztrát",
+    "stavbyBullet2": "Ochrana proti plísním",
+    "stavbyBullet3": "Zvládá členité / profilované fasády",
+    "termalniStopaBullet1": "Snížená termální stopa",
+    "prepravaBullet1": "Omezení kondenzace",
+    "prepravaBullet2": "Zpomalení koroze",
+    "potrubniSystemyBullet1": "Nižší povrchová teplota potrubí",
+    "potrubniSystemyBullet2": "Stabilnější teplota média uvnitř",
+    "bioplynBullet1": "Udržení teploty fermentačního procesu"
+  },
+  "features": {
+    "title": "Souhra výkonů, jeden materiál",
+    "subtitle": "V jednom kroku chráníte proti",
+    "koroze": "Korozi",
+    "tepelneZtraty": "Tepelným ztrátám",
+    "kondenzace": "Kondenzaci",
+    "pozar": "Požáru",
+    "plisne": "Plísním"
+  },
+  "references": {
+    "title": "PS Coat využívají",
+    "viewMore": "Zobrazit více",
+    "hide": "Skrýt",
+    "companies": {
+      "airLiquid": "AIR LIQUID - industrial gases",
+      "airProducts": "AIR Products - industrial gases",
+      "uwc": "UWC, Thailand - ecological production of elektricity",
+      "greenGas": "GREEN GAS - ecological production of elektricity",
+      "mavir": "MAVIR, Almásfüzitő, Hungary - power plants, heating plants",
+      "weglokoks": "WEGLOKOKS, PL - power plants, heating plants",
+      "zem": "ZEM, PL - power plants, heating plants",
+      "ecMikolaj": "EC MIKOLAJ, PL - power plants, heating plants",
+      "azotyGroup": "AZOTY GROUP - chemical industry",
+      "synthos": "SYNTHOS - chemical industry",
+      "kghm": "KGHM (Polish copper) - copper mining",
+      "kosownia": "KOSOWNIA CZENSTOCHOWA, (ZARMEN G.A.) - production of coal coke",
+      "plynex": "PLYNEX, (VAE Controls) - ecological biogas plant, production of elektricity",
+      "tempestHold": "TEMPEST HOLD, SK - industry, construction industry",
+      "vyvojMartin": "VÝVOJ MARTIN, (CZECHOSLOVAK GROUP AG) - military industry"
+    }
+  },
+  "certification": {
+    "heading1": "Certifikace a ověřená kvalita",
+    "text1": "PS Coat je vyvíjen a testován od roku 2013 a splňuje požadavky relevantních certifikací pro průmyslové a stavební aplikace. Výroba probíhá v certifikovaném závodě v Polsku nedaleko Krakova, kde je zajištěna kontrola kvality a dohled nad výrobním procesem.",
+    "heading2": "Švýcarský původ. Mezinárodní dostupnost. Lokální technická podpora.",
+    "text2": "PS Coat vychází z vývoje společnosti založené ve Švýcarsku v roce 2007. Od té doby rozšířila své působení z Evropy do Severní a Jižní Ameriky i na Blízký východ. Materiál je dnes dostupný pro průmyslové, stavební i speciální projekty s lokální technickou podporou.",
+    "heading3": "Nepřetržitý vývoj",
+    "text3": "PS Coat je stabilní a ověřené řešení, které dál rozvíjíme a přizpůsobujeme různým provozním podmínkám. Spolupracujeme s výzkumníky a odborníky na povrchové a průmyslové technologie, abychom materiál průběžně vylepšovali a rozšiřovali jeho možnosti použití v praxi."
+  },
+  "fullScreenVideo": {
+    "title": "RAL jako standard"
+  },
+  "squareDynamic": {
+    "title": "Potvrzeno provozem",
+    "tyreLabel": "Výroba pneumatik",
+    "tyreSublabel": "Continental",
+    "tyreTitle": "Úspora energie při výrobě traktorových pneumatik",
+    "tyreText": "Aplikace PS Coat na formy pro výrobu traktorových pneumatik snížila spotřebu elektrické energie potřebné pro ohřev procesu přibližně o 50 %, podle provedeného měření v provozu.",
+    "siloLabel": "Izolace pecí a chladících věží",
+    "siloSublabel": "Industry",
+    "siloTitle": "Bezpečnější provoz a nižší teplota v hale",
+    "siloText": "Aplikace PS Coat na povrchy pecí omezila přenos tepla do okolního prostředí a snížila teplotu v hale. Zároveň došlo ke zvýšení bezpečnosti práce díky nižší povrchové teplotě zařízení a omezení rizika popálení.",
+    "facadeLabel": "Fasáda historického objektu",
+    "facadeSublabel": "Kostel a fara",
+    "facadeTitle": "Zateplení členité historické fasády",
+    "facadeText": "Na objektu kostela byla použita tenká vrstva PS Coat, která umožnila zateplení členité historické fasády bez změny jejího vzhledu. Došlo ke snížení tepelných ztrát a energií na vytápění přibližně o 40 %. Povrch zároveň získal antibakteriální charakter a protipožární ochranu.",
+    "biogasLabel": "Bioplynová Stanice",
+    "biogasSublabel": "PLYNEX ",
+    "biogasTitle": "Stabilní teplota fermentace i v mrazech",
+    "biogasText": "V dofermentoru klesala v zimním období teplota média na +15 °C, což způsobovalo nedostatečnou produkci plynu a výpadky kogeneračních jednotek. Po aplikaci 1,5 mm vrstvy PS Coat se teplota stabilně drží kolem +35 °C, bez ztrát výkonu a s nižší spotřebou glycerinu.",
+    "previous": "Předchozí",
+    "next": "Další"
+  },
+  "footer": {
+    "description": "Tenkovrstvé termoizolační nátěry s vysokým obsahem mikrosfér. Izolují, snižují kondenzaci a korozi a zvyšují bezpečnost provozu napříč obory.",
+    "navigation": "Navigace",
+    "coJepscoat": "Co je PScoat?",
+    "reference": "Reference",
+    "onas": "O nás",
+    "contact": "Kontakt",
+    "contactTitle": "Kontakt",
+    "address": "Hlubinská 1378/36, 702 00 Ostrava",
+    "copyright": "© {year} PScoat",
+    "requestOffer": "Požádat o nabídku",
+    "certification": "Certifikace",
+    "manufacturer": "Výrobce: RIVER POWER s.r.o., Hlubinská 1378/36, 702 00 Ostrava"
+  },
+  "products": {
+    "title": "Naše produkty",
+    "subtitle": "Kompletní portfolio izolačních systémů PScoat pro různé oblasti použití",
+    "search": "Hledat produkty...",
+    "all": "Všechny",
+    "detailProduct": "Detail produktu",
+    "helpTitle": "Potřebujete pomoct s výběrem?",
+    "helpText": "Kontaktujte nás a společně najdeme ideální řešení pro vaši aplikaci",
+    "contactUs": "Kontaktovat nás",
+    "categories": {
+      "stavebnictvi": "Stavebnictví",
+      "prumysl": "Průmysl",
+      "verejnySektor": "Veřejný sektor a zdravotnictví"
+    }
+  },
+  "productDetail": {
+    "back": "Zpět na produkty",
+    "notFound": "Produkt nenalezen",
+    "gallery": "Galerie",
+    "characteristics": "Charakteristiky",
+    "applications": "Aplikace",
+    "downloads": "Ke stažení",
+    "pdf": "PDF",
+    "requestOffer": "Požádat o nabídku",
+    "contactSales": "Kontaktovat obchodní oddělení",
+    "productDescription": "Popis produktu",
+    "usage": "Použití",
+    "keyFeatures": "Hlavní vlastnosti",
+    "requestConsultation": "Požádat o konzultaci",
+    "relatedProducts": "Podobné produkty",
+    "close": "Zavřít",
+    "previousImage": "Předchozí obrázek",
+    "nextImage": "Další obrázek",
+    "colorVariants": "Barevné varianty",
+    "colorVariantsDescription": "Tento produkt je možné objednat i ve verzi COLOR. Možnost aplikace různých barevných odstínů ve škále RAL."
+  },
+  "productDetails": {
+    "psc-250t-ecb-basic-b": {
+      "typ_produktu": "Základní nátěr",
+      "description": "ECB BASIC B je vysoce penetračně adhezní, energeticky úsporný a flexibilní základní nátěr. Je netoxický, přátelský pro životní prostředí a vytváří membránu. Po nanesení vytvoří příjemný matný sádrový povrch.",
+      "pouziti": "Jako základní penetračně adhezní nátěr pro nanášení hlavní vrstvy BUILD, ECI INTERIOR, BS INSIDE, ECO OUTSIDE, ECF FLOOR, BS FLOOR, ECE ELASTIC",
+      "vlastnosti": [
+        "Vysoce penetračně adhezní",
+        "Energeticky úsporný",
+        "Flexibilní",
+        "Netoxický",
+        "Přátelský pro životní prostředí",
+        "Vytváří membránu",
+        "Po nanesení vytvoří příjemný matný sádrový povrch"
+      ]
+    },
+    "psc-250t-eci-interior": {
+      "typ_produktu": "Dekorativní ochranný nátěr",
+      "description": "ECI INTERIOR je vysoce účinný izolačně reflexní dekorativní ochranný nátěr pro použití na vnitřní stěny obytných a kancelářských budov. Je odolný vůči nečistotám a odolává plísním. Je navržený jako vnitřní izolace pro zvýšení efektu odrazivosti energie od izolovaného povrchu směrem zpět do místnosti.",
+      "pouziti": "Vnitřní stěny obytných a kancelářských budov",
+      "vlastnosti": [
+        "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+        "Odolný vůči nečistotám",
+        "Odolává plísním",
+        "Navržený jako vnitřní izolace",
+        "Vodou ředitelná barva na bázi akrylátové pryskyřice",
+        "Vynikající izolační vlastnosti",
+        "Netoxický a šetrný k životnímu prostředí",
+        "Vytváří membránu, která pokrývá mikrotrhliny",
+        "Vhodný pro klimatické podmínky s vysokými energetickými náklady",
+        "Vynikající odolnost proti kondenzaci",
+        "Možnost barevných variant RAL"
+      ]
+    },
+    "psc-250t-build": {
+      "typ_produktu": "Nátěr na izolaci venkovních stavebních konstrukcí",
+      "description": "PSC 250T BUILD je vysoce výkonný, energeticky úsporný a flexibilní nátěr na izolaci venkovních stavebních konstrukcí. Je netoxický, přátelský pro životní prostředí a vyplňující mikrotrhliny. Jedná se o paropropustný izolační nátěr, který zabraňuje vzniku plísní.",
+      "pouziti": "Vnější stěny průmyslových a obytných budov",
+      "vlastnosti": [
+        "Vysoce výkonný",
+        "Energeticky úsporný",
+        "Flexibilní",
+        "Netoxický",
+        "Přátelský pro životní prostředí",
+        "Vyplňující mikrotrhliny",
+        "Paropropustný izolační nátěr",
+        "Zabraňuje vzniku plísní",
+        "Funguje jako konduktivní izolačně reflexní vrstva",
+        "Účinná ochrana proti pronikání mrazu nebo tepla",
+        "Vysoká přilnavost pro všechny známé stavební materiály",
+        "Ekologický a zdravotně nezávadný"
+      ]
+    },
+    "psc-250t-eco-outside": {
+      "typ_produktu": "Dekorativní ochranný nátěr",
+      "description": "ECO OUTSIDE je vysoce účinný izolačně reflexní dekorativní ochranný nátěr pro použití na fasádách obytných, průmyslových budov a jako nátěr střešních krytin z betonu, keramických materiálů nebo eternitu. Odolává atmosférickým vlivům, kyselým dešťům a ostatním standardním povětrnostním podmínkám.",
+      "pouziti": "Fasády obytných a průmyslových budov, nátěr střešních krytin z betonu, keramických materiálů nebo eternitu",
+      "vlastnosti": [
+        "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+        "Odolává atmosférickým vlivům",
+        "Otěruvzdorný",
+        "Paropropustný",
+        "Zvýšená odolnost proti mechanickému poškození",
+        "Možnost barevných variant RAL"
+      ]
+    },
+    "psc-250t-ecf-floor": {
+      "typ_produktu": "Dekorativní ochranný nátěr pro podlahy",
+      "description": "ECF FLOOR je vysoce účinný izolačně reflexní dekorativní ochranný nátěr pro použití na podlahy administrativních, průmyslových (lehký průmysl) a obytných podlah. Je plně omyvatelný a odolný vůči nečistotám a chemikáliím, odolává běžnému zatížení a provozu.",
+      "pouziti": "Podlahy administrativních, průmyslových (lehký průmysl) a obytných podlah",
+      "vlastnosti": [
+        "Vysoce účinný izolačně reflexní nátěr",
+        "Plně omyvatelný",
+        "Odolný vůči nečistotám a chemikáliím",
+        "Odolává běžnému zatížení",
+        "Účinná ochrana proti pronikání mrazu nebo tepla",
+        "Ekologický a zdravotně nezávadný",
+        "Vynikající izolační vlastnosti",
+        "Vhodný pro klimatické podmínky s vysokými energetickými náklady",
+        "Vynikající odolnost proti kondenzaci",
+        "Možnost barevných variant RAL"
+      ]
+    },
+    "psc-250t-ece-elastic": {
+      "typ_produktu": "Dekorativní ochranný nátěr",
+      "description": "ECE ELASTIC je vysoce účinný izolačně reflexní dekorativní ochranný nátěr pro použití na střešní krytiny nebo jiné stavební a konstrukční prvky z PVC, PC, PS, asfaltových pásů (IPA), plastických hmot, polykarbonátu, tvrzené PVC. Odolává atmosférickým vlivům a kyselým dešťům.",
+      "pouziti": "Střešní krytiny nebo jiné stavební a konstrukční prvky z PVC, PC, PS, asfaltových pásů",
+      "vlastnosti": [
+        "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+        "Odolává atmosférickým vlivům",
+        "Elastomerické vlastnosti",
+        "Otěruvzdorný",
+        "Paropropustný",
+        "Zvýšená odolnost proti mechanickému poškození",
+        "Možnost barevných variant RAL"
+      ]
+    },
+    "psc-250t-ecr-roof": {
+      "typ_produktu": "Vrchní reflexní nátěr",
+      "description": "ECR ROOF je flexibilní vrchní reflexní nátěr střešní ocelové krytiny a prvků střešní konstrukce se sklonem více jak 3% a jako krycí vrchní nátěr pro HP, HP+. Je netoxický a šetrný k životnímu prostředí.",
+      "pouziti": "Střešní ocelové krytiny a prvky střešní konstrukce se sklonem více jak 3%",
+      "vlastnosti": [
+        "Flexibilní vrchní reflexní nátěr",
+        "Netoxický",
+        "Šetrný k životnímu prostředí",
+        "Plně omyvatelný",
+        "Odolný vůči nečistotám a chemikáliím",
+        "Výborná ochranná a vizuální funkce",
+        "Vysoce odolný proti atmosférickým vlivům",
+        "Vynikající odolnost proti kondenzaci",
+        "Vynikající odolnost proti chemickému prostředí",
+        "Možnost barevných variant RAL"
+      ]
+    },
+    "psc-250t-ecb-basic-a": {
+      "typ_produktu": "Základní nátěr",
+      "description": "ECB BASIC A je základní nátěr, který má vynikající odolnost proti korozi a kondenzaci vody. Aplikace je vhodná pro všechny povrchy z oceli, hliníku, nerezu, mědi, atd. Lze použít i přímo na zkorodovaný, ale stabilní povrch.",
+      "pouziti": "Jako základní nátěr pro nanášení hlavní vrstvy PSC HP, HP+, EC, EC+, ECR ROOF, HP 600.",
+      "vlastnosti": [
+        "Vynikající odolnost proti korozi",
+        "Vynikající odolnost proti kondenzaci vody",
+        "Vhodný pro ocel, hliník, nerez, měď",
+        "Lze použít přímo na zkorodovaný (stabilní) povrch"
+      ]
+    },
+    "psc-250t-hp": {
+      "typ_produktu": "Izolační a těsnící nátěr",
+      "description": "HP je vysoce účinný, energeticky úsporný a flexibilní nátěr pro izolaci a těsnění. Jedná se o nátěr s nejvyšším obsahem mikrosfér. Je netoxický, šetrný k životnímu prostředí a tvoří jednotnou membránu, která pokrývá mikrotrhliny. Má vynikající odolnost proti vzniku kondenzátu, chemickému prostředí (C4 a C5) a povětrnostním vlivům.",
+      "pouziti": "Všechny ocelové konstrukce. Izolace potrubí teplé a studené vody, klimatizačních systémů, střech, opláštění budov a hal, ploch, kde je třeba snížit povrchovou teplotu (kotle, parovody, aj.), zásobníky chemických produktů, nádrže na kapalný dusík, průmyslové mrazící přístroje, kontejnery, výměníky tepla, bojlery, rozvody klimatizace.",
+      "vlastnosti": [
+        "Vysoce účinný",
+        "Energeticky úsporný",
+        "Flexibilní",
+        "Nejvyšší obsah mikrosfér",
+        "Netoxický, šetrný k životnímu prostředí",
+        "Tvoří jednotnou membránu, pokrývá mikrotrhliny",
+        "Vynikající odolnost proti kondenzátu",
+        "Odolnost proti chemickému prostředí (C4 a C5)",
+        "Vysoká přilnavost ke kovům",
+        "Ekologický a zdravotně nezávadný"
+      ]
+    },
+    "psc-250t-hp-plus": {
+      "typ_produktu": "Izolační a těsnící nátěr s antikorozními složkami",
+      "description": "HP+ je vysoce účinný, energeticky úsporný a flexibilní nátěr pro izolaci a těsnění s nejvyšším obsahem mikrosfér. Je netoxický, šetrný k životnímu prostředí a tvoří jednotnou membránu, která pokrývá mikrotrhliny. Obsahuje antikorozní složky, a proto může být použit i bez základního nátěru ECB BASIC A. Má vynikající odolnost proti vzniku kondenzátu, chemickému prostředí C4 a C5 a povětrnostním vlivům.",
+      "pouziti": "Všechny ocelové konstrukce. Izolace potrubí teplé a studené vody, klimatizačních systémů, střech, opláštění budov a hal, ploch, kde je třeba snížit povrchovou teplotu (kotle, parovody, aj.), zásobníky chemických produktů, nádrže na kapalný dusík, průmyslové mrazící přístroje, kontejnery, výměníky tepla, bojlery, rozvody klimatizace.",
+      "vlastnosti": [
+        "Vysoce účinný",
+        "Energeticky úsporný",
+        "Flexibilní",
+        "Nejvyšší obsah mikrosfér",
+        "Netoxický, šetrný k životnímu prostředí",
+        "Tvoří jednotnou membránu, pokrývá mikrotrhliny",
+        "Obsahuje antikorozní složky (lze bez základu)",
+        "Vynikající odolnost proti kondenzátu",
+        "Odolnost proti chemickému prostředí (C4 a C5)",
+        "Vysoká přilnavost ke kovům",
+        "Ekologický a zdravotně nezávadný"
+      ]
+    },
+    "psc-250t-ec": {
+      "typ_produktu": "Vrchní krycí nátěr",
+      "description": "PSC 250T EC je vrchní krycí nátěr pro PSC 250T HP ve venkovním nebo vnitřním prostředí. Je netoxický, šetrný k životnímu prostředí. Je plně omyvatelný a odolný vůči nečistotám a chemikáliím. Nátěr s výbornou ochrannou, reflexní a vizuální funkcí. Je vysoce odolný proti všem atmosférickým vlivům.",
+      "pouziti": "Venkovní nebo vnitřní stěny konstrukcí jako vrchní nátěr pro PSC 250T HP.",
+      "vlastnosti": [
+        "Vrchní krycí nátěr pro PSC 250T HP",
+        "Netoxický, šetrný k životnímu prostředí",
+        "Plně omyvatelný",
+        "Odolný vůči nečistotám a chemikáliím",
+        "Výborná ochranná, reflexní a vizuální funkce",
+        "Vysoce odolný proti atmosférickým vlivům",
+        "Vynikající odolnost proti kondenzaci",
+        "Vynikající odolnost proti chemickému prostředí (C4 a C5)",
+        "Vysoká přilnavost ke kovům",
+        "Ekologický a zdravotně nezávadný",
+        "Možnost barevných variant RAL (verze COLOR)"
+      ]
+    },
+    "psc-250t-ec-plus": {
+      "typ_produktu": "Vrchní krycí reflexní nátěr s antikorozními složkami",
+      "description": "PSC 250T EC+ je vrchní krycí nátěr pro PSC 250T HP pro venkovním prostředí a zároveň může být použit jako vrchní krycí reflexní nátěr. Je netoxický, šetrný k životnímu prostředí. Nátěr je plně omyvatelný, odolný vůči nečistotám a chemikáliím. Má výbornou ochrannou, reflexní a vizuální funkcí. Obsahuje antikorozní složky a může být použit i bez základního nátěru ECB BASIC A.",
+      "pouziti": "Vnější stěny konstrukcí jako vrchní nátěr pro PSC 250T HP. Lze použít jako samostatný vrchní krycí reflexní nátěr.",
+      "vlastnosti": [
+        "Vrchní krycí reflexní nátěr pro venkovní prostředí",
+        "Netoxický, šetrný k životnímu prostředí",
+        "Plně omyvatelný",
+        "Odolný vůči nečistotám a chemikáliím",
+        "Výborná ochranná, reflexní a vizuální funkce",
+        "Vysoce odolný proti atmosférickým vlivům",
+        "Obsahuje antikorozní složky (lze bez základu)",
+        "Vynikající odolnost proti chemickému prostředí (C4 a C5)",
+        "Vysoká přilnavost ke kovům",
+        "Ekologický a zdravotně nezávadný",
+        "Možnost barevných variant RAL (verze COLOR)"
+      ]
+    },
+    "psc-250t-ece-elastic-prumysl": {
+      "typ_produktu": "Dekorativní ochranný nátěr (Elastomer)",
+      "description": "ECE ELASTIC je vysoce účinný izolačně reflexní dekorativní ochranný nátěr. Díky svým elastomerním vlastnostem poskytuje vynikající ochranné a estetické vlastnosti. Odolává atmosférickým vlivům, kyselým dešťům a ostatním standardním povětrnostním podmínkám. Materiál neumožní prostup atmosférických vlivů.",
+      "pouziti": "Střešní krytiny nebo jiné stavební a konstrukční prvky z PVC, PC, PS, asfaltových pásů (IPA), plastických hmot, polykarbonátu, tvrzené PVC, apod.",
+      "vlastnosti": [
+        "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+        "Odolává atmosférickým vlivům a kyselým dešťům",
+        "Elastomerní vlastnosti",
+        "Zvýšená odolnost proti mechanickému poškození",
+        "Otěruvzdorný a paropropustný",
+        "Poskytuje vynikající ochranné a estetické vlastnosti",
+        "Možnost barevných variant RAL (verze COLOR)"
+      ]
+    },
+    "psc-250t-ecr-roof-prumysl": {
+      "typ_produktu": "Vrchní reflexní nátěr pro střechy",
+      "description": "ECR ROOF je flexibilní vrchní reflexní nátěr střešní ocelové krytiny a prvků střešní konstrukce se sklonem více jak 3%. Používá se i jako krycí vrchní nátěr pro HP, HP+. Je netoxický, šetrný k životnímu prostředí. Nátěr je plně omyvatelný a odolný vůči nečistotám a chemikáliím.",
+      "pouziti": "Střešní ocelové krytiny a prvky střešní konstrukce se sklonem více jak 3%. Jako krycí vrchní nátěr pro HP, HP+.",
+      "vlastnosti": [
+        "Flexibilní vrchní reflexní nátěr",
+        "Netoxický, šetrný k životnímu prostředí",
+        "Plně omyvatelný",
+        "Odolný vůči nečistotám a chemikáliím",
+        "Výborná ochranná a vizuální funkce",
+        "Vysoce odolný proti atmosférickým vlivům",
+        "Vynikající odolnost proti kondenzaci",
+        "Vynikající odolnost proti chemickému prostředí (C4 a C5)",
+        "Možnost barevných variant RAL (verze COLOR)"
+      ]
+    },
+    "psc-250t-bs-floor": {
+      "typ_produktu": "Dekorativní ochranný nátěr pro podlahy",
+      "description": "BS FLOOR je vysoce účinný izolačně reflexní dekorativní ochranný nátěr pro použití na podlahy veřejných budov, nemocnic, domovů pro seniory, školních zařízení. Je plně omyvatelný, odolný vůči nečistotám, chemikáliím a je bakteriostatický. Odolává běžnému zatížení v provozu. Je velmi účinný při izolaci podlah a poskytuje účinnou ochranu proti pronikání mrazu nebo tepla. Je ekologický a zdravotně nezávadný.",
+      "pouziti": "Podlahy veřejných budov, nemocnic, domovů pro seniory, školních zařízení",
+      "vlastnosti": [
+        "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+        "Plně omyvatelný",
+        "Odolný vůči nečistotám a chemikáliím",
+        "Bakteriostatický",
+        "Odolává běžnému zatížení v provozu",
+        "Účinná ochrana proti pronikání mrazu nebo tepla",
+        "Ekologický a zdravotně nezávadný",
+        "Vodou ředitelná barva na bázi akrylátové pryskyřice",
+        "Vynikající izolační vlastnosti",
+        "Netoxický, šetrný k životnímu prostředí",
+        "Vytváří membránu, která pokrývá mikrotrhliny",
+        "Vhodný pro použití v klimatických podmínkách s vysokými energetickými náklady",
+        "Vynikající odolnost proti kondenzaci",
+        "Možnost aplikace v barevných odstínech RAL"
+      ]
+    },
+    "psc-250t-bs-inside": {
+      "typ_produktu": "Dekorativní ochranný nátěr pro vnitřní stěny",
+      "description": "BS INSIDE je vysoce účinný izolačně reflexní dekorativní ochranný nátěr pro použití na vnitřní stěny veřejných budov, nemocnic, domovů pro seniory, školních zařízení. Je odolný vůči nečistotám, plísním a je rovněž bakteriostatický. Je navržen jako vnitřní izolace pro zvýšení efektu odrazivosti energie od izolovaného povrchu zpět do místnosti.",
+      "pouziti": "Vnitřní stěny veřejných budov, nemocnic, domovů pro seniory, školních zařízení",
+      "vlastnosti": [
+        "Vysoce účinný izolačně reflexní dekorativní ochranný nátěr",
+        "Odolný vůči nečistotám",
+        "Odolný vůči plísním",
+        "Bakteriostatický",
+        "Navržen jako vnitřní izolace pro odrazivost energie",
+        "Vodou ředitelná barva na bázi akrylátové pryskyřice",
+        "Vynikající izolační vlastnosti",
+        "Netoxický, šetrný k životnímu prostředí",
+        "Vytváří membránu, která pokrývá mikrotrhliny",
+        "Vhodný pro použití v klimatických podmínkách s vysokými energetickými náklady",
+        "Vynikající odolnost proti kondenzaci",
+        "Možnost aplikace v barevných odstínech RAL"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Máte dotaz nebo zájem o naše produkty? Rádi vám zodpovíme všechny otázky a pomůžeme najít nejvhodnější řešení pro váš projekt.",
+    "writeUs": "Napište nám",
+    "firstName": "Jméno",
+    "lastName": "Příjmení",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "message": "Zpráva",
+    "sendMessage": "Odeslat zprávu",
+    "contactInfo": "Kontaktní informace",
+    "addressValue": "Praha, Česká republika",
+    "quickOfferTitle": "Potřebujete rychlou nabídku?",
+    "quickOfferText": "Využijte náš specializovaný formulář pro žádost o nabídku a získejte individuální cenovou kalkulaci.",
+    "requestOffer": "Požádat o nabídku",
+    "branchesTitle": "Naše pobočky po celém světě",
+    "branchesSubtitle": "PScoat má zastoupení na všech kontinentech. Najděte svou nejbližší pobočku.",
+    "closeDetail": "Zavřít detail",
+    "office": "pobočka",
+    "offices": "pobočky",
+    "placeholders": {
+      "message": "Vaše zpráva..."
+    }
+  },
+  "requestOffer": {
+    "title": "Požádat o technickou konzultaci",
+    "subtitle1": "Kontaktujte nás pro individuální nabídku a konzultaci",
+    "subtitle2": "Vyplňte formulář a my vám připravíme individuální nabídku na míru vašemu projektu. Těšíme se na spolupráci!",
+    "contactDetails": "Kontaktní údaje",
+    "fullName": "Celé jméno",
+    "company": "Společnost",
+    "object": "Objekt",
+    "selectVariants": "Vyberte prosím varianty",
+    "whatProblems": "Jaké řešíte problémy?",
+    "message": "Zpráva",
+    "yourMessage": "Vaše zpráva",
+    "send": "Odeslat žádost",
+    "required": "*",
+    "placeholders": {
+      "object": "Popište váš projekt a požadavky..."
+    },
+    "variants": {
+      "tezkyPrumysl": "Těžký průmysl",
+      "prumysl": "Průmysl",
+      "potravinarsky": "Potravinářský průmysl",
+      "vyroba": "Výroba",
+      "komercniBudovy": "Komerční budovy",
+      "stavebnictvi": "Stavebnictví",
+      "klimatizace": "Klimatizace",
+      "jine": "Jiné"
+    },
+    "problems": {
+      "kondenzace": "Kondenzace",
+      "koroze": "Koroze",
+      "plisne": "Plísně",
+      "tepelneZtraty": "Tepelné ztráty/nutnost chlazení",
+      "izolaceDomu": "Izolace domu",
+      "bezpecnost": "Bezpečnost provozu",
+      "zefektivneni": "Zefektivnění provozu"
+    },
+    "errors": {
+      "selectVariant": "Prosím vyberte alespoň jednu variantu.",
+      "selectProblem": "Prosím vyberte alespoň jeden problém, který řešíte."
+    }
+  },
+  "about": {
+    "title": "O společnosti",
+    "subtitle": "Od roku 2007 vyvíjíme inovativní termoizolační technologie",
+    "milestones": "Důležité milníky",
+    "milestone2007": "Vznik Alpha Construction AG ve Švýcarsku",
+    "milestone2009": "Expanze na trhy EU",
+    "milestone2011": "Přesun do Zug a akvizice RIVER POWER",
+    "milestone2013": "Začátek vývoje produktu PScoat",
+    "milestone2023": "Transformace na ALPHA Construction SE",
+    "production": "Výroba",
+    "productionInPoland": "v Polsku",
+    "productionText": "Výrobní závod produktu PScoat je aktuálně v Polsku ve Woli Batorske nedaleko Krakova",
+    "certifiedProducts": "Certifikované produkty",
+    "awards": "Ocenění",
+    "mayorCup": "Pohár starosty města",
+    "mayorCupLocation": "Bielska-Biała",
+    "mayorCupDescription": "Za nejlepší inovativní výrobek stavebního veletrhu roku 2020",
+    "bronzePillar": "Bronzový stavební pilíř",
+    "bronzePillarLocation": "Polsko 2020",
+    "bronzePillarDescription": "Za nejlepší inovativní produkt v Polsku za rok 2020",
+    "testimonials": "Doporučení",
+    "petrKouril": "Petr Kouřil",
+    "petrKourilTitle": "Mistr České Republiky v letecké akrobacii",
+    "petrKourilText": "doporučuje výrobky PScoat",
+    "lomzaVive": "ŁOMŻA VIVE KIELCE",
+    "lomzaViveTitle": "(2× mistr UEFA a 18× mistr Polska v házené)",
+    "lomzaViveText": "doporučuje výrobky PScoat"
+  },
+  "technology": {
+    "title": "Technologie",
+    "subtitle": "Unikátní moderní termoizolační materiál",
+    "microspheres": {
+      "title": "Mikrosféry:",
+      "subtitle": "unikátní moderní termo izolační materiál",
+      "point1": "založený na bázi nanotechnologie a uzavřených mikrosfér",
+      "point2": "plnohodnotné nahrazení polystyrenu a minerální vaty",
+      "point3": "minimalizuje přenosy tepla mezi povrchy",
+      "point4": "se sílou aplikace převážně 1-3 mm",
+      "point5": "šetří místo a hmotnost, možno aplikovat kdekoliv",
+      "point6": "není nutnost mít speciální aplikační tým – aplikace sprejem nebo nátěrem",
+      "point7": "kontrola případných závad zjistitelná pouhým okem, možnost rychlých oprav"
+    },
+    "insulation": {
+      "title": "Izolace vůči vnějším teplotám",
+      "withoutPsc": "BEZ APLIKACE PSC: tepelný tok venku / vevnitř",
+      "withPsc": "S APLIKACÍ PSC: tepelný tok venku / vevnitř",
+      "coldTitle": "Izolace vůči chladu",
+      "coldWithoutPsc": "BEZ APLIKACE PSC : tepelný tok venku / vevnitř",
+      "coldWithPsc": "S APLIKACÍ PSC: tepelný tok venku / vevnitř"
+    },
+    "suitableAreas": {
+      "title": "Plochy vhodné k pokrytí PScoat:",
+      "subtitle": "Interiéry i exteriéry budov",
+      "items": {
+        "roofs": "Střechy",
+        "ceilings": "Stropy",
+        "walls": "Stěny",
+        "basements": "Podzemní patra/suterény",
+        "piping": "Rozvody/potrubí",
+        "metalParts": "Kovové součásti",
+        "railings": "Zábradlí",
+        "facades": "Fasády",
+        "other": "a další"
+      },
+      "uniqueProperties": "Unikátní vlastnosti PScoat jsou dány především kombinací tepelné vodivosti + TSR až >92% odrazu veškerého záření."
+    },
+    "comparison": {
+      "title": "Porovnání klasické izolace s PScoat:",
+      "table": {
+        "property": "Vlastnosti",
+        "pscoat": "PScoat",
+        "traditional": "Běžné izolační materiály",
+        "thermal": {
+          "property": "Termo izolační vlastnosti",
+          "pscoat": "Stabilní vůči změně teplot a v čase bez ohledu na vlhkost vzduchu. Výkon termoizolace PSC je dlouhodobě stabilní.",
+          "traditional": "Materiál rychle degraduje v souvislosti s vlhkým ovzduším a snižuje tak následně živostnost zařízení pod izolací a jeho termoizolační výkon."
+        },
+        "waterResistance": {
+          "property": "Voděodolnost",
+          "pscoat": "PSC 250T je  hydroizolační – doloženo certifikátem",
+          "traditional": "Tento materiál vstřebává vlhkost z okolí a neumí tedy řešit např. problém koroze díky  vznikajícímu kondenzátu"
+        },
+        "corrosion": {
+          "property": "Ochrana před korozí",
+          "pscoat": "PSC 250T má anti-korozní vlastnosti – doloženo certifikátem",
+          "traditional": "Neumí řešit problém s korozí"
+        },
+        "condensation": {
+          "property": "Kondenzace - srážlivost vody",
+          "pscoat": "PSC 250T umí vyřešit problém s kondenzací",
+          "traditional": "Neumí řešit problém kondenzace a když, tak ve velmi hrubých vrstvách."
+        },
+        "uvStable": {
+          "property": "UV stabilní",
+          "pscoat": "PSC 250T je díky vlastnosti TSR /Total Solar Reflection - s odrazivostí 92% veškerého záření v celém svém spektru/ UV stabilní. Sluneční záření 97%.",
+          "traditional": "Je nutná dodatečná ochrana"
+        },
+        "weight": {
+          "property": "Náročnost na váhové zatížení a na plochu zařízení",
+          "pscoat": "Vzhledem k tenké vrstvě aplikace převážně mezi 1-3 mm není povrch aplikací PSC váhově nijak zásadně zatížen a díky této tenké vrstvě nevyžaduje ani velký prostor okolo aplikovaného zařízení.",
+          "traditional": "Vrstva této izolace zabere mnohem větší plochu a při nasáknutí vlhkosti výrazně zvýší svoji váhu a zatíží tak zařízení."
+        },
+        "application": {
+          "property": "Způsob aplikace",
+          "pscoat": "Jednoduchá a rychlá aplikace PSC nástřikem, nebo válečkem. V případě menších ploch štětcem.",
+          "traditional": "Složitý proces, který vyžaduje použití několika dílčích složek, aby izolace byla kompletní."
+        },
+        "repairs": {
+          "property": "Opravy",
+          "pscoat": "Jednoduchá identifikace závad. Díky tenké vrstvě PSC jsou opravy velmi snadné. V případě nutnosti opravy se daný bod očistí kartáčem. PSC se odstraní a po opravě se znovu lokálně naaplikuje,",
+          "traditional": "Těžko identifikovatelné opravy. Na povrchu izolace nejsou vidět žádné stopy poškození, ale pod izolací může být vážný problém s kondenzací, škůdci a plísněmi. Opravy jsou náročné a vyžadují složitý proces sundání celé izolace a následnou ekologickou likvidaci materiálu ."
+        },
+        "lifespan": {
+          "property": "Životnost",
+          "pscoat": "PSC má 25-30 let certifikace na životnost materiálu",
+          "traditional": "Krátká životnost díky problému s vstřebáváním vlhkosti z okolního prostředí, nebo degradace na velmi horkým povrchu."
+        },
+        "resistance": {
+          "property": "Odolnost proti hmyzu, hlodavcům a plísním",
+          "pscoat": "Díky tenké vrstvě aplikace PSC a dokonalé adhezi k aplikovanému povrchu, zabraňuje tvorbě plísní, a pohybu hmyzu pod izolací",
+          "traditional": "Pod klasickou izolací se může držet hmyz a hlodavci., mohou se snadno vytvářet plísně."
+        },
+        "ecology": {
+          "property": "Ekologie",
+          "pscoat": "PSC je ekologický produkt, který je certifikován z hlediska hygieny a je možné jej použít i v potravinářském průmyslu.",
+          "traditional": "Složitě ekologicky zlikvidovatelné, finančně náročné. Může mít nepříznivý vliv na zdraví člověka."
+        }
+      }
+    },
+    "specificProperties": {
+      "title": "Specifické vlastnosti PScoat",
+      "left": {
+        "item1": "schopnost odolat teplotám od -200 do +200 °C",
+        "item2": "může být aplikováno přímo na horké povrchy do +150 °C",
+        "item3": "možno aplikovat vně i zevnitř",
+        "item4": "otěruvzdorné",
+        "item5": "velmi dobrá přilnavost",
+        "item6": "odraz veškerého záření v celém svém spektru (TSR) 92 %",
+        "item7": "plnohodnotná náhrada za polystyren, minerální vatu a jiné izolační materiály",
+        "item8": "nanotechnologie na bázi mikrosfér",
+        "item9": "možnost aplikace různých barevných odstínů"
+      },
+      "right": {
+        "item1": "stálost barvy",
+        "item2": "elastický",
+        "item3": "odolává kyselinám a dalším chemickým sloučeninám (prostředí C4, C5)",
+        "item4": "ochrana před plísní",
+        "item5": "ochrana před korozí",
+        "item6": "ochrana před vznikem kondenzátu",
+        "item7": "UV rezistentní",
+        "item8": "jednoduchá aplikace tvarově složitých povrchů (např. ventily, kohouty...)",
+        "item9": "prevence BOZPO"
+      }
+    }
+  }
+}

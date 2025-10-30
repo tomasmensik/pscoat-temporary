@@ -1,30 +1,34 @@
 "use client";
 
+import { useI18n } from "@/lib/contexts/I18nContext";
+
 export default function FeaturesSection() {
+  const { t } = useI18n();
+  
   const features = {
     koroze: {
       icon: "/home/ikony-vlastnosti/koroze.png",
-      label: "Korozi",
+      label: t("features.koroze"),
       borderColor: "from-orange-500 to-orange-700",
     },
     tepelneZtraty: {
       icon: "/home/ikony-vlastnosti/tepelne-ztraty.png",
-      label: "Tepelným ztrátám",
+      label: t("features.tepelneZtraty"),
       borderColor: "from-blue-400 to-red-500",
     },
     kondenzace: {
       icon: "/home/ikony-vlastnosti/kondenzace.png",
-      label: "Kondenzaci",
+      label: t("features.kondenzace"),
       borderColor: "from-blue-500 to-blue-700",
     },
     pozar: {
       icon: "/home/ikony-vlastnosti/pozar.png",
-      label: "Požáru",
+      label: t("features.pozar"),
       borderColor: "from-red-500 to-red-600",
     },
     plisne: {
       icon: "/home/ikony-vlastnosti/plisne.png",
-      label: "Plísním",
+      label: t("features.plisne"),
       borderColor: "from-green-400 to-green-600",
     },
   };
@@ -50,10 +54,10 @@ export default function FeaturesSection() {
         {/* Heading */}
         <div className="mb-10 sm:mb-14 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-black mb-3 sm:mb-4 leading-tight">
-            Souhra výkonů, jeden materiál
+            {t("features.title")}
           </h2>
           <p className="text-base sm:text-lg text-black/80">
-            V jednom kroku chráníte proti
+            {t("features.subtitle")}
           </p>
         </div>
 

@@ -1,8 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { useI18n } from "@/lib/contexts/I18nContext";
 
 export default function PozadatONabidku() {
+  const { t } = useI18n();
   const [formData, setFormData] = useState({
     form_name: "",
     form_company: "",
@@ -18,12 +20,12 @@ export default function PozadatONabidku() {
 
     // Validate that at least one option is selected for each checkbox group
     if (formData.form_varianta.length === 0) {
-      alert("Prosím vyberte alespoň jednu variantu.");
+      alert(t("requestOffer.validationVariants"));
       return;
     }
 
     if (formData.form_problem.length === 0) {
-      alert("Prosím vyberte alespoň jeden problém, který řešíte.");
+      alert(t("requestOffer.validationProblems"));
       return;
     }
 
@@ -64,16 +66,15 @@ export default function PozadatONabidku() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-3xl mt-12">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
-              Požádat o technickou konzultaci
+              {t("requestOffer.title")}
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-2 max-w-2xl leading-relaxed">
               <strong>
-                Kontaktujte nás pro individuální nabídku a konzultaci
+                {t("requestOffer.subtitle1")}
               </strong>
             </p>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
-              Vyplňte formulář a my vám připravíme individuální nabídku na míru
-              vašemu projektu. Těšíme se na spolupráci!
+              {t("requestOffer.subtitle2")}
             </p>
           </div>
         </div>
@@ -84,13 +85,13 @@ export default function PozadatONabidku() {
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">
-              Kontaktní údaje
+              {t("requestOffer.contactDetails")}
             </h2>
 
             <div className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Celé jméno <span className="text-red-500">*</span>
+                  {t("requestOffer.fullName")} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -105,7 +106,7 @@ export default function PozadatONabidku() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Společnost <span className="text-red-500">*</span>
+                    {t("requestOffer.company")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -119,7 +120,7 @@ export default function PozadatONabidku() {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    E-mail <span className="text-red-500">*</span>
+                    {t("requestOffer.email")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -134,7 +135,7 @@ export default function PozadatONabidku() {
 
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Objekt <span className="text-red-500">*</span>
+                  {t("requestOffer.object")} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -152,19 +153,19 @@ export default function PozadatONabidku() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6">
-                Vyberte prosím varianty
+                {t("requestOffer.selectVariants")}
                 <span className="text-red-500">*</span>
               </h3>
               <div className="space-y-3">
                 {[
-                  { value: "tezky-prumysl", label: "Těžký průmysl" },
-                  { value: "prumysl", label: "Průmysl" },
-                  { value: "potravinarsky", label: "Potravinářský průmysl" },
-                  { value: "vyroba", label: "Výroba" },
-                  { value: "komercni-budovy", label: "Komerční budovy" },
-                  { value: "stavebnictvi", label: "Stavebnictví" },
-                  { value: "klimatizace", label: "Klimatizace" },
-                  { value: "jine", label: "Jiné" },
+                  { value: "tezky-prumysl", label: t("requestOffer.variants.tezkyPrumysl") },
+                  { value: "prumysl", label: t("requestOffer.variants.prumysl") },
+                  { value: "potravinarsky", label: t("requestOffer.variants.potravinarsky") },
+                  { value: "vyroba", label: t("requestOffer.variants.vyroba") },
+                  { value: "komercni-budovy", label: t("requestOffer.variants.komercniBudovy") },
+                  { value: "stavebnictvi", label: t("requestOffer.variants.stavebnictvi") },
+                  { value: "klimatizace", label: t("requestOffer.variants.klimatizace") },
+                  { value: "jine", label: t("requestOffer.variants.jine") },
                 ].map((option) => (
                   <label
                     key={option.value}
@@ -188,21 +189,21 @@ export default function PozadatONabidku() {
 
             <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
               <h3 className="text-xl font-bold text-gray-900 mb-6">
-                Jaké řešíte problémy?
+                {t("requestOffer.whatProblems")}
                 <span className="text-red-500">*</span>
               </h3>
               <div className="space-y-3">
                 {[
-                  { value: "kondenzace", label: "Kondenzace" },
-                  { value: "koroze", label: "Koroze" },
-                  { value: "plisne", label: "Plísně" },
+                  { value: "kondenzace", label: t("requestOffer.problems.kondenzace") },
+                  { value: "koroze", label: t("requestOffer.problems.koroze") },
+                  { value: "plisne", label: t("requestOffer.problems.plisne") },
                   {
                     value: "tepelne-ztraty",
-                    label: "Tepelné ztráty/nutnost chlazení",
+                    label: t("requestOffer.problems.tepelneZtraty"),
                   },
-                  { value: "izolace-domu", label: "Izolace domu" },
-                  { value: "bezpecnost", label: "Bezpečnost provozu" },
-                  { value: "zefektivneni", label: "Zefektivnění provozu" },
+                  { value: "izolace-domu", label: t("requestOffer.problems.izolaceDomu") },
+                  { value: "bezpecnost", label: t("requestOffer.problems.bezpecnost") },
+                  { value: "zefektivneni", label: t("requestOffer.problems.zefektivneni") },
                 ].map((option) => (
                   <label
                     key={option.value}
@@ -228,12 +229,12 @@ export default function PozadatONabidku() {
           {/* Message */}
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
             <h2 className="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">
-              Zpráva
+              {t("requestOffer.message")}
             </h2>
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Vaše zpráva <span className="text-red-500">*</span>
+                {t("requestOffer.yourMessage")} <span className="text-red-500">*</span>
               </label>
               <textarea
                 name="form_message"
@@ -241,7 +242,7 @@ export default function PozadatONabidku() {
                 onChange={handleInputChange}
                 required
                 rows={8}
-                placeholder="Popište váš projekt a požadavky..."
+                placeholder={t("requestOffer.placeholders.object")}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#0180ae] focus:ring-2 focus:ring-[#0180ae]/20 outline-none transition-all duration-300 resize-none"
               />
             </div>
@@ -253,7 +254,7 @@ export default function PozadatONabidku() {
               type="submit"
               className="px-12 py-4 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-0.5"
             >
-              Odeslat žádost
+              {t("requestOffer.send")}
             </button>
           </div>
         </form>

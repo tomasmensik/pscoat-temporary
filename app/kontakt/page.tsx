@@ -8,6 +8,7 @@ import {
   Marker,
   ZoomableGroup,
 } from "react-simple-maps";
+import { useI18n } from "@/lib/contexts/I18nContext";
 
 const MapComposableMap = ComposableMap as any;
 const MapZoomableGroup = ZoomableGroup as any;
@@ -16,6 +17,7 @@ const MapGeography = Geography as any;
 const MapMarker = Marker as any;
 
 export default function Kontakt() {
+  const { t } = useI18n();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -409,11 +411,10 @@ export default function Kontakt() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-3xl mt-12">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
-              Kontakt
+              {t("contact.title")}
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
-              Máte dotaz nebo zájem o naše produkty? Rádi vám zodpovíme všechny
-              otázky a pomůžeme najít nejvhodnější řešení pro váš projekt.
+              {t("contact.subtitle")}
             </p>
           </div>
         </div>
@@ -425,7 +426,7 @@ export default function Kontakt() {
           {/* Contact Form */}
           <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 flex flex-col h-full">
             <h2 className="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-200">
-              Napište nám
+              {t("contact.writeUs")}
             </h2>
 
             <form
@@ -435,7 +436,7 @@ export default function Kontakt() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Jméno <span className="text-red-500">*</span>
+                    {t("contact.firstName")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -449,7 +450,7 @@ export default function Kontakt() {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Příjmení <span className="text-red-500">*</span>
+                    {t("contact.lastName")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="text"
@@ -465,7 +466,7 @@ export default function Kontakt() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    E-mail <span className="text-red-500">*</span>
+                    {t("contact.email")} <span className="text-red-500">*</span>
                   </label>
                   <input
                     type="email"
@@ -479,7 +480,7 @@ export default function Kontakt() {
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Telefon
+                    {t("contact.phone")}
                   </label>
                   <input
                     type="tel"
@@ -492,16 +493,16 @@ export default function Kontakt() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Zpráva <span className="text-red-500">*</span>
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={6}
-                  placeholder="Vaše zpráva..."
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    {t("contact.message")} <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    placeholder={t("contact.placeholders.message")}
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-[#0180ae] focus:ring-2 focus:ring-[#0180ae]/20 outline-none transition-all duration-300 resize-none"
                 />
               </div>
@@ -511,7 +512,7 @@ export default function Kontakt() {
                   type="submit"
                   className="w-full px-8 py-4 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-1"
                 >
-                  Odeslat zprávu
+                  {t("contact.sendMessage")}
                 </button>
               </div>
             </form>
@@ -521,7 +522,7 @@ export default function Kontakt() {
           <div className="flex flex-col h-full gap-8">
             <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 flex-1">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Kontaktní informace
+                {t("contact.contactInfo")}
               </h2>
 
               <div className="space-y-6">
@@ -542,7 +543,7 @@ export default function Kontakt() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">E-mail</h3>
+                    <h3 className="font-bold text-gray-900 mb-1">{t("contact.email")}</h3>
                     <p className="text-gray-600">info@pscoat.com</p>
                   </div>
                 </div>
@@ -564,7 +565,7 @@ export default function Kontakt() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Telefon</h3>
+                    <h3 className="font-bold text-gray-900 mb-1">{t("contact.phone")}</h3>
                     <p className="text-gray-600">+420 123 456 789</p>
                   </div>
                 </div>
@@ -593,7 +594,7 @@ export default function Kontakt() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Adresa</h3>
-                    <p className="text-gray-600">Praha, Česká republika</p>
+                    <p className="text-gray-600">{t("contact.addressValue")}</p>
                   </div>
                 </div>
               </div>
@@ -601,17 +602,16 @@ export default function Kontakt() {
 
             <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Potřebujete rychlou nabídku?
+                {t("contact.quickOfferTitle")}
               </h2>
               <p className="text-gray-600 mb-6">
-                Využijte náš specializovaný formulář pro žádost o nabídku a
-                získejte individuální cenovou kalkulaci.
+                {t("contact.quickOfferText")}
               </p>
               <a
                 href="/pozadat-o-nabidku"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 transform hover:-translate-y-1"
               >
-                Požádat o nabídku
+                {t("contact.requestOffer")}
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -636,11 +636,10 @@ export default function Kontakt() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Naše pobočky po celém světě
+              {t("contact.branchesTitle")}
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              PScoat má zastoupení na všech kontinentech. Najděte svou nejbližší
-              pobočku.
+              {t("contact.branchesSubtitle")}
             </p>
           </div>
 
@@ -745,14 +744,14 @@ export default function Kontakt() {
                             {countryName}
                           </h3>
                           <span className="text-gray-500 text-sm">
-                            ({countryOffices.length} {countryOffices.length === 1 ? "pobočka" : "pobočky"})
+                            ({countryOffices.length} {countryOffices.length === 1 ? t("contact.office") : t("contact.offices")})
                           </span>
                         </div>
                         {selectedCountry && (
                           <button
                             onClick={closePinnedTooltip}
                             className="ml-4 text-gray-400 hover:text-gray-600"
-                            aria-label="Zavřít detail"
+                            aria-label={t("contact.closeDetail")}
                           >
                             ×
                           </button>

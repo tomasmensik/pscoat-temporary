@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useI18n } from "@/lib/contexts/I18nContext";
 
 type SquareItem = {
   id: string;
@@ -18,6 +19,7 @@ type SquareItem = {
 };
 
 export default function SquareDynamicSection() {
+  const { t } = useI18n();
   const TYRE_BIG1 = "/home/square-sekce/tyre-velky-ctverec-1.png";
   const TYRE_BIG2 = "/home/square-sekce/tyre-velky-ctverec-2.png";
   const ELEC_1 = "/home/square-sekce/elektrarna-velky-ctverec-1.png";
@@ -28,46 +30,42 @@ export default function SquareDynamicSection() {
     () => [
       {
         id: "tyre",
-        label: "Výroba pneumatik",
-        sublabel: "Continental",
+        label: t("squareDynamic.tyreLabel"),
+        sublabel: t("squareDynamic.tyreSublabel"),
         images: [TYRE_BIG1, TYRE_BIG2],
-        contentTitle: "Úspora energie při výrobě traktorových pneumatik",
-        contentText:
-          "Aplikace PS Coat na formy pro výrobu traktorových pneumatik snížila spotřebu elektrické energie potřebné pro ohřev procesu přibližně o 50 %, podle provedeného měření v provozu.",
+        contentTitle: t("squareDynamic.tyreTitle"),
+        contentText: t("squareDynamic.tyreText"),
         imageLayout: "leftRight",
       },
       {
         id: "silo",
-        label: "Izolace pecí a chladících věží",
-        sublabel: "Industry",
+        label: t("squareDynamic.siloLabel"),
+        sublabel: t("squareDynamic.siloSublabel"),
         images: [ELEC_1, ELEC_2],
-        contentTitle: "Bezpečnější provoz a nižší teplota v hale",
-        contentText:
-          "Aplikace PS Coat na povrchy pecí omezila přenos tepla do okolního prostředí a snížila teplotu v hale. Zároveň došlo ke zvýšení bezpečnosti práce díky nižší povrchové teplotě zařízení a omezení rizika popálení.",
+        contentTitle: t("squareDynamic.siloTitle"),
+        contentText: t("squareDynamic.siloText"),
         imageLayout: "twoStack",
       },
       {
         id: "facade",
-        label: "Fasáda historického objektu",
-        sublabel: "Kostel a fara",
+        label: t("squareDynamic.facadeLabel"),
+        sublabel: t("squareDynamic.facadeSublabel"),
         images: [KOSTEL_1, KOSTEL_1],
-        contentTitle: "Zateplení členité historické fasády",
-        contentText:
-          "Na objektu kostela byla použita tenká vrstva PS Coat, která umožnila zateplení členité historické fasády bez změny jejího vzhledu. Došlo ke snížení tepelných ztrát a energií na vytápění přibližně o 40 %. Povrch zároveň získal antibakteriální charakter a protipožární ochranu.",
+        contentTitle: t("squareDynamic.facadeTitle"),
+        contentText: t("squareDynamic.facadeText"),
         imageLayout: "imageLeftTextRight",
       },
       {
         id: "biogas",
-        label: "Bioplynová Stanice",
-        sublabel: "PLYNEX ",
+        label: t("squareDynamic.biogasLabel"),
+        sublabel: t("squareDynamic.biogasSublabel"),
         images: [SILO_1, SILO_1],
-        contentTitle: "Stabilní teplota fermentace i v mrazech",
-        contentText:
-          "V dofermentoru klesala v zimním období teplota média na +15 °C, což způsobovalo nedostatečnou produkci plynu a výpadky kogeneračních jednotek. Po aplikaci 1,5 mm vrstvy PS Coat se teplota stabilně drží kolem +35 °C, bez ztrát výkonu a s nižší spotřebou glycerinu.",
+        contentTitle: t("squareDynamic.biogasTitle"),
+        contentText: t("squareDynamic.biogasText"),
         imageLayout: "imageTopLeft",
       },
     ],
-    []
+    [t]
   );
 
   // only 3 visible on the left
@@ -105,7 +103,7 @@ export default function SquareDynamicSection() {
           <div className="flex items-center gap-3">
             <div>
               <h2 className="text-4xl sm:text-6xl md:text-8xl font-thin text-slate-900">
-                Potvrzeno provozem
+                {t("squareDynamic.title")}
               </h2>
             </div>
           </div>
@@ -186,7 +184,7 @@ export default function SquareDynamicSection() {
                     ? "opacity-50 cursor-not-allowed"
                     : "hover:bg-white"
                 }`}
-                aria-label="Předchozí"
+                aria-label={t("squareDynamic.previous")}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -211,7 +209,7 @@ export default function SquareDynamicSection() {
                     ? "opacity-50 cursor-not-allowed"
                     : "hover:bg-white"
                 }`}
-                aria-label="Další"
+                aria-label={t("squareDynamic.next")}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -502,7 +500,7 @@ export default function SquareDynamicSection() {
                       ? "opacity-50 cursor-not-allowed"
                       : "hover:bg-white"
                   }`}
-                  aria-label="Předchozí"
+                  aria-label={t("squareDynamic.previous")}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -527,7 +525,7 @@ export default function SquareDynamicSection() {
                       ? "opacity-50 cursor-not-allowed"
                       : "hover:bg-white"
                   }`}
-                  aria-label="Další"
+                  aria-label={t("squareDynamic.next")}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
