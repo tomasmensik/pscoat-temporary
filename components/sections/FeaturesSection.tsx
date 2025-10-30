@@ -51,12 +51,6 @@ export default function FeaturesSection() {
 
   return (
     <section className="relative w-full min-h-screen flex items-center bg-white">
-      {/* Top gradient stripe */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1E73B2] via-purple-500 to-red-600"></div>
-
-      {/* Bottom gradient stripe */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1E73B2] via-purple-500 to-red-600"></div>
-
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-12 gap-24">
           {/* First Row */}
