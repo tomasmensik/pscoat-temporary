@@ -400,10 +400,10 @@ export default function ProductDetailPage() {
               {/* CTA Buttons */}
               <div className="flex gap-4 pt-4">
                 <Link
-                  href="/kontakt"
+                  href="/poyadat-o-nabidku"
                   className="flex-1 bg-gradient-to-r from-[#0180ae] to-[#00a4d6] text-white font-semibold py-4 px-6 rounded-xl hover:shadow-lg hover:shadow-[#0180ae]/25 transition-all duration-300 text-center"
                 >
-                  Požádat o nabídku
+                  Požádat o konzultaci
                 </Link>
               </div>
             </div>

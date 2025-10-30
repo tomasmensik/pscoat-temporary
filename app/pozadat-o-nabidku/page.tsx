@@ -64,7 +64,7 @@ export default function PozadatONabidku() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="max-w-3xl mt-12">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gray-900 tracking-tight">
-              Požádat o nabídku
+              Požádat o technickou konzultaci
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-2 max-w-2xl leading-relaxed">
               <strong>

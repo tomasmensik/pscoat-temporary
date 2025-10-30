@@ -8,10 +8,10 @@ interface NavbarProps {
 }
 
 const navItems = [
-  { label: "Využití", href: "/co-je-pscoat/pouziti" },
+  { label: "Využití", href: "/#industry-section" },
   { label: "Produkty", href: "/produkty" },
-  { label: "Technologie", href: "/co-je-pscoat" },
-  { label: "Realizace", href: "/reference" },
+  { label: "Technologie", href: "/technologie" },
+  { label: "Realizace", href: "/#realizace-section" },
   { label: "Výrobce", href: "/o-nas" },
   { label: "Kontakt", href: "/kontakt" },
 ];
