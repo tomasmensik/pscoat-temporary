@@ -89,6 +89,29 @@
   "fullScreenVideo": {
     "title": "RAL jako standard"
   },
+  "material": {
+    "metal": "Kov",
+    "omitka": "Omítka",
+    "pvc": "PVC",
+    "trubky": "Trubky",
+    "wall": "Zdivo",
+    "wood": "Dřevo",
+    "mainText": "Materiál nezáleží. Výsledek ano.",
+    "subText": "Jedna vrstva, která se přizpůsobuje struktuře, prostředí a aplikaci."
+  },
+  "microsphere": {
+    "title": "Nanotechnologie s měřitelným účinkem. Pokrok založený na vědě.",
+    "description": "PS Coat využívá nanostrukturované mikrosféry k ovlivnění chování povrchu v kontaktu s teplotou a environmentálními podmínkami. Izolace a ochrana jsou spojeny v jedné tenké vrstvě s dlouhodobou stabilitou, která snižuje spotřebu materiálu a nároky na údržbu. Výsledkem je účinné a ekologicky šetrné řešení.",
+    "viewCaseStudies": "Zobrazit případové studie",
+    "benefits": {
+      "title": "Výhody",
+      "description": "Odolává UV záření a chemikáliím, chrání zařízení a může být snadno aplikován přímo na horké povrchy."
+    },
+    "ecology": {
+      "title": "Ekologie",
+      "description": "Má nízkou uhlíkovou stopu, je ekologicky šetrný, podporuje bezpečnější pracovní podmínky a přispívá k úsporám energie."
+    }
+  },
   "squareDynamic": {
     "title": "Potvrzeno provozem",
     "tyreLabel": "Výroba pneumatik",

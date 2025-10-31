@@ -83,10 +83,34 @@
     "text1": "PS Coat has been developed and tested since 2013 and meets the relevant certification requirements for industrial and construction applications. Production takes place in a certified facility in Poland near Kraków, ensuring quality control and oversight of the manufacturing process.",
     "heading2": "Swiss origin. International availability. Local technical support.",
     "text2": "PS Coat originates from a company founded in Switzerland in 2007. Since then, its presence has expanded from Europe to North and South America and the Middle East. Today, the material is available for industrial, construction and specialized projects with local technical support.",
+    "heading3": "Continuous development",
     "text3": "PS Coat is a stable and proven solution that we continue to develop and adapt to various operating conditions. We work with researchers and experts in surface and industrial technologies to continuously improve the material and expand its practical applications."
   },
   "fullScreenVideo": {
     "title": "RAL as standard"
+  },
+  "material": {
+    "metal": "Metal",
+    "omitka": "Plaster",
+    "pvc": "PVC",
+    "trubky": "Pipes",
+    "wall": "Masonry",
+    "wood": "Wood",
+    "mainText": "The material doesn't matter. The result does.",
+    "subText": "One layer that adapts to the structure, the environment, and the application."
+  },
+  "microsphere": {
+    "title": "Nanotechnology with measurable effect. Progress grounded in science.",
+    "description": "PS Coat uses nanostructured microspheres to influence how the surface behaves in contact with temperature and environmental conditions. Insulation and protection are combined in one thin layer with long-lasting stability, reducing material use and maintenance demands. The result is an effective and environmentally considerate solution.",
+    "viewCaseStudies": "View case studies",
+    "benefits": {
+      "title": "Benefits",
+      "description": "It withstands UV exposure and chemicals, protects equipment, and can be easily applied directly to hot surfaces."
+    },
+    "ecology": {
+      "title": "Ecology",
+      "description": "It has a low carbon footprint, is environmentally considerate, supports safer working conditions, and contributes to energy savings."
+    }
   },
   "squareDynamic": {
     "title": "Proven in real operation",
