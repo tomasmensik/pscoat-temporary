@@ -53,13 +53,6 @@ export default function HeroSection() {
         <Navbar isNavbarVisible={true} />
       </div>
 
-      {/* Subtle Play Icon in Background (very faint) */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="opacity-5">
-          <PlayIcon className="text-black" />
-        </div>
-      </div>
-
       {/* Main Content - centered vertically and horizontally */}
       <div className="absolute inset-0 flex items-center justify-center z-10">
         <div className="text-center px-4 sm:px-6 lg:px-8">
@@ -97,4 +90,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
