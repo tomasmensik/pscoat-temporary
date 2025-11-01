@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["cdn.spline.design"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.spline.design",
+      },
+      {
+        protocol: "https",
+        hostname: "upload.wikimedia.org",
+      },
+    ],
   },
 };
 
