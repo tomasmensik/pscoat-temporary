@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   ComposableMap,
   Geographies,
@@ -55,8 +56,11 @@ export default function WorldMapSection({
     ? getOfficesForCountry(selectedCountry)
     : [];
   const countryName =
-    countryOffices[0]?.flags.find((f) => f.code === selectedCountry)?.name ||
-    selectedCountry;
+    selectedCountry
+      ? countryOffices[0]?.flags.find((f) => f.code === selectedCountry)?.name ||
+        selectedCountry ||
+        ""
+      : "";
 
   return (
     <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 mb-16 relative">
@@ -73,7 +77,14 @@ export default function WorldMapSection({
             zoom={mapZoom}
             center={mapCenter}
             onMoveEnd={({ zoom, coordinates }: any) => {
-              onMapMove(zoom, Array.isArray(coordinates) ? coordinates : mapCenter);
+              const validCoordinates: [number, number] =
+                Array.isArray(coordinates) &&
+                coordinates.length === 2 &&
+                typeof coordinates[0] === "number" &&
+                typeof coordinates[1] === "number"
+                  ? [coordinates[0], coordinates[1]]
+                  : mapCenter;
+              onMapMove(zoom, validCoordinates);
             }}
           >
             <MapGeographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
@@ -133,10 +144,12 @@ export default function WorldMapSection({
         <div className="absolute top-4 right-4 bg-white rounded-xl p-4 shadow-xl border border-gray-200 max-w-lg z-10 animate-in fade-in duration-200">
           <div className="flex justify-between items-start">
             <div className="flex items-center gap-2 mb-3">
-              <img
+              <Image
                 src={getFlagUrl(selectedCountry)}
                 alt={countryName}
-                className="w-8 h-5 object-cover rounded-sm border border-gray-200"
+                width={32}
+                height={20}
+                className="object-cover rounded-sm border border-gray-200"
               />
               <h3 className="font-bold text-gray-900 text-base">{countryName}</h3>
               <span className="text-gray-500 text-sm">

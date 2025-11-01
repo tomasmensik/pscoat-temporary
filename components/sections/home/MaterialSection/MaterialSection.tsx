@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useI18n } from "@/lib/contexts/I18nContext";
 import { textures } from "./data";
@@ -38,7 +39,7 @@ export default function MaterialSection() {
           <div
             key={index}
             onClick={() => handleTextureClick(index)}
-            className={`w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white/10 backdrop-blur-sm overflow-hidden shadow-lg border border-white/20 cursor-pointer transition-all duration-300 ${
+            className={`relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white/10 backdrop-blur-sm overflow-hidden shadow-lg border border-white/20 cursor-pointer transition-all duration-300 ${
               activeIndex !== null && activeIndex !== index
                 ? "opacity-30 brightness-50"
                 : "opacity-100 brightness-100"
@@ -48,10 +49,11 @@ export default function MaterialSection() {
                 : ""
             }`}
           >
-            <img
+            <Image
               src={`/home/animation/texture/${texture.id}.png`}
               alt={texture.id}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
         ))}

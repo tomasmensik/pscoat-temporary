@@ -38,7 +38,12 @@ export default function IndustrySection() {
   };
 
   useSliderAnimation(selectedIcon, isDragging, setSliderPosition);
-  useDragHandlers(isDragging, setIsDragging, sliderContainerRef, setSliderPosition);
+  useDragHandlers(
+    isDragging,
+    setIsDragging,
+    sliderContainerRef,
+    setSliderPosition
+  );
 
   const scrollDown = () => {
     if (iconIndex < totalIcons - visibleIcons) {
@@ -64,7 +69,7 @@ export default function IndustrySection() {
       setIconIndex(iconIndex - 1);
     }
   };
-  
+
   return (
     <section
       id="industry-section"
@@ -93,14 +98,18 @@ export default function IndustrySection() {
                     {t("industry.description3")}
                   </p>
                   <div className="flex flex-col items-center gap-3 mb-8 justify-center sm:flex-col md:flex-col lg:flex-row lg:items-center lg:justify-start">
-                    <img
+                    <Image
                       src="/home/ikony-vlastnosti/thermo-barrier.png"
                       alt="Fire barrier"
+                      width={100}
+                      height={24}
                       className="h-6 w-auto object-contain"
                     />
-                    <img
+                    <Image
                       src="/home/ikony-vlastnosti/fire-barrier.png"
                       alt="Thermo barrier"
+                      width={100}
+                      height={24}
                       className="h-6 w-auto object-contain"
                     />
                   </div>
@@ -160,19 +169,18 @@ export default function IndustrySection() {
                         }}
                       >
                         <div
-                          className={`w-full h-full rounded-lg flex items-center justify-center ${
+                          className={`relative w-full h-full rounded-lg flex items-center justify-center ${
                             selectedIcon === 0 ? "bg-white/30" : ""
                           }`}
                         >
-                          <img
-                            src="/home/slider-odvetvi/letadlo.svg"
-                            alt="Doprava"
-                            className="w-[70%] h-[70%] object-contain filter brightness-0 invert"
-                            style={{
-                              width: "70%",
-                              height: "70%",
-                            }}
-                          />
+                          <div className="relative w-[70%] h-[70%]">
+                            <Image
+                              src="/home/slider-odvetvi/letadlo.svg"
+                              alt="Doprava"
+                              fill
+                              className="object-contain filter brightness-0 invert"
+                            />
+                          </div>
                         </div>
                       </button>
 
@@ -189,19 +197,18 @@ export default function IndustrySection() {
                         }}
                       >
                         <div
-                          className={`w-full h-full rounded-lg flex items-center justify-center ${
+                          className={`relative w-full h-full rounded-lg flex items-center justify-center ${
                             selectedIcon === 1 ? "bg-white/30" : ""
                           }`}
                         >
-                          <img
-                            src="/home/slider-odvetvi/kostel.svg"
-                            alt="Kostel"
-                            className="w-[70%] h-[70%] object-contain filter brightness-0 invert"
-                            style={{
-                              width: "70%",
-                              height: "70%",
-                            }}
-                          />
+                          <div className="relative w-[70%] h-[70%]">
+                            <Image
+                              src="/home/slider-odvetvi/kostel.svg"
+                              alt="Kostel"
+                              fill
+                              className="object-contain filter brightness-0 invert"
+                            />
+                          </div>
                         </div>
                       </button>
 
@@ -218,19 +225,18 @@ export default function IndustrySection() {
                         }}
                       >
                         <div
-                          className={`w-full h-full rounded-lg flex items-center justify-center ${
+                          className={`relative w-full h-full rounded-lg flex items-center justify-center ${
                             selectedIcon === 2 ? "bg-white/30" : ""
                           }`}
                         >
-                          <img
-                            src="/home/slider-odvetvi/thermovision.svg"
-                            alt="Thermovize"
-                            className="w-[70%] h-[70%] object-contain filter brightness-0 invert"
-                            style={{
-                              width: "70%",
-                              height: "70%",
-                            }}
-                          />
+                          <div className="relative w-[70%] h-[70%]">
+                            <Image
+                              src="/home/slider-odvetvi/thermovision.svg"
+                              alt="Thermovize"
+                              fill
+                              className="object-contain filter brightness-0 invert"
+                            />
+                          </div>
                         </div>
                       </button>
 
@@ -247,19 +253,18 @@ export default function IndustrySection() {
                         }}
                       >
                         <div
-                          className={`w-full h-full rounded-lg flex items-center justify-center ${
+                          className={`relative w-full h-full rounded-lg flex items-center justify-center ${
                             selectedIcon === 3 ? "bg-white/30" : ""
                           }`}
                         >
-                          <img
-                            src="/home/slider-odvetvi/lod.svg"
-                            alt="Lod"
-                            className="w-[70%] h-[70%] object-contain filter brightness-0 invert"
-                            style={{
-                              width: "70%",
-                              height: "70%",
-                            }}
-                          />
+                          <div className="relative w-[70%] h-[70%]">
+                            <Image
+                              src="/home/slider-odvetvi/lod.svg"
+                              alt="Lod"
+                              fill
+                              className="object-contain filter brightness-0 invert"
+                            />
+                          </div>
                         </div>
                       </button>
 
@@ -276,19 +281,18 @@ export default function IndustrySection() {
                         }}
                       >
                         <div
-                          className={`w-full h-full rounded-lg flex items-center justify-center ${
+                          className={`relative w-full h-full rounded-lg flex items-center justify-center ${
                             selectedIcon === 4 ? "bg-white/30" : ""
                           }`}
                         >
-                          <img
-                            src="/home/slider-odvetvi/trubky.svg"
-                            alt="Trubky"
-                            className="w-[70%] h-[70%] object-contain filter brightness-0 invert"
-                            style={{
-                              width: "70%",
-                              height: "70%",
-                            }}
-                          />
+                          <div className="relative w-[70%] h-[70%]">
+                            <Image
+                              src="/home/slider-odvetvi/trubky.svg"
+                              alt="Trubky"
+                              fill
+                              className="object-contain filter brightness-0 invert"
+                            />
+                          </div>
                         </div>
                       </button>
 
@@ -305,19 +309,18 @@ export default function IndustrySection() {
                         }}
                       >
                         <div
-                          className={`w-full h-full rounded-lg flex items-center justify-center ${
+                          className={`relative w-full h-full rounded-lg flex items-center justify-center ${
                             selectedIcon === 5 ? "bg-white/30" : ""
                           }`}
                         >
-                          <img
-                            src="/home/slider-odvetvi/silo.svg"
-                            alt="Silo"
-                            className="w-[70%] h-[70%] object-contain filter brightness-0 invert"
-                            style={{
-                              width: "70%",
-                              height: "70%",
-                            }}
-                          />
+                          <div className="relative w-[70%] h-[70%]">
+                            <Image
+                              src="/home/slider-odvetvi/silo.svg"
+                              alt="Silo"
+                              fill
+                              className="object-contain filter brightness-0 invert"
+                            />
+                          </div>
                         </div>
                       </button>
                     </div>
@@ -374,7 +377,7 @@ export default function IndustrySection() {
                             selectedIcon === idx ? "bg-white/30" : "bg-white/10"
                           }`}
                         >
-                          <img
+                          <Image
                             src={
                               idx === 0
                                 ? "/home/slider-odvetvi/letadlo.svg"
@@ -389,7 +392,9 @@ export default function IndustrySection() {
                                 : "/home/slider-odvetvi/silo.svg"
                             }
                             alt="Ikona odvětví"
-                            className="w-10 h-10 object-contain filter brightness-0 invert"
+                            width={40}
+                            height={40}
+                            className="object-contain filter brightness-0 invert"
                           />
                         </button>
                       ))}
@@ -418,11 +423,12 @@ export default function IndustrySection() {
                   className="relative overflow-hidden w-full h-[70vh]"
                 >
                   {/* Background Image (dynamic before) */}
-                  <img
+                  <Image
                     src={iconContent[selectedIcon].images[0]}
-                    loading="eager"
                     alt="Industry showcase before"
-                    className="absolute inset-0 w-full h-full object-cover object-top"
+                    fill
+                    priority
+                    className="object-cover object-top"
                   />
                   {/* Foreground Image (placeholder-2) - clipped based on slider */}
                   <div
@@ -431,11 +437,12 @@ export default function IndustrySection() {
                       clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
                     }}
                   >
-                    <img
+                    <Image
                       src={iconContent[selectedIcon].images[1]}
-                      loading="eager"
                       alt="Industry showcase after"
-                      className="w-full h-full object-cover object-top"
+                      fill
+                      priority
+                      className="object-cover object-top"
                     />
                   </div>
                   {/* Vertical Slider (draggable anywhere along the line) */}
@@ -504,4 +511,3 @@ export default function IndustrySection() {
     </section>
   );
 }
-

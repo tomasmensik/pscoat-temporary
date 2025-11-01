@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useI18n } from "@/lib/contexts/I18nContext";
 import { useFeaturesData } from "./data";
 
@@ -10,9 +11,11 @@ export default function FeaturesSection() {
   const renderFeature = (feature: { icon: string; label: string }) => {
     return (
       <div className="flex flex-col items-center text-center gap-3">
-        <img
+        <Image
           src={feature.icon}
           alt={feature.label}
+          width={96}
+          height={96}
           className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain"
         />
         <p className="text-base sm:text-lg lg:text-xl text-black font-medium">

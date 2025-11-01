@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useI18n } from "@/lib/contexts/I18nContext";
 import { ChevronDownIcon } from "@/components/icons";
@@ -20,20 +21,24 @@ export default function ReferencesSection() {
         <div className="mt-10 flex flex-col gap-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 place-items-center">
             {logosTop.map((src) => (
-              <img
+              <Image
                 key={src}
                 src={src}
                 alt="reference logo"
+                width={144}
+                height={144}
                 className="h-30 md:h-36 object-contain opacity-70"
               />
             ))}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 place-items-center">
             {logosBottom.map((src) => (
-              <img
+              <Image
                 key={src}
                 src={src}
                 alt="reference logo"
+                width={144}
+                height={144}
                 className="h-30 md:h-36 object-contain opacity-70"
               />
             ))}

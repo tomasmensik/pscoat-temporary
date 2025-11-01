@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useI18n } from "@/lib/contexts/I18nContext";
 import HeadingGrid from "./HeadingGrid";
 
@@ -19,9 +20,11 @@ export default function CertificationSection() {
               <div>
                 <HeadingGrid lines={[t("certification.heading1"), "", ""]} />
               </div>
-              <img
+              <Image
                 src="/home/certifikace/tuv-logo.png"
                 alt="TÜV logo"
+                width={200}
+                height={HEADING_LINE_HEIGHT_EM * HEADING_ROWS * 16}
                 className="object-contain"
                 style={{ height: `${HEADING_LINE_HEIGHT_EM * HEADING_ROWS}em`, width: "auto" }} />
             </div>

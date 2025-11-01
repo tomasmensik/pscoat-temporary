@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 import { offices, getFlagUrl, Office } from "../WorldMapSection/data";
 
@@ -14,18 +15,22 @@ export default function OfficesGridSection() {
           {/* Flags */}
           <div className="flex gap-2 mb-4 flex-wrap">
             {office.flags.map((flag, flagIndex) => (
-              <img
+              <Image
                 key={flagIndex}
                 src={getFlagUrl(flag.code)}
                 alt={flag.name}
                 title={flag.name}
-                className="w-8 h-6 object-cover rounded border border-gray-200"
+                width={32}
+                height={24}
+                className="object-cover rounded border border-gray-200"
               />
             ))}
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-bold text-gray-900 mb-2">{office.name}</h3>
+          <h3 className="text-lg font-bold text-gray-900 mb-2">
+            {office.name}
+          </h3>
 
           {/* Company */}
           <p className="text-[#0180ae] font-semibold mb-3">{office.company}</p>
@@ -50,7 +55,9 @@ export default function OfficesGridSection() {
                   key={contactIndex}
                   className="border-l-2 border-[#0180ae] pl-3"
                 >
-                  <p className="font-medium text-gray-900 text-sm">{contact.name}</p>
+                  <p className="font-medium text-gray-900 text-sm">
+                    {contact.name}
+                  </p>
                   <p className="text-gray-600 text-sm">{contact.phone}</p>
                   {contact.email && (
                     <a
@@ -66,7 +73,9 @@ export default function OfficesGridSection() {
           ) : (
             <div className="space-y-2">
               {office.contact && (
-                <p className="font-medium text-gray-900 text-sm">{office.contact}</p>
+                <p className="font-medium text-gray-900 text-sm">
+                  {office.contact}
+                </p>
               )}
               {office.phone && (
                 <p className="text-gray-600 text-sm">{office.phone}</p>
@@ -91,4 +100,3 @@ export default function OfficesGridSection() {
     </div>
   );
 }
-
