@@ -5,6 +5,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useI18n } from "@/lib/contexts/I18nContext";
 import LanguageSwitcher from "../LanguageSwitcher";
+import { HamburgerIcon, CloseIcon } from "@/components/icons";
+import { Button } from "@/components/ui";
+import { navItems } from "./data";
 
 interface NavbarProps {
   isNavbarVisible: boolean;
@@ -12,15 +15,6 @@ interface NavbarProps {
 
 export default function Navbar({ isNavbarVisible }: NavbarProps) {
   const { t } = useI18n();
-  
-  const navItems = [
-    { key: "nav.vyuziti", href: "/#industry-section" },
-    { key: "nav.produkty", href: "/produkty" },
-    { key: "nav.technologie", href: "/technologie" },
-    { key: "nav.realizace", href: "/#realizace-section" },
-    { key: "nav.vyrobce", href: "/o-nas" },
-    { key: "nav.kontakt", href: "/kontakt" },
-  ];
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   // Prevent background scroll when mobile menu is open
@@ -73,12 +67,13 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
             {/* CTA Button and Language Switcher */}
             <div className="hidden md:flex items-center gap-4 flex-shrink-0">
               <LanguageSwitcher />
-              <Link
+              <Button
                 href="/pozadat-o-nabidku"
-                className="bg-[#2B659C] hover:bg-cyan-600 text-white px-6 py-3 rounded-sm text-xs transition-colors"
+                variant="primary"
+                size="sm"
               >
-                {t('nav.chciKonzultaci')}
-              </Link>
+                {t("nav.chciKonzultaci")}
+              </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -90,15 +85,9 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                 className="text-black hover:text-[#2B659C] focus:outline-none drop-shadow-sm"
               >
                 {isMobileOpen ? (
-                  // Close icon
-                  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                  <CloseIcon className="h-6 w-6" />
                 ) : (
-                  // Hamburger icon
-                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
+                  <HamburgerIcon className="h-6 w-6" />
                 )}
               </button>
             </div>
@@ -125,8 +114,18 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                     <div className="flex flex-col items-center">
                       <div className="flex items-center h-20 gap-12 lg:gap-16 w-full justify-between md:justify-start">
                         <div className="flex-shrink-0">
-                          <Link href="/" onClick={() => setIsMobileOpen(false)} className="flex-shrink-0">
-                            <Image src="/logo.svg" alt="PScoat Logo" width={120} height={32} className="h-12 w-auto" />
+                          <Link
+                            href="/"
+                            onClick={() => setIsMobileOpen(false)}
+                            className="flex-shrink-0"
+                          >
+                            <Image
+                              src="/logo.svg"
+                              alt="PScoat Logo"
+                              width={120}
+                              height={32}
+                              className="h-12 w-auto"
+                            />
                           </Link>
                         </div>
                         <button
@@ -134,9 +133,7 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                           onClick={() => setIsMobileOpen(false)}
                           className="p-2 text-black hover:text-[#2B659C]"
                         >
-                          <svg className="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                          </svg>
+                          <CloseIcon className="h-7 w-7" />
                         </button>
                       </div>
                       <div className="h-px bg-black/80 w-full"></div>
@@ -161,13 +158,16 @@ export default function Navbar({ isNavbarVisible }: NavbarProps) {
                         <LanguageSwitcher />
                       </div>
                     </div>
-                    <Link
+                    <Button
                       href="/pozadat-o-nabidku"
+                      variant="primary"
+                      size="lg"
+                      fullWidth
                       onClick={() => setIsMobileOpen(false)}
-                      className="block text-center bg-[#2B659C] hover:bg-cyan-600 text-white px-5 py-4 rounded-sm text-base transition-colors"
+                      className="text-center"
                     >
-                      {t('nav.chciKonzultaci')}
-                    </Link>
+                      {t("nav.chciKonzultaci")}
+                    </Button>
                   </div>
                 </div>
               </div>

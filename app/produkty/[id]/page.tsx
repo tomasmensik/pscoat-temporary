@@ -11,6 +11,14 @@ import {
 import { products } from "../../../lib/constants/products";
 import { categories } from "../../../lib/constants/products";
 import { useI18n } from "@/lib/contexts/I18nContext";
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  PaintbrushIcon,
+  ZoomIcon,
+  CheckIcon,
+  CloseIcon,
+} from "@/components/icons";
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -141,19 +149,7 @@ export default function ProductDetailPage() {
               href="/produkty"
               className="inline-flex items-center gap-2 mb-8 text-gray-600 hover:text-[#0180ae] transition-colors group"
             >
-              <svg
-                className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
+              <ArrowLeftIcon className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" />
               <span className="font-medium">{t("productDetail.back")}</span>
             </Link>
 
@@ -206,19 +202,7 @@ export default function ProductDetailPage() {
                       className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
                       aria-label={t("productDetail.previousImage")}
                     >
-                      <svg
-                        className="w-6 h-6 text-gray-800"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 19l-7-7 7-7"
-                        />
-                      </svg>
+                      <ArrowLeftIcon className="w-6 h-6 text-gray-800" />
                     </button>
                     <button
                       onClick={(e) => {
@@ -228,19 +212,7 @@ export default function ProductDetailPage() {
                       className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
                       aria-label={t("productDetail.nextImage")}
                     >
-                      <svg
-                        className="w-6 h-6 text-gray-800"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                      <ArrowRightIcon className="w-6 h-6 text-gray-800" />
                     </button>
                   </>
                 )}
@@ -249,19 +221,7 @@ export default function ProductDetailPage() {
                 {product.hasColorVariant && (
                   <div className="absolute top-6 right-6 group/color">
                     <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer">
-                      <svg
-                        className="w-5 h-5 text-[#0180ae]"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="m14.622 17.897-10.68-2.913M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0zM9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15"
-                        />
-                      </svg>
+                      <PaintbrushIcon className="w-5 h-5 text-[#0180ae]" />
                       <p className="text-xs text-gray-700 font-medium whitespace-nowrap">
                         {t("productDetail.colorVariants")}
                       </p>
@@ -270,19 +230,7 @@ export default function ProductDetailPage() {
                     {/* Color variant popup */}
                     <div className="absolute top-14 right-0 bg-white rounded-xl shadow-2xl p-4 w-72 z-50 border border-gray-100 opacity-0 invisible group-hover/color:opacity-100 group-hover/color:visible transition-all duration-200">
                       <div className="flex items-start gap-3">
-                        <svg
-                          className="w-5 h-5 text-[#0180ae] flex-shrink-0 mt-0.5"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="m14.622 17.897-10.68-2.913M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0zM9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15"
-                          />
-                        </svg>
+                        <PaintbrushIcon className="w-5 h-5 text-[#0180ae] flex-shrink-0 mt-0.5" />
                         <div>
                           <h4 className="text-sm font-semibold text-gray-900 mb-1">
                             {t("productDetail.colorVariants")}
@@ -298,19 +246,7 @@ export default function ProductDetailPage() {
 
                 {/* Zoom indicator */}
                 <div className="absolute bottom-4 right-4 bg-black/60 hover:bg-black/80 rounded-full p-2 text-white opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
-                    />
-                  </svg>
+                  <ZoomIcon className="w-6 h-6" />
                 </div>
               </div>
 
@@ -378,17 +314,7 @@ export default function ProductDetailPage() {
                             key={index}
                             className="flex items-center gap-2 p-2 rounded-lg bg-gray-50"
                           >
-                            <svg
-                              className="w-5 h-5 text-[#0180ae] flex-shrink-0"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
+                            <CheckIcon className="w-5 h-5 text-[#0180ae] flex-shrink-0" />
                             <span className="text-sm text-gray-700">
                               {translatedVlastnost}
                             </span>
@@ -462,19 +388,7 @@ export default function ProductDetailPage() {
             className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
             aria-label={t("productDetail.close")}
           >
-            <svg
-              className="w-10 h-10"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <CloseIcon className="w-10 h-10" />
           </button>
 
           {/* Image Container */}
@@ -512,19 +426,7 @@ export default function ProductDetailPage() {
                 className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white transition-all"
                 aria-label={t("productDetail.previousImage")}
               >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
+                <ArrowLeftIcon className="w-8 h-8" />
               </button>
               <button
                 onClick={(e) => {
@@ -534,19 +436,7 @@ export default function ProductDetailPage() {
                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full p-3 text-white transition-all"
                 aria-label={t("productDetail.nextImage")}
               >
-                <svg
-                  className="w-8 h-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+                <ArrowRightIcon className="w-8 h-8" />
               </button>
             </>
           )}

@@ -2,63 +2,7 @@
 
 import { useState } from "react";
 import { useI18n } from "@/lib/contexts/I18nContext";
-
-// Czech Republic Flag SVG Component
-const CzechFlag = ({ className = "w-6 h-4" }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 60 40"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-label="Czech Republic flag"
-    style={{ borderRadius: "2px", overflow: "hidden" }}
-    shapeRendering="geometricPrecision"
-  >
-    {/* White top stripe */}
-    <rect y="0" width="60" height="20" fill="#ffffff" />
-    {/* Red bottom stripe */}
-    <rect y="20" width="60" height="20" fill="#d7141a" />
-    {/* Blue triangle - starts at left edge, goes to center */}
-    <polygon points="0,0 30,20 0,40" fill="#11457e" />
-  </svg>
-);
-
-// United Kingdom Flag SVG Component
-const UKFlag = ({ className = "w-6 h-4" }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 900 600"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-label="United Kingdom flag"
-  >
-    <path fill="#012169" d="M0 0h900v600H0z" />
-    <path
-      fill="#fff"
-      d="M0 0l900 600M900 0L0 600"
-      stroke="#fff"
-      strokeWidth="120"
-      strokeLinecap="square"
-    />
-    <path
-      fill="#c8102e"
-      d="M0 0l900 600M900 0L0 600"
-      stroke="#c8102e"
-      strokeWidth="80"
-      strokeLinecap="square"
-    />
-    <path
-      fill="#fff"
-      d="M450 0v600M0 300h900"
-      stroke="#fff"
-      strokeWidth="200"
-    />
-    <path
-      fill="#c8102e"
-      d="M450 0v600M0 300h900"
-      stroke="#c8102e"
-      strokeWidth="120"
-    />
-  </svg>
-);
+import { ChevronDownIcon, CzechFlag, UKFlag } from "@/components/icons";
 
 export default function LanguageSwitcher() {
   const { locale, setLocale } = useI18n();
@@ -87,19 +31,7 @@ export default function LanguageSwitcher() {
         <span className="md:inline">
           {currentLanguage.code.toUpperCase()}
         </span>
-        <svg
-          className="w-5 h-5 md:w-4 md:h-4"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        <ChevronDownIcon className="w-5 h-5 md:w-4 md:h-4" />
       </button>
 
       {isOpen && (

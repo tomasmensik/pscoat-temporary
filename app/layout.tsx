@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Lexend } from "next/font/google";
 import { Raleway } from "next/font/google";
 import "./globals.css";
-import NavbarProvider from "../components/NavbarProvider";
+import NavbarProvider from "../components/shared/navbar/NavbarProvider";
 import Footer from "../components/shared/Footer";
 import { I18nProvider } from "@/lib/contexts/I18nContext";
 

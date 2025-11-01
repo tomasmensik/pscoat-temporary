@@ -1,14 +1,14 @@
 "use client";
 
-import HeroSection from "../components/sections/HeroSection";
-import IndustrySection from "../components/sections/IndustrySection";
-import FeaturesSection from "../components/sections/FeaturesSection";
-import MicrosphereSection from "../components/sections/MicrosphereSection";
-import SquareDynamicSection from "../components/sections/SquareDynamicSection";
-import MaterialSection from "../components/sections/MaterialSection";
-import CertificationSection from "../components/sections/CertificationSection";
-import ReferencesSection from "../components/sections/ReferencesSection";
-import FullScreenVideoSection from "../components/sections/FullScreenVideoSection";
+import HeroSection from "../components/sections/home/HeroSection/HeroSection";
+import IndustrySection from "../components/sections/home/IndustrySection/IndustrySection";
+import FeaturesSection from "../components/sections/home/FeaturesSection/FeaturesSection";
+import MicrosphereSection from "../components/sections/home/MicrosphereSection/MicrosphereSection";
+import SquareDynamicSection from "../components/sections/home/SquareDynamicSection/SquareDynamicSection";
+import MaterialSection from "../components/sections/home/MaterialSection/MaterialSection";
+import CertificationSection from "../components/sections/home/CertificationSection/CertificationSection";
+import ReferencesSection from "../components/sections/home/ReferencesSection/ReferencesSection";
+import FullScreenVideoSection from "../components/sections/home/FullScreenVideoSection/FullScreenVideoSection";
 
 export default function Home() {
   return (
